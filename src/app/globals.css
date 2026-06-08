@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* Paleta de colores corporativa + alias para compatibilidad */
+@theme {
+  --color-atencion:#B33A3A;
+  --color-satisfactorio:#3C6E5F;
+  --color-secundario:#4C1D24;
+  --color-principal:#E8D8C4;
+  --color-textoClaro:#F9F6F1;
+  --color-textoOscuro:#2C2C2C;
+  --color-detalles:#B8865A;
+  --color-detalles2:#9A9A9A;
+
+}
+
+/* Reglas globales base */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-principal);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#__next {
+  height: 100%;
+}
+
+/* Scroll Snap por secciones (Desktop) */
+@media (min-width: 768px) {
+  html, body {
+    overflow: hidden;
+  }
+
+  .snap-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .snap-section {
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+  }
+}
+
+/* Móvil */
+@media (max-width: 767px) {
+  .snap-container {
+    overflow-y: auto;
+  }
+  .snap-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+}
+
+/* Utilidades para el efecto Flip 3D */
+.perspective {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Ocultar barra de scroll para Chrome, Safari y Opera */
+.snap-container::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ocultar barra de scroll para IE, Edge y Firefox */
+.snap-container,
+html,
+body {
+  -ms-overflow-style: none;  /* IE y Edge */
+  scrollbar-width: none;  /* Firefox */
+}
