@@ -70,8 +70,8 @@ export default function Header() {
         </button>
 
         <nav className={`
-          fixed md:static top-[68px] left-0 w-full md:w-auto 
-          bg-principal md:bg-transparent flex flex-col md:flex-row items-center justify-start md:justify-end
+          fixed md:static top-[68px] left-0 w-full md:w-auto bg-secundario
+           md:bg-transparent flex flex-col md:flex-row items-center justify-start md:justify-end
           pt-10 md:pt-0 gap-6 transition-all duration-300 ease-in-out z-40
           ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
         `}>
