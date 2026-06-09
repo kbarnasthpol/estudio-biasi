@@ -4,7 +4,7 @@ import Footer from './Footer'; // Asegurate de que la ruta de importación sea l
 
 export default function Contact() {
   const socialLinks = [
-    { name: 'WhatsApp', icon: 'fab fa-whatsapp', url: 'https://api.whatsapp.com/send?phone=+549221&text=Hola!%20Necesito%20asesor%C3%ADa%20legal%20y%20quiero%20pactar%20una%20reuni%C3%B3n%20con%20su%20estudio.', color: 'hover:text-green-500 hover:border-green-500/30' },
+    { name: 'WhatsApp', icon: 'fab fa-whatsapp', url: 'https://api.whatsapp.com/send?phone=+5492213507725&text=Hola!%20Necesito%20asesor%C3%ADa%20legal%20y%20quiero%20pactar%20una%20reuni%C3%B3n%20con%20su%20estudio.', color: 'hover:text-green-500 hover:border-green-500/30' },
     { name: 'Email', icon:'fas fa-envelope' ,url:'mailto:estudioabogadosbiasi@gmail.com', color: 'hover:text-blue-400 hover:border-blue-400/30' },
     { name: 'Instagram', icon: 'fab fa-instagram', url: '#', color: 'hover:text-pink-500 hover:border-pink-500/30' },
     { name: 'LinkedIn', icon: 'fab fa-linkedin', url: '#', color: 'hover:text-blue-600 hover:border-blue-600/30' },
