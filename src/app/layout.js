@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
           precedence="default"
         />
       </head>
-      <body className="antialiased pt-[68px] ">
+      <body className="antialiased">
         <Header />
         <main className="bg-absolute bg-gradient-to-br from-principal to-secundario/20">
           {children}

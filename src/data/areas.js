@@ -1,44 +1,97 @@
 export const areasData = [
   {
     id: "laboral",
-    title: "DERECHO LABORAL",
-    icon: "fas fa-briefcase",
-    description: "Asesoramiento integral en cuestiones laborales",
-    tags: ["DESPIDOS", "REMUNERACIÓN", "INDEMNIZACIÓN", "ACOSO", "VACACIONES"]
+    nombre: "Derecho Laboral",
+    descripcion:
+      "Brindamos asesoramiento integral tanto a trabajadores como a empleadores en conflictos laborales, reclamos salariales, despidos y demás cuestiones derivadas de la relación de trabajo. Nuestro objetivo es proteger sus derechos y alcanzar la mejor solución posible.",
+    servicios: [
+      "Despidos con y sin causa",
+      "Indemnizaciones",
+      "Reclamos salariales",
+      "Accidentes de trabajo",
+      "Acoso laboral",
+      "Vacaciones y licencias"
+    ]
   },
+
   {
     id: "penal",
-    title: "DERECHO PENAL - DERECHO PROCESAL PENAL",
-    icon: "fas fa-gavel",
-    description: "Defensa jurídica en procesos penales y delitos de toda índole.",
-    tags: ["DEFENSA", "PROCESOS PENALES", "DELITOS", "JUICIOS", "APELACIONES"]
+    nombre: "Derecho Penal y Procesal Penal",
+    descripcion:
+      "Ejercemos la defensa técnica de personas denunciadas, imputadas o víctimas de delitos, acompañando cada etapa del proceso penal con una estrategia jurídica sólida y un trato profesional y confidencial.",
+    servicios: [
+      "Defensa en procesos penales",
+      "Asistencia al imputado",
+      "Presentación de denuncias",
+      "Apelaciones",
+      "Excarcelaciones",
+      "Representación en juicio"
+    ]
   },
+
   {
-    id: "familiar",
-    title: "DERECHO DE LAS FAMILIAS",
-    icon: "fas fa-heart",
-    description: "Soluciones legales en materia de familia y cuestiones personales.",
-    tags: ["DERECHOS PERSONALES", "ALIMENTOS", "CUIDADO PERSONAL", "ADN", "FILIACIÓN", "MEDIDAS CAUTELARES", "TENENCIA", "DIVORCIOS", "PATRIA POTESTAD", "PROTECCIÓN EN VIOLENCIA FAMILIAR"]
+    id: "familia",
+    nombre: "Derecho de Familia",
+    descripcion:
+      "Acompañamos a nuestros clientes en situaciones familiares complejas, procurando soluciones jurídicas que prioricen la protección de los derechos personales y el bienestar de todas las partes involucradas.",
+    servicios: [
+      "Divorcios",
+      "Alimentos",
+      "Cuidado personal",
+      "Régimen de comunicación",
+      "Filiación",
+      "Medidas de protección",
+      "Violencia familiar",
+      "Responsabilidad parental"
+    ]
   },
+
   {
     id: "animal",
-    title: "DERECHO ANIMAL",
-    icon: "fas fa-paw",
-    description: "Protección legal y defensa de los derechos de los animales",
-    tags: ["MALTRATO", "TENENCIA", "DERECHOS", "ADOPCIONES", "LEGISLACIÓN"]
+    nombre: "Derecho Animal",
+    descripcion:
+      "Promovemos la protección jurídica de los animales mediante asesoramiento y representación en casos vinculados al maltrato, la crueldad y la aplicación de la legislación vigente en materia de bienestar animal.",
+    servicios: [
+      "Denuncias por maltrato",
+      "Denuncias por crueldad",
+      "Protección animal",
+      "Tenencia responsable",
+      "Adopciones",
+      "Asesoramiento legal"
+    ]
   },
+
   {
-    id: "civilycomercial",
-    title: "DERECHO CIVIL Y COMERCIAL",
-    icon: "fas fa-balance-scale",
-    description: "Brindamos asesoramiento en temas civiles y comerciales.",
-    tags: ["CONTRATOS", "DAÑOS Y PERJUCIOS", "OBLIGACIONES", "DERECHOS DE PROPIEDAD"]
+    id: "civil",
+    nombre: "Derecho Civil y Comercial",
+    descripcion:
+      "Ofrecemos asesoramiento integral a personas físicas y jurídicas en asuntos civiles y comerciales, brindando soluciones legales orientadas a la prevención de conflictos y la defensa de sus intereses.",
+    servicios: [
+      "Contratos",
+      "Daños y perjuicios",
+      "Accidentes de tránsito",
+      "Sucesiones",
+      "Usucapión",
+      "Desalojos",
+      "Propiedad",
+      "Empresas",
+      "Sociedades",
+      "Fundaciones",
+      "Concursos y quiebras"
+    ]
   },
+
   {
-    id: "comercial",
-    title: "DERECHO COMERCIAL",
-    icon: "fas fa-chart-line",
-    description: "Asesoramiento para empresas, sociedades y emprendimientos comerciales.",
-    tags: ["EMPRESAS", "SOCIEDADES", "CONTRATOS", "CONCURSOS", "QUIEBRAS"]
+    id: "seguridad",
+    nombre: "Seguridad Pública y Ciudadana",
+    descripcion:
+      "Asesoramos a instituciones, empresas y particulares en cuestiones vinculadas a la seguridad pública, prevención de riesgos y cumplimiento de la normativa vigente.",
+    servicios: [
+      "Consultoría en seguridad",
+      "Asesoramiento institucional",
+      "Planes de prevención",
+      "Cumplimiento normativo",
+      "Gestión de riesgos"
+    ]
   }
 ];

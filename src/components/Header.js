@@ -11,6 +11,26 @@ export default function Header() {
     { id: 'areas-especializacion', label: 'SERVICIOS' },
     { id: 'contacto', label: 'CONTACTO' },
   ];
+  const [showHeader, setShowHeader] = useState(false);
+
+useEffect(() => {
+  const hero = document.getElementById("inicio");
+
+  if (!hero) return;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      setShowHeader(!entry.isIntersecting);
+    },
+    {
+      threshold: 0.2,
+    }
+  );
+
+  observer.observe(hero);
+
+  return () => observer.disconnect();
+}, []);
 
   useEffect(() => {
     const sections = navLinks.map(link => document.getElementById(link.id)).filter(Boolean);
@@ -52,12 +72,36 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-secundario text-textoClaro fixed w-full top-0 z-50 shadow-lg transition-all duration-300">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center relative">
+<header
+  className={`
+fixed top-0 left-0 w-full z-50
+transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)]
+${
+showHeader
+? "bg-secundario/90 backdrop-blur-lg shadow-2xl translate-y-0 opacity-100 border-b border-principal/10"
+: "opacity-0 -translate-y-6 pointer-events-none"
+}
+`}
+>
+        <div className="container mx-auto px-6 py-4 flex justify-between items-center relative">
         
-        <div className="text-2xl font-bold tracking-wider text-detalles z-50">
-          BIASI<span className="text-principal">&</span>ASOCIADOS
-        </div>
+        <div
+ className={`
+text-2xl
+font-bold
+tracking-wider
+text-principal
+transition-all
+duration-700
+${
+showHeader
+? "opacity-100 translate-y-0 scale-100"
+: "opacity-0 translate-y-4 scale-110"
+}
+`}
+>
+  BIASI<span className="text-detalles">&</span>ASOCIADOS
+</div>
 
         <button 
           className="text-2xl md:hidden focus:outline-none cursor-pointer z-50"
@@ -68,15 +112,36 @@ export default function Header() {
         </button>
 
         {/* MENÚ DESPLEGABLE COMPACTO */}
-        <nav className={`
-          absolute md:static top-full left-0 w-full md:w-auto bg-secundario
-          md:bg-transparent flex flex-col md:flex-row items-center justify-start md:justify-end
-          py-6 md:py-0 gap-6 transition-all duration-300 ease-in-out z-40 shadow-xl md:shadow-none
-          ${isOpen 
-            ? 'translate-y-0 opacity-100 pointer-events-auto' 
-            : '-translate-y-2 opacity-0 pointer-events-none md:translate-y-0 md:opacity-100 md:pointer-events-auto'
-          }
-        `}>
+        <nav
+  className={`
+    absolute md:static
+    top-full left-0
+    w-full md:w-auto
+    bg-secundario md:bg-transparent
+
+    flex flex-col md:flex-row
+    items-center justify-start md:justify-end
+
+    py-6 md:py-0 gap-6
+
+    transition-all duration-700 ease-out
+
+    ${
+      showHeader
+        ? "opacity-100 translate-y-0"
+        : "opacity-0 -translate-y-2 pointer-events-none"
+    }
+
+    ${
+      isOpen
+        ? "max-md:pointer-events-auto"
+        : "max-md:pointer-events-none"
+    }
+
+    md:pointer-events-auto
+    shadow-xl md:shadow-none
+  `}
+>
           <ul className="flex flex-col md:flex-row gap-4 md:gap-8 text-center w-full md:w-auto px-6 md:px-0">
             {navLinks.map((link, index) => (
               <li 
