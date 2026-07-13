@@ -20,7 +20,7 @@ export default function Hero() {
         <div className="mt-10">
           <a 
             href="#areas-especializacion"
-            className="inline-block bg-satisfactorio text-principal font-bold px-8 py-3.5 rounded-xl shadow-lg hover:bg-detalles hover:text-secundario hover:scale-105 transition-all duration-300 transform hover:-translate-y-0.5 tracking-wide uppercase text-sm"
+            className="inline-block bg-secundario text-detalles font-bold px-8 py-3.5 rounded-xl shadow-lg hover:bg-detalles hover:text-secundario hover:scale-105 transition-all duration-300 transform hover:-translate-y-0.5 tracking-wide uppercase text-sm"
           >
             Nuestros Servicios
           </a>

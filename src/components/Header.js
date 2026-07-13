@@ -55,8 +55,8 @@ export default function Header() {
     <header className="bg-secundario text-textoClaro fixed w-full top-0 z-50 shadow-lg transition-all duration-300">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center relative">
         
-        <div className="text-2xl font-bold tracking-wider text-principal z-50">
-          BIASI<span className="text-detalles">&</span>ASOCIADOS
+        <div className="text-2xl font-bold tracking-wider text-detalles z-50">
+          BIASI<span className="text-principal">&</span>ASOCIADOS
         </div>
 
         <button 
@@ -94,8 +94,8 @@ export default function Header() {
                     block py-2 px-4 text-md font-medium tracking-wide rounded-lg transition-all duration-300 md:hover:scale-110
                     ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 md:translate-y-0 md:opacity-100'}
                     ${activeSection === link.id 
-                      ? 'bg-detalles text-principal shadow-md'   
-                      : 'text-principal hover:bg-principal hover:text-secundario' 
+                      ? 'bg-detalles text-secundario shadow-md'   
+                      : 'text-principal hover:bg-detalles' 
                     }
                   `}
                 >

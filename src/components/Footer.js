@@ -75,13 +75,13 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="w-full h-auto py-6 mt-auto border-t border-white/5 relative z-10"
+      className="w-full h-auto py-6 mt-auto border-t border-secundario/20 relative z-10"
     >
       <div className="container mx-auto max-w-4xl px-6 flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
-        <div className="text-base font-bold tracking-wider text-textoClaro">
+        <div className="text-base font-bold tracking-wider text-secundario">
           BIASI<span className="text-detalles">&</span>ASOCIADOS
         </div>
-        <p className="text-[10px] text-textoClaro/60 uppercase tracking-wider">
+        <p className="text-[10px] text-textoOscuro/60 uppercase tracking-wider">
           &copy; {new Date().getFullYear()} BIASI & ASOCIADOS. TODOS LOS DERECHOS RESERVADOS.
         </p>
       </div>
