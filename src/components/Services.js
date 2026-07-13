@@ -15,7 +15,7 @@ export default function Services() {
 
         {/* Título */}
         <div className="text-center mb-14">
-          <h2 className="text-2xl md:text-4xl font-bold text-secundario relative inline-block after:absolute after:-bottom-3 after:left-1/2 after:-translate-x-1/2 after:w-52 after:h-1 after:bg-detalles">
+          <h2 className="text-2xl md:hidden font-bold text-secundario relative inline-block after:absolute after:-bottom-3 after:left-1/2 after:-translate-x-1/2 after:w-52 after:h-1 after:bg-detalles">
             ÁREAS DE ESPECIALIZACIÓN
           </h2>
         </div>
@@ -28,51 +28,86 @@ export default function Services() {
     border-secundario/15
     bg-principal
     shadow-2xl
-    h-[650px]
+    h-auto
     md:h-[575px]
 ">
           <div className="flex flex-col md:flex-row h-full">
 
             {/* PANEL IZQUIERDO */}
 
-            <aside className="bg-secundario md:w-80 shrink-0 h-full">
+            <aside
+  className="
+    bg-secundario
+    md:w-80
+    shrink-0
 
-              {areasData.map((area) => {
+    flex
+    flex-row
+    md:flex-col
 
-                const active = area.id === selectedArea.id;
+    overflow-x-auto
+    md:overflow-x-visible
 
-                return (
-                  <button
-                    key={area.id}
-                    onClick={() => setSelectedArea(area)}
-                    className={`
-                      relative
-                      w-full
-                      text-left
-                      px-8
-                      py-6
-                      transition-all
-                      duration-300
-                      border-b
-                      border-principal/10
+    overflow-y-hidden
+    md:overflow-y-auto
 
-                      ${active
-                        ? "bg-principal translate-x-2 text-secundario font-bold"
-                        : "text-principal hover:bg-secundario/70 hover:translate-x-1"
-                      }
-                    `}
-                  >
-                    {active && (
-                      <div className="absolute left-0 top-0 h-full w-1 bg-detalles" />
-                    )}
+    whitespace-nowrap
+    md:whitespace-normal
 
-                    {area.nombre}
-                  </button>
-                );
-              })}
-            </aside>
+    border-b
+    md:border-b-0
+    md:border-r
 
-            {/* PANEL DERECHO */}
+    border-principal/10
+  "
+>
+  {areasData.map((area) => {
+
+    const active = area.id === selectedArea.id;
+
+    return (
+      <button
+        key={area.id}
+        onClick={() => setSelectedArea(area)}
+        className={`
+          relative
+
+          shrink-0
+          md:w-full
+
+          px-6
+          py-5
+
+          md:px-8
+          md:py-6
+
+          text-left
+
+          transition-all
+          duration-300
+
+          border-r
+          md:border-r-0
+          md:border-b
+
+          border-principal/10
+
+          ${
+            active
+              ? "bg-principal text-secundario font-semibold"
+              : "text-principal hover:bg-secundario/80"
+          }
+        `}
+      >
+        {active && (
+          <div className="absolute left-0 top-0 h-full w-1 bg-detalles" />
+        )}
+
+        {area.nombre}
+      </button>
+    );
+  })}
+</aside>
 
             {/* PANEL DERECHO */}
 
@@ -81,17 +116,23 @@ export default function Services() {
               {/* Contenido */}
               <div
                 key={selectedArea.id}
-                className="flex-1 overflow-y-auto p-10"
+                className="
+flex-1
+overflow-y-auto
+
+p-6
+md:p-10
+"
               >
                 <p className="text-detalles uppercase tracking-[0.3em] text-sm mb-3">
                   Área de práctica
                 </p>
 
-                <h3 className="text-3xl font-bold text-secundario mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold text-secundario mb-6">
                   {selectedArea.nombre}
                 </h3>
 
-                <p className="text-textoOscuro leading-8 text-lg mb-10">
+                <p className="text-textoOscuro leading-8 text-base md:text-lg mb-10">
                   {selectedArea.descripcion}
                 </p>
 
@@ -104,8 +145,13 @@ export default function Services() {
                     <span
                       key={servicio}
                       className="
-            px-4
-            py-2
+            px-3
+py-2
+text-xs
+
+md:px-4
+md:py-2
+md:text-sm
             rounded-lg
             bg-secundario/5
             border

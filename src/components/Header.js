@@ -117,28 +117,31 @@ showHeader
     absolute md:static
     top-full left-0
     w-full md:w-auto
-    bg-secundario md:bg-transparent
+
+    ${
+      isOpen
+        ? "bg-secundario"
+        : "bg-transparent"
+    }
+    md:bg-transparent
 
     flex flex-col md:flex-row
     items-center justify-start md:justify-end
 
     py-6 md:py-0 gap-6
 
-    transition-all duration-700 ease-out
-
-    ${
-      showHeader
-        ? "opacity-100 translate-y-0"
-        : "opacity-0 -translate-y-2 pointer-events-none"
-    }
+    transition-all duration-500
 
     ${
       isOpen
-        ? "max-md:pointer-events-auto"
-        : "max-md:pointer-events-none"
+        ? "opacity-100 visible translate-y-0"
+        : "opacity-0 invisible -translate-y-2"
     }
 
-    md:pointer-events-auto
+    md:opacity-100
+    md:visible
+    md:translate-y-0
+
     shadow-xl md:shadow-none
   `}
 >
