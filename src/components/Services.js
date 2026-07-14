@@ -175,7 +175,9 @@ md:text-sm
 
               {/* Footer */}
               <div className=" bg-principal px-8 py-5 flex justify-end">
+                <a href="#contacto">
                 <button
+                href="#contacto"
                   className="
         group
         flex
@@ -194,12 +196,12 @@ md:text-sm
         hover:text-principal
       "
                 >
-                  Consultar sobre esta área
-
+                  Consultar
                   <span className="transition-transform duration-300 group-hover:translate-x-1">
                     →
                   </span>
                 </button>
+                </a>
               </div>
 
             </div>
