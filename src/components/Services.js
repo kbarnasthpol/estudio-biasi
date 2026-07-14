@@ -189,11 +189,15 @@ md:text-sm
         py-3
         rounded-lg
         font-semibold
-        text-secundario
+        text-principal
+        sm:text-secundario
         transition-all
         duration-300
         hover:bg-detalles
         hover:text-principal
+        bg-detalles
+        sm:bg-transparent
+
       "
                 >
                   Consultar
