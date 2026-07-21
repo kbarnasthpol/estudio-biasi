@@ -32,7 +32,8 @@ export default function Services() {
                         border
                         border-secundario/15
                         bg-principal
-                        shadow-2xl
+                        shadow-1px
+            md:shadow-2xl
 
                         transition-all
                         duration-100

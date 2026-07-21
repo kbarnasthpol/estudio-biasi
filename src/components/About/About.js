@@ -31,7 +31,8 @@ export default function About() {
 
             bg-principal
 
-            shadow-2xl
+            shadow-1px
+            md:shadow-2xl
 
             p-6
             lg:pl-0
