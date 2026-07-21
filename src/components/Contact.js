@@ -1,83 +1,266 @@
-// components/Contact.js
-'use client';
-import Footer from './Footer'; // Asegurate de que la ruta de importación sea la correcta para tu proyecto
+"use client";
+
+import Container from "./Container";
+import Footer from "./Footer";
+import useReveal from "../hooks/useReveal";
 
 export default function Contact() {
   const socialLinks = [
-    { name: 'WhatsApp', icon: 'fab fa-whatsapp', url: 'https://api.whatsapp.com/send?phone=+5492213507725&text=Hola!%20Necesito%20asesor%C3%ADa%20legal%20y%20quiero%20pactar%20una%20reuni%C3%B3n%20con%20su%20estudio.', color: 'hover:text-green-500 hover:border-green-500/30' },
-    { name: 'Email', icon:'fas fa-envelope' ,url:'mailto:estudioabogadosbiasi@gmail.com', color: 'hover:text-blue-400 hover:border-blue-400/30' },
-    { name: 'Instagram', icon: 'fab fa-instagram', url: '#', color: 'hover:text-pink-500 hover:border-pink-500/30' },
-    { name: 'LinkedIn', icon: 'fab fa-linkedin', url: '#', color: 'hover:text-blue-600 hover:border-blue-600/30' },
-    { name: 'YouTube', icon: 'fab fa-youtube', url: '#', color: 'hover:text-red-500 hover:border-red-500/30' },
+    {
+      name: "WhatsApp - +5492213507725",
+      icon: "fab fa-whatsapp",
+      color: "bg-green-500/70 hover:bg-green-500",
+      url: "https://api.whatsapp.com/send?phone=+5492213507725&text=Hola!%20Necesito%20asesor%C3%ADa%20legal%20y%20quiero%20pactar%20una%20reuni%C3%B3n%20con%20su%20estudio.",
+    },
+    {
+      name: "Email - mfbiasi@hotmail.com",
+      icon: "fas fa-envelope",
+      color: "bg-blue-500/70 hover:bg-blue-500",
+      url: "mailto:estudioabogadosbiasi@gmail.com",
+    },
   ];
+  const [ref, visible] = useReveal();
+  console.log("CONTACT VISIBLE:", visible);
 
   return (
-    <div 
-      id="contacto" 
-      className="w-full flex flex-col justify-between text-secundario px-6 min-h-screen md:h-screen pt-16 md:pt-12 relative"
-    >
-      {/* Detalle decorativo */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(246,174,45,0.03),transparent_40%)] pointer-events-none" />
+    <section id="contacto" className="relative w-full">
 
-      {/* Contenedor Principal (Centrado verticalmente con my-auto) */}
-      <div className="container mx-auto max-w-4xl my-auto relative z-10 w-full py-8 md:py-0">
-        {/* Encabezado */}
-        <div className="text-center mb-8">
-          <h2 className="text-2xl text-secundario md:text-4xl font-bold mb-3">
-            Iniciá tu Consulta Legal Hoy
-          </h2>
-          <p className="text-textoOscuro max-w-xl mx-auto text-xs md:text-sm leading-relaxed">
-            Estamos listos para asesorarte y ofrecerte el respaldo jurídico que necesitás. Hacé clic abajo para enviarnos los detalles de tu caso.
-          </p>
-        </div>
+      <Container>
+    <div ref={ref}>
+        <div
+          className={`
+    relative
+    overflow-hidden
+    rounded-2xl
+    border
+    border-secundario/15
+    bg-principal
+    shadow-2xl
 
-        {/* Grid de Contenido */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* LADO IZQUIERDO: Canales de Atención */}
-          <div className="space-y-4 text-center md:text-left">
-            <h3 className="text-lg md:text-xl font-semibold text-secundario">
-              Nuestros Canales
-            </h3>
-            <p className="text-textoOscuro text-xs md:text-sm leading-relaxed">
-              Podés encontrarnos en nuestras redes sociales o escribirnos de forma directa a nuestros medios oficiales:
-            </p>
-            
-            <div className="flex flex-wrap justify-center md:justify-start gap-3">
-              {socialLinks.map((link, idx) => (
-                <a
-                  key={idx}
-                  href={link.url}
-                  className={`flex items-center text-principal gap-2 bg-secundario border hover:border-detalles hover:borde-2 px-4 py-2 rounded-xl text-xs md:text-sm font-medium transition-all duration-300 ${link.color} hover:bg-detalles/10`}
-                >
-                  <i className={`${link.icon} text-sm md:text-base`}></i>
-                  <span>{link.name}</span>
-                </a>
-              ))}
-            </div>
-          </div>
+    transition-all
+    duration-700
+    ease-[cubic-bezier(0.22,1,0.36,1)]
 
-          {/* LADO DERECHO: Botón al Google Forms */}
-          <div className="flex flex-col items-center justify-center bg-secundario p-6 md:p-8 rounded-2xl backdrop-blur-sm shadow-xl">
-            <i className="fas fa-file-alt text-3xl md:text-3xl text-detalles mb-3" />
-            <h4 className="text-principal md:text-lg font-bold mb-1 text-center">Formulario de Orientación</h4>
-            <p className="text-principal text-[11px] md:text-xs text-center mb-5 leading-relaxed max-w-xs">
-              Completá nuestro formulario en línea con los datos de tu situación para que podamos analizarlo previo a la entrevista.
-            </p>
-            
-            <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSeevxFp8amKbv5WZKeeGpSoQ3g8buYwwLzeSeWC5B-zc-eXKg/viewform?usp=publish-editor" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-full text-center bg-principal text-secundario font-extrabold text-xs md:text-sm px-6 py-3.5 rounded-xl shadow-md hover:bg-detalles/90 hover:text-principal hover:border-1 hover:border-detalles transition-all duration-300 transform hover:-translate-y-0.5 tracking-wider uppercase"
+    ${visible
+              ? "opacity-100 translate-y-0 scale-100"
+              : "opacity-0 translate-y-10 scale-95"
+            }
+  `}
+        >
+          {/* Detalle de fondo */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,148,122,.05),transparent_45%)] pointer-events-none" />
+
+          <div className="grid lg:grid-cols-12 relative z-10">
+
+            {/* ================= IZQUIERDA ================= */}
+
+            <div
+              className={`
+  lg:col-span-7
+  p-8
+  md:p-14
+  flex
+  flex-col
+  justify-center
+
+  transition-all
+  duration-700
+  delay-150
+
+  ${visible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-10"
+                }
+`}
             >
-              CONTÁCTANOS AQUÍ
-            </a>
+              <h2 className="text-4xl md:text-5xl font-bold text-secundario leading-tight max-w-xl">
+                Iniciemos una conversación.
+              </h2>
+
+              <p className="mt-8 text-textoOscuro leading-8 text-base md:text-lg max-w-xl">
+                Cada situación requiere una estrategia diferente.
+                Completá nuestro formulario de orientación para que
+                podamos analizar previamente tu caso y aprovechar al
+                máximo la primera reunión.
+              </p>
+
+              <div className="mt-12 flex flex-wrap gap-8">
+
+                {socialLinks.map((link, index) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    className={`
+                    group
+                    flex
+                    items-center
+                    gap-3
+                    text-principal
+                    ${link.color}
+                    hover:text-principal
+                    text-principal/90
+                    transition-all
+                    duration-300
+                    border-1
+                    border-secundario
+                    p-3
+                    rounded-2xl
+                    hover:scale-105
+                    ${visible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-6"
+                      }
+`}
+                    style={{
+                      transitionDelay: `${index * 120 + 300}ms`
+                    }}
+                  >
+                    <i className={`${link.icon} text-lg`} />
+
+                    <span className="text-sm font-medium">
+                      {link.name}
+                    </span>
+
+                    <span className="group-hover:translate-x-1 transition-transform">
+                      →
+                    </span>
+
+                  </a>
+
+                ))}
+
+              </div>
+
+            </div>
+
+            {/* ================= DERECHA ================= */}
+
+            <div
+className={`
+lg:col-span-5
+flex
+items-center
+justify-center
+p-8
+md:p-14
+
+transition-all
+duration-700
+delay-300
+
+${
+ visible
+ ? "opacity-100 translate-x-0"
+ : "opacity-0 translate-x-10"
+}
+`}
+>
+
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeevxFp8amKbv5WZKeeGpSoQ3g8buYwwLzeSeWC5B-zc-eXKg/viewform?usp=publish-editor"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                group
+
+                w-full
+                max-w-sm
+
+                rounded-3xl
+
+                border
+                border-secundario/10
+
+                bg-secundario/90
+
+                px-10
+                py-14
+
+                transition-all
+                duration-500
+
+                hover:-translate-y-2
+                hover:border-detalles
+                hover:scale-102
+                hover:shadow-[0_20px_60px_rgba(2,82,89,.18)]
+                "
+              >
+
+                <div className="flex flex-col items-center text-center">
+
+                  <div
+                    className="
+                    h-20
+                    w-20
+
+                    rounded-full
+
+                    bg-detalles/10
+
+                    flex
+                    items-center
+                    justify-center
+
+                    mb-8
+                    "
+                  >
+                    <i className="fas fa-file-signature text-3xl text-detalles" />
+                  </div>
+
+                  <p className="uppercase tracking-[0.3em] text-principal/60 text-xs mb-3">
+                    Formulario
+                  </p>
+
+                  <h3 className="text-3xl font-bold text-principal">
+                    Iniciar consulta
+                  </h3>
+
+                  <p className="mt-4 mb-4 text-principal/80 leading-7">
+                    Revisaremos previamente tu situación antes de coordinar una entrevista.
+                  </p>
+
+                  <div
+                    className="
+                    group
+        flex
+        items-center
+        gap-2
+        border-1
+        border-principal
+        px-8
+        py-3
+        rounded-2xl
+        font-semibold
+        text-secundario
+        transition-all
+        duration-300
+        bg-principal
+        group-hover:text-detalles
+                    "
+                  >
+
+                    Completar formulario
+
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </a>
+
+            </div>
+
           </div>
+
         </div>
-      </div>
-      
-      {/* El footer ahora vive acá abajo, impidiendo que quede separado o colgado de forma extraña */}
-      <Footer />
-    </div>
+        </div>
+
+        <Footer />
+      </Container>
+
+    </section>
   );
 }

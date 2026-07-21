@@ -75,7 +75,10 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="w-full h-auto py-6 mt-auto border-t border-secundario/20 relative z-10"
+      className="absolute
+    bottom-[-50]
+    left-0
+    w-full"
     >
       <div className="container mx-auto max-w-4xl px-6 flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
         <div className="text-base font-bold tracking-wider text-secundario">

@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 
 export default function Hero() {
-  const [shrink, setShrink] = useState(false);
 
   const [compact, setCompact] = useState(false);
 
@@ -52,9 +51,9 @@ export default function Hero() {
             font-extrabold tracking-tight text-principal
             transition-all duration-700 ease-out
             mb-1
-            ${shrink
-              ? "scale-75 opacity-20"
-              : "scale-100 opacity-100"
+            ${compact
+              ? "scale-85 opacity-20 translate-y-4"
+              : "scale-100 opacity-100 translate-y-0"
             }
           `}
         >
@@ -71,7 +70,7 @@ transition-all
 duration-1500
 ${compact
               ? "w-50 opacity-40"
-              : "w-70 sm:w-200 opacity-100"
+              : "md:w-200 sm:w-full opacity-100"
             }
 `}
         />

@@ -1,6 +1,6 @@
 import Hero from '../components/Hero';
-import About from '../components/About';
-import Services from '../components/Services';
+import About from '../components/About/About';
+import Services from '../components/Services/Services';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
@@ -19,7 +19,7 @@ export default function Home() {
         <Services />
       </div>
       
-      <div className="snap-section font-sans">
+      <div className="snap-section">
         <Contact />
       </div>
     </div>
