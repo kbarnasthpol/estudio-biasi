@@ -44,7 +44,7 @@ export default function Services() {
 
                         ${visible
               ? "opacity-100 translate-y-0 scale-100"
-              : "opacity-0 translate-y-10 scale-95"
+              : "opacity-0 translate-y-30 scale-90"
             }
                     `}
         >

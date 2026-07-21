@@ -121,7 +121,7 @@ md:flex-1
               }
             `}
             style={{
-              transitionDelay: `${index * 0}ms`,
+              transitionDelay: `${index * 10}ms`,
             }}
           >
             {active && (
