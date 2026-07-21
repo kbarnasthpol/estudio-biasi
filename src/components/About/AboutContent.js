@@ -21,7 +21,6 @@ export default function AboutContent() {
         className={`
           mt-4
           text-3xl
-          lg:text-2xl
           text-center
           font-bold
           leading-tight
@@ -35,7 +34,7 @@ export default function AboutContent() {
           }
         `}
       >
-        Compromiso-Experiencia-Trayectoria
+        Compromiso Experiencia Trayectoria
       </h2>
 
       <div
@@ -59,6 +58,7 @@ export default function AboutContent() {
           mt-10
           text-lg
           leading-8
+          lg:leading-7
           text-textoOscuro
           transition-all duration-700 delay-700
           ${
@@ -83,6 +83,7 @@ export default function AboutContent() {
           mt-6
           text-lg
           leading-8
+          lg:leading-7
           text-textoOscuro
           transition-all duration-1400 delay-700
           ${

@@ -25,7 +25,7 @@ export default function AboutCard() {
     relative
     w-[280px]
     sm:w-[480px]
-    lg:w-[400px]
+    lg:w-[370px]
 
     h-[360px]
     sm:h-[480px]
@@ -44,9 +44,6 @@ export default function AboutCard() {
   "
 >
 
-        {/* FOTO */}
-
-        <div className="absolute inset-0 flex items-center justify-center">
 
           {/* Cuando tengas la foto simplemente reemplazamos esto */}
 
@@ -54,7 +51,6 @@ export default function AboutCard() {
 
     <div className="text-center">
 
-    </div>
 
 </div>
 

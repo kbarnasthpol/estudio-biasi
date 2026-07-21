@@ -7,9 +7,8 @@ className="
 mx-auto
 w-full
 max-w-7xl
-px-6
-sm:px-4
-lg:px-12
+px-0
+lg:px-6
 "
 >
       {children}

@@ -39,7 +39,7 @@ export default function AboutStats() {
 
             bg-principal
 
-            transition-all duration-1500 delay-1000
+            transition-all duration-150 delay-100
 
             hover:border-secundario/40
 
@@ -50,7 +50,7 @@ export default function AboutStats() {
             }
           `}
           style={{
-            transitionDelay: `${index * 120}ms`,
+            transitionDelay: `${index * 20}ms`,
           }}
         >
 

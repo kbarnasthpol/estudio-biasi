@@ -34,12 +34,16 @@ export default function About() {
             shadow-2xl
 
             p-6
-            md:p-10
-            lg:p-14
+            lg:pl-0
+            lg:p-10
 
             transition-all
             duration-700
             ease-[cubic-bezier(0.22,1,0.36,1)]
+            md:h-[75vh]
+    md:min-h-[550px]
+    
+    md:max-h-[820px]
 
             ${
               visible
@@ -71,7 +75,7 @@ export default function About() {
               lg:grid-cols-12
 
               gap-10
-              lg:gap-14
+              lg:gap-3
 
               items-center
             "

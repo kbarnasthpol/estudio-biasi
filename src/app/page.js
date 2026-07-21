@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 export default function Home() {
   return (
     <div className="snap-container">
-      <div className="snap-section">
+      <div className="snap-section py-10 md:py-0">
         <Hero />
       </div>
       
