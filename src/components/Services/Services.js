@@ -36,7 +36,7 @@ export default function Services() {
             md:shadow-2xl
 
                         transition-all
-                        duration-100
+                        duration-700
                         md:h-[75vh]
     md:min-h-[550px]
     md:max-h-[820px]
