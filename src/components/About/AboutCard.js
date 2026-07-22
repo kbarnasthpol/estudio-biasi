@@ -78,7 +78,7 @@ export default function AboutCard() {
               }
             `}
           >
-            DR. JUAN BIASI
+            DRA. MARIA FERNANDA BIASI
           </h3>
 
           <p
@@ -98,7 +98,7 @@ export default function AboutCard() {
               }
             `}
           >
-            Abogado
+            Abogado - Licenciada en Seguridad
           </p>
 
         </div>
