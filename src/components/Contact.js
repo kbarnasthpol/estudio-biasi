@@ -16,7 +16,7 @@ export default function Contact() {
       name: "Email - mfbiasi@hotmail.com",
       icon: "fas fa-envelope",
       color: "bg-blue-500/70 hover:bg-blue-500",
-      url: "mailto:estudioabogadosbiasi@gmail.com",
+      url: "mailto:mfbiasi@hotmail.com?subject=CONSULTA&body=Hola%2C%20me%20comunico%20con%20usted%20por%20...",
     },
   ];
   const [ref, visible] = useReveal();
