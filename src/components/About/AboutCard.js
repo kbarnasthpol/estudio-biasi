@@ -98,7 +98,7 @@ export default function AboutCard() {
               }
             `}
           >
-            Abogado - Licenciada en Seguridad
+            Abogada - Lic. en Seguridad
           </p>
 
         </div>
