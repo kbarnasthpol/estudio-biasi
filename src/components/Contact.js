@@ -32,11 +32,11 @@ export default function Contact() {
     relative
     overflow-hidden
     rounded-2xl
-    border
-    border-secundario/15
+    md:border
+    md:border-secundario/15
     bg-principal
     shadow-1px
-            md:shadow-2xl
+    md:shadow-2xl
 
     transition-all
     duration-700
@@ -101,19 +101,22 @@ export default function Contact() {
                     hover:text-principal
                     text-principal/90
                     transition-all
-                    duration-300
+                    duration-100
                     border-1
                     border-secundario
                     p-3
                     rounded-2xl
                     hover:scale-105
+                    w-full
+                    md:w-auto
+                    text-center
                     ${visible
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 translate-y-6"
                       }
 `}
                     style={{
-                      transitionDelay: `${index * 120 + 300}ms`
+                      transitionDelay: `${index * 120}ms`
                     }}
                   >
                     <i className={`${link.icon} text-lg`} />

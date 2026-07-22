@@ -26,8 +26,8 @@ export default function About() {
 
             rounded-2xl
 
-            border
-            border-secundario/15
+            md:border
+            md:border-secundario/15
 
             bg-principal
 

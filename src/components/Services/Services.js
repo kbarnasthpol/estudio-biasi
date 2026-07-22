@@ -28,7 +28,7 @@ export default function Services() {
           ref={ref}
           className={`
                         overflow-hidden
-                        rounded-2xl
+                        md:rounded-2xl
                         border
                         border-secundario/15
                         bg-principal
