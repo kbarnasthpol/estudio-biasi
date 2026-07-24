@@ -48,7 +48,7 @@ export default function Hero() {
       <div className="container mx-auto relative z-10">
         <h1
           className={`
-            text-3xl sm:text-5xl md:text-8xl
+            text-4xl sm:text-5xl md:text-8xl
             font-extrabold tracking-tight text-principal
             transition-all duration-700 ease-out
             ${compact
