@@ -47,18 +47,24 @@ export default function Hero() {
 
       <div className="container mx-auto relative z-10">
         <h1
-          className={`
-            text-4xl sm:text-5xl md:text-8xl
-            font-extrabold tracking-tight text-principal
-            transition-all duration-700 ease-out
-            ${compact
-              ? "scale-85 opacity-20 translate-y-4"
-              : "scale-100 opacity-100 translate-y-0"
-            }
-          `}
-        >
-          BIASI<span className="text-detalles">&</span>ASOCIADOS
-        </h1>
+  className={`
+    font-extrabold tracking-tight text-principal
+    transition-all duration-700 ease-out
+    ${
+      compact
+        ? "scale-85 opacity-20 translate-y-4"
+        : "scale-100 opacity-100 translate-y-0"
+    }
+  `}
+>
+  <span className="block text-5xl sm:text-5xl md:text-8xl">
+    BIASI
+  </span>
+
+  <span className="block md:inline text-2xl sm:text-3xl md:text-8xl">
+    <span className="text-detalles">&</span>ASOCIADOS
+  </span>
+</h1>
 
         <div
           className={`
