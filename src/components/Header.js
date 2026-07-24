@@ -1,4 +1,4 @@
-'use client';
+{/*'use client';
 import { useState, useEffect } from 'react';
 
 export default function Header() {
@@ -111,7 +111,7 @@ showHeader
           {isOpen ? '✕' : '☰'}
         </button>
 
-        {/* MENÚ DESPLEGABLE COMPACTO */}
+        
         <nav
   className={`
     absolute md:static
@@ -177,4 +177,4 @@ showHeader
       </div>
     </header>
   );
-}
+}/*}
