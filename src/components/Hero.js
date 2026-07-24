@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+
 export default function Hero() {
 
   const [compact, setCompact] = useState(false);
@@ -47,10 +48,9 @@ export default function Hero() {
       <div className="container mx-auto relative z-10">
         <h1
           className={`
-            text-4xl sm:text-5xl md:text-8xl
+            text-[clamp(2rem,10vw,6rem)]
             font-extrabold tracking-tight text-principal
             transition-all duration-700 ease-out
-            mb-1
             ${compact
               ? "scale-85 opacity-20 translate-y-4"
               : "scale-100 opacity-100 translate-y-0"
