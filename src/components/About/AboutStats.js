@@ -56,7 +56,7 @@ export default function AboutStats() {
 
           <i className="fas fa-check text-secundario" />
 
-          <span className="text-sm font-medium text-detalles">
+          <span className="text-sm font-medium text-detalles uppercase">
 
             {item}
 

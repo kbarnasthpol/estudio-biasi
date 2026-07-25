@@ -65,21 +65,23 @@ export default function AboutCard() {
         <div className="absolute bottom-0 left-0 w-full p-6">
 
           <h3
-            className={`
-              text-2xl
-              font-bold
-              text-white
-              transition-all duration-700 delay-500
+className={`
+text-3xl
+font-serif
+font-bold
+tracking-tight
+text-white
+transition-all duration-700 delay-500
 
-              ${
-                visible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-100"
-              }
-            `}
-          >
-            DRA. MARIA FERNANDA BIASI
-          </h3>
+${
+visible
+? "opacity-100 translate-y-0"
+: "opacity-0 translate-y-100"
+}
+`}
+>
+DRA. MARIA FERNANDA BIASI
+</h3>
 
           <p
             className={`
@@ -87,7 +89,7 @@ export default function AboutCard() {
               uppercase
               tracking-[0.25em]
               text-sm
-              text-secundario
+              text-detalles
 
               transition-all duration-700 delay-700
 

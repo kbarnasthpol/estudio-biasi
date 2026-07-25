@@ -81,7 +81,7 @@ export default function Footer() {
     pt-5"
     >
       <div className="container mx-auto max-w-4xl px-6 flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
-        <div className="text-base font-bold tracking-wider text-secundario">
+        <div className="text-base font-titulo font-bold tracking-wider text-secundario">
           BIASI<span className="text-detalles">&</span>ASOCIADOS
         </div>
         <p className="text-[10px] text-textoOscuro/60 uppercase tracking-wider">

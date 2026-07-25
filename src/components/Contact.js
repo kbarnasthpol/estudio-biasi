@@ -74,7 +74,7 @@ export default function Contact() {
                 }
 `}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-secundario leading-tight max-w-xl">
+              <h2 className="text-4xl uppercase md:text-5xl font-titulo font-bold text-secundario leading-tight max-w-xl">
                 Iniciemos una conversación.
               </h2>
 
@@ -110,6 +110,7 @@ export default function Contact() {
                     w-full
                     md:w-auto
                     text-center
+                    uppercase
                     ${visible
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 translate-y-6"
@@ -215,7 +216,7 @@ ${
                     Formulario
                   </p>
 
-                  <h3 className="text-3xl font-bold text-principal">
+                  <h3 className="text-3xl font-medium text-principal uppercase">
                     Iniciar consulta
                   </h3>
 
@@ -240,6 +241,7 @@ ${
         duration-300
         bg-principal
         group-hover:text-detalles
+        uppercase
                     "
                   >
 

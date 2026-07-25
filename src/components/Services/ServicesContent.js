@@ -11,9 +11,9 @@ export default function ServicesContent({ selectedArea, visible }) {
   // Función para cambiar el área con animación
   const handleAreaChange = (newArea) => {
     if (newArea.id === currentArea.id) return;
-    
+
     setIsChanging(true);
-    
+
     // Cambiamos el contenido después de la animación de salida
     setTimeout(() => {
       setCurrentArea(newArea);
@@ -67,24 +67,26 @@ export default function ServicesContent({ selectedArea, visible }) {
         <h3
           className={`
             text-2xl
-            md:text-3xl
-            font-bold
+            md:text-4xl
+font-serif
+font-bold
+tracking-tight
             text-secundario
             mb-6
-
+uppercase
             transition-all
             duration-300
             ease-in-out
             delay-50
 
             ${visible
-  ? "opacity-100 translate-x-0 blur-0"
-  : "opacity-0 -translate-x-6 blur-[8px]"
-}
+              ? "opacity-100 translate-x-0 blur-0"
+              : "opacity-0 -translate-x-6 blur-[8px]"
+            }
 ${isChanging
-  ? "opacity-0 translate-x-3 blur-[8px]"
-  : ""
-}
+              ? "opacity-0 translate-x-3 blur-[8px]"
+              : ""
+            }
           `}
         >
           {currentArea.nombre}
@@ -105,13 +107,13 @@ ${isChanging
             delay-100
 
             ${visible
-  ? "opacity-100 translate-x-0 blur-0"
-  : "opacity-0 -translate-x-6 blur-[8px]"
-}
+              ? "opacity-100 translate-x-0 blur-0"
+              : "opacity-0 -translate-x-6 blur-[8px]"
+            }
 ${isChanging
-  ? "opacity-0 translate-x-3 blur-[8px]"
-  : ""
-}
+              ? "opacity-0 translate-x-3 blur-[8px]"
+              : ""
+            }
           `}
         >
           {currentArea.descripcion}
@@ -120,17 +122,13 @@ ${isChanging
         {/* Subtitulo - Fade horizontal desde la izquierda */}
         <h4
           className={`
-            font-semibold
-            text-secundario
-            mb-5
-
-            transition-all
-            duration-300
-            ease-in-out
-            delay-150
-
-            ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}
-          `}
+uppercase
+tracking-widest
+text-sm
+font-semibold
+text-secundario
+mb-5
+`}
         >
           Servicios incluidos
         </h4>
@@ -173,7 +171,9 @@ ${isChanging
               px-6
               py-3
               rounded-2xl
-              font-semibold
+              font-medium
+uppercase
+tracking-wide
               text-principal
               sm:text-secundario
               transition-all

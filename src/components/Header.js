@@ -74,7 +74,7 @@ useEffect(() => {
   return (
 <header
   className={`
-fixed top-0 left-0 w-full z-50
+fixed top-0 left-0 w-full z-50 font-titulo
 transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)]
 ${
 showHeader
@@ -83,13 +83,14 @@ showHeader
 }
 `}
 >
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center relative">
+        <div className="container mx-auto px-8 py-5 flex justify-between items-center relative">
         
         <div
- className={`
+className={`
 text-2xl
+font-titulo
 font-bold
-tracking-wider
+tracking-[-0.03em]
 text-principal
 transition-all
 duration-700

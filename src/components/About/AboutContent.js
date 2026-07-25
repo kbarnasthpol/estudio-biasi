@@ -18,24 +18,27 @@ export default function AboutContent() {
       `}
     >
       <h2
-        className={`
-          mt-4
-          text-3xl
-          text-center
-          font-bold
-          leading-tight
-          text-secundario
-          uppercase
-          transition-all duration-700 delay-200
-          ${
-            visible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-6"
-          }
-        `}
-      >
-        Compromiso Experiencia Trayectoria
-      </h2>
+className={`
+mt-4
+text-3xl
+font-titulo
+font-bold
+tracking-tight
+text-center
+leading-tight
+text-secundario
+uppercase
+transition-all duration-700 delay-200
+
+${
+visible
+? "opacity-100 translate-y-0"
+: "opacity-0 translate-y-6"
+}
+`}
+>
+Compromiso - Experiencia - Trayectoria
+</h2>
 
       <div
         className={`
@@ -56,8 +59,9 @@ export default function AboutContent() {
       <p
         className={`
           mt-10
-          text-lg
-          leading-8
+          text-base
+lg:text-lg
+leading-8
           lg:leading-7
           text-textoOscuro
           transition-all duration-700 delay-700
@@ -69,7 +73,7 @@ export default function AboutContent() {
         `}
       >
         En{" "}
-        <strong className="text-secundario">
+        <strong className="text-secundario font-titulo">
           BIASI<span className="text-detalles">&</span>ASOCIADOS
         </strong>{" "}
         entendemos que cada situación legal representa una historia única.
@@ -80,9 +84,10 @@ export default function AboutContent() {
 
       <p
         className={`
-          mt-6
-          text-lg
-          leading-8
+          mt-10
+          text-base
+lg:text-lg
+leading-8
           lg:leading-7
           text-textoOscuro
           transition-all duration-1400 delay-700

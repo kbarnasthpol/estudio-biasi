@@ -56,7 +56,7 @@ useEffect(() => {
         bg-secundario
         md:w-80
         shrink-0
-
+    
         flex
         flex-row
         md:flex-col
@@ -93,7 +93,7 @@ md:flex-1
 
               px-6
               py-5
-
+font-titulo
               md:px-8
               md:py-6
 
@@ -102,7 +102,7 @@ md:flex-1
               border-r
               md:border-r-0
               md:border-b
-
+uppercase
               border-principal/10
 
               transition-colors
@@ -139,7 +139,7 @@ md:flex-1
 <div className={`${
                 active
                   ? "md:translate-x-6 scale-102 font-bold"
-                  : ""
+                  : "font-medium"
               }`}>
             {area.nombre}
 </div>

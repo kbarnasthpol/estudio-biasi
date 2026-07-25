@@ -1,10 +1,23 @@
 import './globals.css';
 import Header from '../components/Header';
+import { Playfair_Display, Inter } from "next/font/google";
 
 export const metadata = {
   title: 'Estudio Biasi & Asociados',
   description: 'Asesoramiento legal integral y representación especializada.',
 };
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["600", "700", "800"],
+});
 
 export default function RootLayout({ children }) {
   return (
@@ -17,7 +30,13 @@ export default function RootLayout({ children }) {
           precedence="default"
         />
       </head>
-      <body className="antialiased">
+      <body
+  className={`
+    ${inter.variable}
+    ${playfair.variable}
+    antialiased
+  `}
+>
         <Header />
         <main className="bg-absolute bg-gradient-to-br from-principal to-secundario/05">
           {children}

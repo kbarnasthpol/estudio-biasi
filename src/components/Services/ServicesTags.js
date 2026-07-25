@@ -10,7 +10,7 @@ export default function ServicesTags({ servicios, visible, isChanging }) {
             px-3
             py-2
             text-xs
-
+            uppercase
             md:px-4
             md:py-2
             md:text-sm

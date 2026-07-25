@@ -52,10 +52,12 @@ export default function Hero() {
     <h1
       className={`
         text-8xl
-        font-extrabold
+        font-bold
         tracking-tight
         text-principal
         transition-all duration-700 ease-out
+        font-titulo
+        tracking-[-0.04em]
         ${
           compact
             ? "scale-85 opacity-20 translate-y-4"
@@ -74,6 +76,8 @@ export default function Hero() {
       w-full
       -translate-y-10
       transition-all duration-700 ease-out
+      font-titulo
+        
       ${
         compact
           ? "scale-85 opacity-20 translate-y-4"
@@ -81,12 +85,12 @@ export default function Hero() {
       }
     `}
   >
-    <h1 className="text-left leading-none">
-      <span className="block text-8xl font-extrabold text-principal">
+    <h1 className="text-center leading-none">
+      <span className="block text-9xl font-bold text-principal tracking-[-0.05em]">
         BIASI
       </span>
 
-      <span className="block text-5xl font-bold text-right text-principal mt-1">
+      <span className="block text-5xl font-bold tracking-[-0.05em] text-principal mt-1">
         <span className="text-detalles">&</span>ASOCIADOS
       </span>
     </h1>
@@ -110,9 +114,8 @@ export default function Hero() {
 
   <h2
     className={`
-      text-base
-      sm:text-xl
-      md:text-2xl
+      text-2xl
+      md:text-3xl
       font-bold
       tracking-widest
       uppercase
@@ -120,7 +123,8 @@ export default function Hero() {
       text-principal
       transition-all
       duration-700
-      text-right
+      text-center
+      md:text-center
       ${
         compact
           ? "opacity-0 translate-y-4"
@@ -129,7 +133,7 @@ export default function Hero() {
     `}
   >
     Asesoramiento Legal Integral{" "}
-    <span className="text-detalles">&</span> Soluciones Estratégicas
+    <br/><span className="text-detalles">&</span> Soluciones Estratégicas
   </h2>
 
 </div>

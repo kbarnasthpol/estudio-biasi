@@ -9,7 +9,8 @@
   --color-textoClaro:#F9F6F1;
   --color-textoOscuro:#2C2C2C;
   --color-detalles:#ff947a;
-
+  --font-titulo: "Playfair Display", serif;
+  --font-comun: "Inter", sans-serif;
 }
 
 /* Reglas globales base */
@@ -19,7 +20,17 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   background-color: var(--color-principal);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-titulo);
+  letter-spacing: -0.025em;
+}
+p {
+  letter-spacing: 0.01em;
+  line-height: 1.7;
 }
 
 #__next {
