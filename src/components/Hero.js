@@ -58,6 +58,7 @@ export default function Hero() {
         transition-all duration-700 ease-out
         font-titulo
         tracking-[-0.04em]
+        md:mb-1
         ${
           compact
             ? "scale-85 opacity-20 translate-y-4"
@@ -74,7 +75,7 @@ export default function Hero() {
     className={`
       md:hidden
       w-full
-      -translate-y-10
+      -translate-y-12
       transition-all duration-700 ease-out
       font-titulo
         
@@ -101,13 +102,13 @@ export default function Hero() {
       h-1
       bg-detalles
       mx-auto
-      mb-6
+      mb-7
       transition-all
       duration-1500
       ${
         compact
           ? "w-50 opacity-40"
-          : "md:w-200 w-full opacity-100"
+          : "md:w-220 w-full opacity-100"
       }
     `}
   />
@@ -133,7 +134,7 @@ export default function Hero() {
     `}
   >
     Asesoramiento Legal Integral{" "}
-    <br/><span className="text-detalles">&</span> Soluciones Estratégicas
+    <br className="hidden md:block"/><span className="text-detalles">&</span> Soluciones Estratégicas
   </h2>
 
 </div>

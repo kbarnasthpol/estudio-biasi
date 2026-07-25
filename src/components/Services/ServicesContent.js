@@ -100,6 +100,7 @@ ${isChanging
             text-base
             md:text-lg
             mb-10
+            text-justify
 
             transition-all
             duration-200

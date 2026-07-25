@@ -29,7 +29,7 @@ export default function Services() {
           className={`
                         overflow-hidden
                         md:rounded-2xl
-                        border
+                        md:border
                         border-secundario/15
                         bg-principal
                         shadow-1px
@@ -48,6 +48,49 @@ export default function Services() {
             }
                     `}
         >
+          <div className="md:hidden p-6">
+            <h2
+className={`
+mt-4
+md:mt-0
+text-3xl
+font-titulo
+font-bold
+tracking-tight
+text-right
+leading-tight
+text-secundario
+uppercase
+transition-all duration-700 delay-200
+
+${
+visible
+? "opacity-100 translate-y-0"
+: "opacity-0 translate-y-6"
+}
+`}
+>
+especialidades
+</h2>
+
+      <div
+        className={`
+          w-full
+          h-[3px]
+          bg-detalles
+          mt-1
+          
+          origin-right
+          transition-all duration-700 delay-500
+          ${
+            visible
+              ? "scale-x-100 translate-x-0"
+              : "scale-x-0"
+          }
+        `}
+      />
+
+          </div>
 
           <div className="flex flex-col md:flex-row md:h-full">
 

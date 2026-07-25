@@ -20,11 +20,13 @@ export default function AboutContent() {
       <h2
 className={`
 mt-4
+md:mt-0
 text-3xl
 font-titulo
 font-bold
 tracking-tight
-text-center
+
+text-right
 leading-tight
 text-secundario
 uppercase
@@ -37,7 +39,7 @@ visible
 }
 `}
 >
-Compromiso - Experiencia - Trayectoria
+SOBRE Nosotros
 </h2>
 
       <div
@@ -45,8 +47,8 @@ Compromiso - Experiencia - Trayectoria
           w-full
           h-[3px]
           bg-detalles
-          mt-8
-          origin-left
+          mt-1
+          origin-right
           transition-all duration-700 delay-500
           ${
             visible
@@ -58,12 +60,13 @@ Compromiso - Experiencia - Trayectoria
 
       <p
         className={`
-          mt-10
+          mt-8
           text-base
 lg:text-lg
 leading-8
-          lg:leading-7
+          lg:leading-0
           text-textoOscuro
+          text-justify
           transition-all duration-700 delay-700
           ${
             visible
@@ -84,12 +87,13 @@ leading-8
 
       <p
         className={`
-          mt-10
+          mt-2
           text-base
 lg:text-lg
 leading-8
           lg:leading-7
           text-textoOscuro
+          text-justify
           transition-all duration-1400 delay-700
           ${
             visible

@@ -78,7 +78,7 @@ export default function Contact() {
                 Iniciemos una conversación.
               </h2>
 
-              <p className="mt-8 text-textoOscuro leading-8 text-base md:text-lg max-w-xl">
+              <p className="mt-8 text-textoOscuro leading-8 text-base md:text-lg max-w-xl text-justify">
                 Cada situación requiere una estrategia diferente.
                 Completá nuestro formulario de orientación para que
                 podamos analizar previamente tu caso y aprovechar al

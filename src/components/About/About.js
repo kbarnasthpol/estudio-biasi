@@ -89,7 +89,9 @@ export default function About() {
                 lg:col-span-5
 
                 flex
+                
                 justify-center
+                
               "
             >
 
@@ -106,7 +108,7 @@ export default function About() {
               "
             >
 
-              <AboutContent />
+              <AboutContent/>
 
               <div className="mt-8">
 

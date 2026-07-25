@@ -14,7 +14,7 @@ export default function AboutCard() {
         transition-all duration-1000
         ${
           visible
-            ? "opacity-100 translate-y-0 scale-y-100 scale-x-100"
+            ? "opacity-100 translate-y-0 scale-y-100 scale-x-100 md:-translate-x-6"
             : "opacity-0 translate-y-10 scale-y-70 scale-x-70"
         }
       `}
@@ -66,7 +66,8 @@ export default function AboutCard() {
 
           <h3
 className={`
-text-3xl
+text-2xl
+md:text-3xl
 font-serif
 font-bold
 tracking-tight
