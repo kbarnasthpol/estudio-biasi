@@ -36,7 +36,7 @@ export default function Services() {
             md:shadow-2xl
 
                         transition-all
-                        duration-700
+                        duration-1500
                         md:h-[75vh]
     md:min-h-[550px]
     md:max-h-[820px]
@@ -70,7 +70,7 @@ visible
 }
 `}
 >
-especialidades
+especialidad
 </h2>
 
       <div
@@ -79,13 +79,13 @@ especialidades
           h-[3px]
           bg-detalles
           mt-1
-          
-          origin-right
-          transition-all duration-700 delay-500
+          mb-5
+
+          transition-all duration-1000 delay-500
           ${
             visible
-              ? "scale-x-100 translate-x-0"
-              : "scale-x-0"
+              ? "scale-x-33 translate-x-0 origin-right"
+              : "scale-x-0 origin-left"
           }
         `}
       />

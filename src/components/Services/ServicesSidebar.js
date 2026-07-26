@@ -52,7 +52,7 @@ useEffect(() => {
     
     <aside
      ref={sidebarRef}
-      className="
+      className={`
         bg-secundario
         md:w-80
         shrink-0
@@ -74,8 +74,16 @@ useEffect(() => {
 
         border-principal/10
         h-full
+        duration-1000
+        transition-all
+        origin-left
+        ${
+                visible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-50"
+              }
         
-      "
+      `}
     >
       {areas.map((area, index) => {
         const active = area.id === selectedArea.id;
@@ -117,7 +125,7 @@ uppercase
               ${
                 visible
                   ? "opacity-100 translate-x-0"
-                  : "opacity-0 -translate-x-6"
+                  : "opacity-0 -translate-x-10"
               }
             `}
             style={{

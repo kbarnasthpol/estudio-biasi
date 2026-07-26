@@ -48,12 +48,11 @@ SOBRE Nosotros
           h-[3px]
           bg-detalles
           mt-1
-          origin-right
-          transition-all duration-700 delay-500
+          transition-all duration-1000 delay-500
           ${
             visible
-              ? "scale-x-100 translate-x-0"
-              : "scale-x-0"
+              ? "scale-x-33 md:scale-x-100 translate-x-0 origin-right"
+              : "scale-x-0 origin-left md:origin-right"
           }
         `}
       />
