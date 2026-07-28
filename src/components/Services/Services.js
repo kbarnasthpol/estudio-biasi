@@ -53,7 +53,7 @@ export default function Services() {
 className={`
 mt-4
 md:mt-0
-text-3xl
+text-4xl
 font-titulo
 font-bold
 tracking-tight
@@ -79,7 +79,7 @@ especialidad
           h-[3px]
           bg-detalles
           mt-1
-          mb-5
+          mb-10
 
           transition-all duration-1000 delay-500
           ${

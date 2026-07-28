@@ -113,10 +113,10 @@ export default function MobileDivider({
         flex
         items-center
         bg-secundario
-        border-detalles/50
+        border-detalles/80
 border-y-1
-duration-1000
-delay-200
+duration-700
+delay-100
 transition-opacity
 ${
             isVisible

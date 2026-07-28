@@ -21,7 +21,7 @@ export default function AboutContent() {
 className={`
 mt-4
 md:mt-0
-text-3xl
+text-4xl
 font-titulo
 font-bold
 tracking-tight
