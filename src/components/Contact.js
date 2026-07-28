@@ -74,8 +74,8 @@ export default function Contact() {
                 }
 `}
             >
-              <h2 className="text-4xl uppercase md:text-5xl font-titulo font-bold text-secundario leading-tight max-w-xl">
-                Iniciemos una conversación.
+              <h2 className="text-4xl uppercase text-right md:text-5xl font-titulo font-bold text-secundario leading-tight max-w-xl">
+                Iniciemos una conversación
               </h2>
 
               <p className="mt-8 text-textoOscuro leading-8 text-base md:text-lg max-w-xl text-justify">
