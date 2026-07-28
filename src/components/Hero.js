@@ -49,6 +49,7 @@ export default function Hero() {
 
   {/* ================= DESKTOP ================= */}
   <div className="hidden md:block">
+    {/* [-webkit-text-stroke:1px_var(--color-textoOscuro)] //agregar esto para stroke de texto */}
     <h1
       className={`
         text-8xl

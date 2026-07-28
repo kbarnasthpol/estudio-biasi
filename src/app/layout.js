@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
   `}
 >
         <Header />
-        <main className="bg-absolute bg-gradient-to-br from-principal to-secundario/05">
+        <main className="bg-principal">
           {children}
         </main>
       </body>

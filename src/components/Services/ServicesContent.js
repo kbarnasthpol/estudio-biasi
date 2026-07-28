@@ -35,12 +35,19 @@ export default function ServicesContent({ selectedArea, visible }) {
       {/* Contenido */}
       <div
         key={currentArea.id}
-        className="
+        className={`
           flex-1
           overflow-y-auto
           p-6
           md:p-10
-        "
+          duration-1500
+          delay-500
+           ${
+                visible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 -translate-y-450"
+              }
+        `}
       >
 
         {/* Área - etiqueta */}
@@ -56,7 +63,7 @@ export default function ServicesContent({ selectedArea, visible }) {
             duration-300
             ease-in-out
 
-            ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-6"}
+            ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-50"}
 
           `}
         >

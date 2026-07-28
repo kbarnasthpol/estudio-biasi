@@ -39,7 +39,7 @@ export default function AboutStats() {
 
             bg-principal
 
-            transition-all duration-150 delay-100
+            transition-all duration-1500 delay-100
 
             hover:border-secundario/40
 
