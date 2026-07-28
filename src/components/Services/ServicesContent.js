@@ -45,7 +45,7 @@ export default function ServicesContent({ selectedArea, visible }) {
            ${
                 visible
                   ? "opacity-100 translate-y-0"
-                  : "opacity-0 -translate-y-450"
+                  : "opacity-0 translate-y-full"
               }
         `}
       >
