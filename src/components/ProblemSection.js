@@ -36,7 +36,7 @@ export default function ProblemSection() {
                 {/* Columna izquierda - Texto */}
                 <div className="max-w-3xl text-center lg:text-left">
                   {/* Badge decorativo */}
-                  <div className="mb-4 flex items-center justify-center lg:justify-start">
+                  <div className="mb-4 hidden md:block flex items-center justify-center lg:justify-start">
                     <span className="inline-flex items-center gap-2 rounded-full bg-detalles/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-detalles">
                       <span className="h-1.5 w-1.5 rounded-full bg-detalles" />
                       Asesoría legal

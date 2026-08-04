@@ -22,9 +22,9 @@ export default function Services() {
           ref={ref}
           className={`  bg-principal transition-all duration-700 ${visible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-98"}`}
         >
-          <div className="md:hidden p-6">
+          <div className="md:hidden p-6 md:mb-3">
             <h2 className={`mt-3 text-3xl font-titulo font-bold tracking-tight text-right leading-tight text-secundario uppercase transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-              Objeto de trabajo.
+              Nuestro enfoque.
             </h2>
             <div className={`mt-2 h-[2px] w-24 bg-detalles transition-all duration-1000 delay-500 ${visible ? "scale-x-100 origin-right" : "scale-x-0 origin-left"}`} />
           </div>

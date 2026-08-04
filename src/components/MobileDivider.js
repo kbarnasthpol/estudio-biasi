@@ -77,7 +77,7 @@ function IconRow({ icons, reverse }) {
           className="
             text-2xl
             text-secundario
-            opacity-70
+            opacity-60
             shrink-0
           "
         />
@@ -137,6 +137,75 @@ function DotRow({ reverse }) {
 
 }
 
+/* =========================================================
+   SIGNOS PREGUNTAS
+========================================================= */
+function QuestionRow({ reverse }) {
+
+  return (
+
+    <div
+      className={`
+        flex
+        items-center
+        w-max
+        gap-12
+        ${
+          reverse
+            ? "animate-marqueeReverse"
+            : "animate-marquee"
+        }
+      `}
+    >
+
+      {[...Array(16)].map((_, index) => (
+
+        <div
+          key={index}
+          className="
+            flex
+            items-center
+            gap-5
+            shrink-0
+          "
+        >
+
+          <span
+            className="
+              w-6
+              h-px
+              bg-detalles/50
+            "
+          />
+
+          <span
+            className="
+              font-titulo
+              text-2xl
+              text-secundario/60
+              leading-none
+          "
+          >
+            ?
+          </span>
+
+          <span
+            className="
+              w-6
+              h-px
+              bg-detalles/50
+            "
+          />
+
+        </div>
+
+      ))}
+
+    </div>
+
+  );
+
+}
 
 /* =========================================================
    ORNAMENTOS
@@ -382,6 +451,13 @@ export default function MobileDivider({
           />
 
         )}
+        {/* SIGNOS PREGUNTAS */}
+
+        {variant === "question" && (
+  <QuestionRow
+    reverse={reverse}
+  />
+)}
 
 
         {/* LÍNEA MINIMAL */}
@@ -432,8 +508,9 @@ export default function MobileDivider({
             gap-3
             px-5
             py-1.5
-            bg-principal
+            bg-principal/50
             whitespace-nowrap
+            font-bold
           "
         >
 

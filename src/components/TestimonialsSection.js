@@ -42,14 +42,14 @@ export default function TestimonialsSection() {
 
             <div className="relative z-10">
               {/* Badge decorativo */}
-              <div className="mb-4 flex items-center gap-2">
+              <div className="mb-4  flex items-center gap-2">
                 <span className="inline-flex items-center gap-2 rounded-full bg-detalles/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-detalles">
                   <span className="h-1.5 w-1.5 rounded-full bg-detalles" />
                   Lo que dicen nuestros clientes
                 </span>
               </div>
 
-              <div className="max-w-4xl">
+              <div className="max-w-4xl hidden md:block">
                 <p className="text-xs uppercase tracking-[0.35em] text-detalles">
                   <i className="fas fa-star mr-2" />
                   Testimonios
