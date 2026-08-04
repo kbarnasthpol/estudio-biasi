@@ -510,8 +510,7 @@ export default function MobileDivider({
             py-1.5
             bg-principal/40
             whitespace-nowrap
-            font-bold
-            text-3xl
+          
           "
         >
 
@@ -529,10 +528,11 @@ export default function MobileDivider({
           <span
             className="
               font-titulo
-              text-sm
               tracking-[0.18em]
               text-secundario
               uppercase
+              font-bold
+            text-2xl
             "
           >
             {title}
