@@ -531,8 +531,8 @@ export default function MobileDivider({
               tracking-[0.18em]
               text-secundario
               uppercase
-              font-bold
-            text-2xl
+              font-extrabold
+            text-xl
             "
           >
             {title}
