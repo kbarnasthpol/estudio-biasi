@@ -70,7 +70,7 @@ function IconRow({ icons, reverse }) {
           key={index}
           className="
             text-2xl
-            text-principal
+            text-secundario
             opacity-80
             shrink-0
           "
@@ -107,12 +107,12 @@ export default function MobileDivider({
       ref={revealRef}
       className={`
         md:hidden
-        h-[10vh]
+        h-[8vh]
         relative
         overflow-hidden
         flex
         items-center
-        bg-secundario
+        bg-principal
         border-detalles
 border-y-1
 
@@ -165,9 +165,9 @@ border-y-1
           absolute
           inset-0
           bg-gradient-to-r
-          from-secundario
+          from-principal
           via-transparent
-          to-secundario
+          to-principal
           z-10
           pointer-events-none
         "
@@ -183,7 +183,7 @@ border-y-1
           left-0
           w-full
           h-5px
-          bg-principal/20
+          bg-secundario/20
         "
       />
 
@@ -220,7 +220,7 @@ border-y-1
           left-0
           w-full
           h-px
-          bg-principal/20
+          bg-secundario/20
         "
       />
 

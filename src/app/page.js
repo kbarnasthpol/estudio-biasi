@@ -16,36 +16,41 @@ export default function Home() {
       <div className="snap-section">
         <Hero />
       </div>
+      <MobileDivider type="contact" reverse />
 
-      <div className="snap-section py-10 md:py-0">
+      <div className="snap-section ">
         <TrustSection />
       </div>
+      <MobileDivider type="contact" />
 
-      <div className="snap-section py-10 md:py-0">
+      <div className="snap-section ">
         <About />
       </div>
 
       <MobileDivider type="services" />
 
-      <div className="snap-section py-10 md:py-0">
+      <div className="snap-section ">
         <ProblemSection />
       </div>
+      <MobileDivider type="services" reverse />
 
-      <div className="snap-section py-10 md:py-0">
+      <div className="snap-section ">
         <Services />
       </div>
+      <MobileDivider type="contact" />
 
-      <div className="snap-section py-10 md:py-0">
+      <div className="snap-section ">
         <TestimonialsSection />
       </div>
+      <MobileDivider type="contact" reverse />
 
-      <div className="snap-section py-10 md:py-0">
+      <div className="snap-section ">
         <FaqSection />
       </div>
 
       <MobileDivider type="contact" reverse />
 
-      <div className="snap-section py-10 md:py-0">
+      <div className="snap-section ">
         <Contact />
       </div>
       
