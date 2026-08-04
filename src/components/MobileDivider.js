@@ -77,7 +77,7 @@ function IconRow({ icons, reverse }) {
           className="
             text-2xl
             text-secundario
-            opacity-60
+            opacity-50
             shrink-0
           "
         />
@@ -508,9 +508,10 @@ export default function MobileDivider({
             gap-3
             px-5
             py-1.5
-            bg-principal/50
+            bg-principal/40
             whitespace-nowrap
             font-bold
+            text-2xl
           "
         >
 

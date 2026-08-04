@@ -49,8 +49,8 @@ export default function TestimonialsSection() {
                 </span>
               </div>
 
-              <div className="max-w-4xl hidden md:block">
-                <p className="text-xs uppercase tracking-[0.35em] text-detalles">
+              <div className="max-w-4xl ">
+                <p className=" hidden md:block text-xs uppercase tracking-[0.35em] text-detalles">
                   <i className="fas fa-star mr-2" />
                   Testimonios
                 </p>
