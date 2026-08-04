@@ -3,8 +3,12 @@ import Header from '../components/Header';
 import { Playfair_Display, Inter } from "next/font/google";
 
 export const metadata = {
-  title: 'Estudio Biasi & Asociados',
-  description: 'Asesoramiento legal integral y representación especializada.',
+  title: 'Estudio Biasi & Asociados | Asesoramiento Jurídico Integral',
+  description: 'Estudio Biasi & Asociados ofrece asesoramiento jurídico integral en Derecho Laboral, Penal, Familia, Civil y Comercial, Derecho Animal y Seguridad Pública.',
+  keywords: ['abogados', 'asesoramiento jurídico', 'derecho laboral', 'derecho penal', 'derecho familia', 'la plata', 'estudio jurídico'],
+  alternates: {
+    canonical: 'https://estudio-biasi.vercel.app/'
+  }
 };
 
 const inter = Inter({

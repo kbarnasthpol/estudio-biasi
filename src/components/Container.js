@@ -8,7 +8,7 @@ mx-auto
 w-full
 max-w-7xl
 px-0
-lg:px-6
+lg:px-2
 "
 >
       {children}

@@ -1,180 +1,210 @@
 'use client';
-import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect, useMemo, useState } from 'react';
+import { areasData } from '../data/areas';
 
 export default function Header() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
-
-  const navLinks = [
-    { id: 'inicio', label: 'INICIO' },
-    { id: 'sobre-mi', label: 'NOSOTROS' },
-    { id: 'areas-especializacion', label: 'SERVICIOS' },
-    { id: 'contacto', label: 'CONTACTO' },
-  ];
   const [showHeader, setShowHeader] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
-useEffect(() => {
-  const hero = document.getElementById("inicio");
-
-  if (!hero) return;
-
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      setShowHeader(!entry.isIntersecting);
-    },
-    {
-      threshold: 0.2,
-    }
+  const navLinks = useMemo(
+    () => [
+      { id: 'inicio', label: 'INICIO', href: '/' },
+      { id: 'valores', label: 'VALORES', href: '/#valores' },
+      { id: 'sobre-mi', label: 'NOSOTROS', href: '/#sobre-mi' },
+      { id: 'problemas', label: 'PROBLEMAS', href: '/#problemas' },
+      { id: 'areas-especializacion', label: 'SERVICIOS', href: '/#areas-especializacion', hasSubmenu: true },
+      { id: 'testimonios', label: 'TESTIMONIOS', href: '/#testimonios' },
+      { id: 'faq', label: 'FAQ', href: '/faq' },
+      { id: 'contacto', label: 'CONTACTO', href: '/#contacto' },
+    ],
+    []
   );
 
-  observer.observe(hero);
-
-  return () => observer.disconnect();
-}, []);
+  const serviceLinks = useMemo(
+    () =>
+      areasData.map((area) => ({
+        href: `/servicios/${area.id}`,
+        label: area.nombre,
+      })),
+    []
+  );
 
   useEffect(() => {
-    const sections = navLinks.map(link => document.getElementById(link.id)).filter(Boolean);
-    
+    const hero = document.getElementById('inicio');
+
+    if (!hero) {
+      setShowHeader(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowHeader(!entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(hero);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const sections = navLinks
+      .map((link) => document.getElementById(link.id))
+      .filter(Boolean);
+
     const observer = new IntersectionObserver(
       (entries) => {
         let bestEntry = null;
         let bestRatio = 0;
-        entries.forEach(entry => {
+
+        entries.forEach((entry) => {
           if (entry.intersectionRatio > bestRatio) {
             bestRatio = entry.intersectionRatio;
             bestEntry = entry;
           }
         });
-        if (bestEntry && bestEntry.target.id) {
+
+        if (bestEntry?.target?.id) {
           setActiveSection(bestEntry.target.id);
         }
       },
       { threshold: [0.3, 0.5, 0.7], rootMargin: '-80px 0px -20% 0px' }
     );
 
-    sections.forEach(section => {
+    sections.forEach((section) => {
       if (section) observer.observe(section);
     });
 
     return () => observer.disconnect();
   }, [navLinks]);
 
-  const scrollToSection = (e, id) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+  const handleNavClick = (e, link) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      const element = document.getElementById(link.id);
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
     }
+
     setIsOpen(false);
+    setIsServicesOpen(false);
   };
 
   return (
-<header
-  className={`
-fixed top-0 left-0 w-full z-50 font-titulo
-transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)]
-${
-showHeader
-? "bg-secundario/90 backdrop-blur-lg shadow-2xl translate-y-0 opacity-100 border-b border-principal/10"
-: "opacity-0 -translate-y-6 pointer-events-none"
-}
-`}
->
-        <div className="container mx-auto px-8 py-5 flex justify-between items-center relative">
-        
+    <header
+      className={`fixed left-0 top-0 z-50 w-full font-titulo transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)] ${
+        showHeader
+          ? 'border-b border-principal/10 bg-secundario/95 opacity-100 translate-y-0 backdrop-blur-lg'
+          : 'pointer-events-none -translate-y-6 opacity-0'
+      }`}
+    >
+      <div className="container relative mx-auto flex items-center justify-between px-4 py-4 md:px-8 md:py-5">
         <div
-className={`
-text-2xl
-font-titulo
-font-bold
-tracking-[-0.03em]
-text-principal
-transition-all
-duration-700
-${
-showHeader
-? "opacity-100 translate-y-0 scale-100"
-: "opacity-0 translate-y-4 scale-110"
-}
-`}
->
-  BIASI<span className="text-detalles">&</span>ASOCIADOS
-</div>
+          className={`text-2xl font-titulo font-bold tracking-[-0.03em] text-principal transition-all duration-700 ${
+            showHeader ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-110 opacity-0'
+          }`}
+        >
+          BIASI<span className="text-detalles">&</span>ASOCIADOS
+        </div>
 
-        <button 
-          className="text-2xl md:hidden focus:outline-none cursor-pointer z-50"
-          onClick={() => setIsOpen(!isOpen)}
+        <button
+          className="z-50 cursor-pointer text-2xl focus:outline-none md:hidden"
+          onClick={() => setIsOpen((prev) => !prev)}
           aria-label="Abrir menú"
         >
           {isOpen ? '✕' : '☰'}
         </button>
 
-        
         <nav
-  className={`
-    absolute md:static
-    top-full left-0
-    w-full md:w-auto
+          className={`absolute left-0 top-full w-full transition-all duration-500 md:static md:w-auto ${
+            isOpen ? 'visible translate-y-0 bg-secundario opacity-100' : 'invisible -translate-y-2 bg-transparent opacity-0'
+          } md:visible md:translate-y-0 md:bg-transparent md:opacity-100`}
+        >
+          <ul className="flex w-full flex-col gap-2 px-4 py-6 text-center md:w-auto md:flex-row md:gap-6 md:px-0 md:py-0 md:text-left">
+            {navLinks.map((link, index) => {
+              const isServicesLink = link.hasSubmenu;
 
-    ${
-      isOpen
-        ? "bg-secundario"
-        : "bg-transparent"
-    }
-    md:bg-transparent
-
-    flex flex-col md:flex-row
-    items-center justify-start md:justify-end
-
-    py-6 md:py-0 gap-6
-
-    transition-all duration-500
-
-    ${
-      isOpen
-        ? "opacity-100 visible translate-y-0"
-        : "opacity-0 invisible -translate-y-2"
-    }
-
-    md:opacity-100
-    md:visible
-    md:translate-y-0
-
-    shadow-xl md:shadow-none
-  `}
->
-          <ul className="flex flex-col md:flex-row gap-4 md:gap-8 text-center w-full md:w-auto px-6 md:px-0">
-            {navLinks.map((link, index) => (
-              <li 
-                key={link.id} 
-                className="w-full md:w-auto transition-all duration-500 ease-out"
-                style={{
-                  // El retraso dinámico solo se aplica en móviles (pantallas chicas) cuando el menú se abre
-                  transitionDelay: isOpen ? `${index * 75}ms` : '0ms'
-                }}
-              >
-                <a
-                  href={`#${link.id}`}
-                  onClick={(e) => scrollToSection(e, link.id)}
-                  className={`
-                    block py-2 px-4 text-md font-medium tracking-wide rounded-lg transition-all duration-300 md:hover:scale-110
-                    ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 md:translate-y-0 md:opacity-100'}
-                    ${activeSection === link.id 
-                      ? 'bg-detalles text-secundario shadow-md'   
-                      : 'text-principal hover:bg-detalles' 
-                    }
-                  `}
+              return (
+                <li
+                  key={link.id}
+                  className="w-full transition-all duration-500 ease-out md:w-auto"
+                  style={{ transitionDelay: isOpen ? `${index * 75}ms` : '0ms' }}
+                  onMouseEnter={() => isServicesLink && setIsServicesOpen(true)}
+                  onMouseLeave={() => isServicesLink && setIsServicesOpen(false)}
                 >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+                  {isServicesLink ? (
+                    <div className="relative">
+                      <a
+                        href="/#areas-especializacion"
+                        onClick={(e) => {
+                          handleNavClick(e, link);
+                          if (window.innerWidth < 768) {
+                            setIsServicesOpen((prev) => !prev);
+                          } else {
+                            setIsServicesOpen(true);
+                          }
+                        }}
+                        className={`relative block px-3 py-2 text-[0.78rem] font-medium tracking-[0.2em] transition-all duration-300 md:hover:scale-105 ${
+                          isOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 md:translate-y-0 md:opacity-100'
+                        } ${activeSection === link.id ? 'text-detalles' : 'text-principal hover:text-detalles'}`}
+                      >
+                        {activeSection === link.id && (
+                          <span className="absolute left-1/2 top-full mt-0 h-[2px] w-full -translate-x-1/2 rounded-full bg-detalles transition-all duration-300" />
+                        )}
+                        {link.label}
+                      </a>
+
+                      <div
+                        className={`absolute left-0 top-full mt-3 w-72  border border-principal/10 bg-secundario/95 p-3 shadow-xl transition-all duration-300 ${
+                          isServicesOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-2 opacity-0'
+                        }`}
+                      >
+                        {serviceLinks.map((serviceLink) => (
+                          <Link
+                            key={serviceLink.href}
+                            href={serviceLink.href}
+                            onClick={() => {
+                              setIsServicesOpen(false);
+                              setIsOpen(false);
+                            }}
+                            className="block px-3 py-2 text-sm text-principal transition hover:bg-principal/10 hover:text-detalles"
+                          >
+                            {serviceLink.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <a
+                      href={link.href}
+                      onClick={(e) => handleNavClick(e, link)}
+                      className={`relative block rounded-full px-3 py-2 text-[0.78rem] font-medium tracking-[0.2em] transition-all duration-300 md:hover:scale-105 ${
+                        isOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 md:translate-y-0 md:opacity-100'
+                      } ${activeSection === link.id ? 'text-detalles' : 'text-principal hover:text-detalles'}`}
+                    >
+                      {activeSection === link.id && (
+                        <span className="absolute left-1/2 top-full mt-0 h-[2px] w-full -translate-x-1/2 bg-detalles transition-all duration-300" />
+                      )}
+                      {link.label}
+                    </a>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
-
       </div>
     </header>
   );

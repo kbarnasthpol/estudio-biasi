@@ -15,7 +15,7 @@ export default function ServicesTags({ servicios, visible, isChanging }) {
             md:py-2
             md:text-sm
 
-            rounded-lg
+            rounded-none
 
             bg-secundario/5
             border

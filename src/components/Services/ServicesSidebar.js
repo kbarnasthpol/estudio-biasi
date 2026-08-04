@@ -56,6 +56,7 @@ useEffect(() => {
         bg-secundario
         md:w-80
         shrink-0
+        self-stretch
     
         flex
         flex-row
@@ -73,15 +74,15 @@ useEffect(() => {
         border-0
 
         border-principal/10
-        h-full
-        delay-300
-        duration-2000
+        md:min-h-[520px]
+        delay-200
+        duration-500
         transition-all
         origin-left
         ${
                 visible
                   ? "opacity-100 translate-x-0"
-                  : "opacity-0 md:-translate-x-50"
+                  : "opacity-0 md:-translate-x-full"
               }
         
       `}

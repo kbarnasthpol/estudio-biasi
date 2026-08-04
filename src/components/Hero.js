@@ -2,9 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-
 export default function Hero() {
-
   const [compact, setCompact] = useState(false);
 
   useEffect(() => {
@@ -29,116 +27,65 @@ export default function Hero() {
   return (
     <div
       id="inicio"
-      className="w-full min-h-screen flex items-center justify-center text-center relative overflow-hidden bg-secundario px-6"
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-secundario px-6 text-center"
     >
-      <div
-        className="
-          absolute
-          inset-0
-          bg-gradient-to-b
-          from-principal/10
-          via-black/10
-          to-principal/20
-          via-50%
-        "
-      />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(88,38,31,0.08),transparent_20%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(246,174,45,0.05),transparent_80%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(247,243,227,0.16),_transparent_45%),linear-gradient(135deg,_rgba(247,243,227,0.16),_transparent_55%)]" />
 
-      <div className="container mx-auto relative z-10">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center justify-center text-center ">
+        <div className="hidden md:block">
+          <h1
+            className={`font-titulo text-7xl font-bold tracking-[-0.04em] text-principal transition-all duration-700 ease-out lg:text-8xl ${
+              compact ? "translate-y-4 scale-85 opacity-20" : "translate-y-0 scale-100 opacity-100"
+            }`}
+          >
+            BIASI<span className="text-detalles">&</span>ASOCIADOS
+          </h1>
+        </div>
 
-  {/* ================= DESKTOP ================= */}
-  <div className="hidden md:block">
-    {/* [-webkit-text-stroke:1px_var(--color-textoOscuro)] //agregar esto para stroke de texto */}
-    <h1
-      className={`
-        text-8xl
-        font-bold
-        tracking-tight
-        text-principal
-        transition-all duration-700 ease-out
-        font-titulo
-        tracking-[-0.04em]
-        md:mb-1
-        ${
-          compact
-            ? "scale-85 opacity-20 translate-y-4"
-            : "scale-100 opacity-100 translate-y-0"
-        }
-      `}
-    >
-      BIASI<span className="text-detalles">&</span>ASOCIADOS
-    </h1>
-  </div>
+        <div
+          className={`w-full font-titulo transition-all duration-700 ease-out md:hidden ${
+            compact ? "translate-y-4 scale-85 opacity-20" : "translate-y-0 scale-100 opacity-100"
+          }`}
+        >
+          <h1 className="leading-none text-center">
+            <span className="block text-8xl font-bold tracking-[-0.05em] text-principal">BIASI</span>
+            <span className="mt-1 block text-4xl font-bold tracking-[-0.05em] text-principal">
+              <span className="text-detalles">&</span>ASOCIADOS
+            </span>
+          </h1>
+        </div>
 
-  {/* ================= MOBILE ================= */}
-  <div
-    className={`
-      md:hidden
-      w-full
-      -translate-y-12
-      transition-all duration-700 ease-out
-      font-titulo
-        
-      ${
-        compact
-          ? "scale-85 opacity-20 translate-y-4"
-          : "scale-100 opacity-100"
-      }
-    `}
-  >
-    <h1 className="text-center leading-none">
-      <span className="block text-9xl font-bold text-principal tracking-[-0.05em]">
-        BIASI
-      </span>
+        <div className={`mx-auto my-6 h-[2px] bg-detalles transition-all duration-1500 md:mx-0 ${compact ? "w-24 opacity-50" : "w-28 opacity-100 md:w-48"}`} />
 
-      <span className="block text-5xl font-bold tracking-[-0.05em] text-principal mt-1">
-        <span className="text-detalles">&</span>ASOCIADOS
-      </span>
-    </h1>
-  </div>
+        <h2
+          className={`max-w-3xl text-xl font-semibold uppercase leading-relaxed tracking-[0.25em] text-principal transition-all duration-700 ${
+            compact ? "translate-y-4 opacity-0" : "translate-y-0 opacity-100"
+          }`}
+        >
+          Asesoramiento jurídico con estrategia, cercanía y compromiso.
+        </h2>
 
-  <div
-    className={`
-      h-1
-      bg-detalles
-      mx-auto
-      mb-7
-      transition-all
-      duration-1500
-      ${
-        compact
-          ? "w-50 opacity-40"
-          : "md:w-220 w-full opacity-100"
-      }
-    `}
-  />
+        <p
+          className={`mt-5 max-w-3xl text-base leading-8 text-principal/90 transition-all duration-700 delay-150 md:text-lg ${
+            compact ? "translate-y-4 opacity-0" : "translate-y-0 opacity-100"
+          }`}
+        >
+          Derecho Laboral, Penal, Familia, Civil y Comercial, Derecho Animal y Seguridad Pública.
+        </p>
 
-  <h2
-    className={`
-      text-2xl
-      md:text-3xl
-      font-bold
-      tracking-widest
-      uppercase
-      leading-relaxed
-      text-principal
-      transition-all
-      duration-700
-      text-center
-      md:text-center
-      ${
-        compact
-          ? "opacity-0 translate-y-4"
-          : "opacity-100 translate-y-0"
-      }
-    `}
-  >
-    Asesoramiento Legal Integral{" "}
-    <br className="hidden md:block"/><span className="text-detalles">&</span> Soluciones Estratégicas
-  </h2>
-
-</div>
+        <div
+          className={`mt-12 flex flex-col items-center justify-center gap-3 transition-all duration-700 delay-200 sm:flex-row md:mt-14 md:items-start md:justify-start md:gap-4 ${
+            compact ? "translate-y-4 opacity-0" : "translate-y-0 opacity-100"
+          }`}
+        >
+          <a
+            href="#contacto"
+            className="inline-flex items-center justify-center border border-detalles bg-detalles px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-secundario transition hover:-translate-y-0.5"
+          >
+            Solicitar asesoramiento
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

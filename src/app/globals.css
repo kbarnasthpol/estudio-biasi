@@ -5,6 +5,7 @@
   --color-atencion:#B33A3A;
   --color-satisfactorio:#3C6E5F;
   --color-secundario:#025259;
+  --color-secundario2:#95D2A9;
   --color-principal:#F7F3E3;
   --color-textoClaro:#F9F6F1;
   --color-textoOscuro:#2C2C2C;
@@ -20,7 +21,8 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   background-color: var(--color-principal);
-
+  color: var(--color-textoOscuro);
+  font-family: var(--font-comun);
 }
 h1,
 h2,
@@ -32,6 +34,14 @@ p {
   letter-spacing: 0.01em;
   line-height: 1.7;
 }
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(255, 148, 122, 0.35);
+  color: var(--color-secundario);
+}
 
 #__next {
   height: 100%;
@@ -40,7 +50,7 @@ p {
 /* Scroll Snap por secciones (Desktop) */
 @media (min-width: 768px) {
   html, body {
-    overflow: hidden;
+    overflow: auto;
   }
 
   .snap-container {
@@ -66,7 +76,7 @@ p {
   html,
   body {
     height: 100%;
-    overflow: hidden;
+    overflow: auto;
   }
 
   .snap-container {
@@ -83,6 +93,15 @@ p {
 /* Utilidades para el efecto Flip 3D */
 .perspective {
   perspective: 1000px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 .transform-style-3d {
   transform-style: preserve-3d;

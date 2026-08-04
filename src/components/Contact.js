@@ -2,271 +2,176 @@
 
 import Container from "./Container";
 import Footer from "./Footer";
+import SectionFrame from "./SectionFrame";
 import useReveal from "../hooks/useReveal";
 
 export default function Contact() {
   const socialLinks = [
     {
-      name: "WhatsApp - +5492213507725",
+      name: "WhatsApp",
       icon: "fab fa-whatsapp",
-      color: "bg-green-500/70 hover:bg-green-500",
+      color: "bg-[#25D366] hover:bg-[#1fae54] text-white",
       url: "https://api.whatsapp.com/send?phone=+5492213507725&text=Hola!%20Necesito%20asesor%C3%ADa%20legal%20y%20quiero%20pactar%20una%20reuni%C3%B3n%20con%20su%20estudio.",
     },
     {
-      name: "Email - mfbiasi@hotmail.com",
+      name: "Email",
       icon: "fas fa-envelope",
-      color: "bg-blue-500/70 hover:bg-blue-500",
+      color: "bg-principal/80 hover:bg-principal/90 text-secundario",
       url: "mailto:mfbiasi@hotmail.com?subject=CONSULTA&body=Hola%2C%20me%20comunico%20con%20usted%20por%20...",
     },
   ];
+
   const [ref, visible] = useReveal();
-  console.log("CONTACT VISIBLE:", visible);
 
   return (
-    <section id="contacto" className="relative w-full">
-
-      <Container>
-    <div ref={ref}>
-        <div
-          className={`
-    relative
-    overflow-hidden
-    rounded-2xl
-    md:border
-    md:border-secundario/15
-    bg-principal
-    shadow-1px
-    md:shadow-2xl
-
-    transition-all
-    duration-700
-    ease-[cubic-bezier(0.22,1,0.36,1)]
-
-    ${visible
-              ? "opacity-100 translate-y-0 scale-100"
-              : "opacity-0 translate-y-10 scale-95"
-            }
-  `}
-        >
-          {/* Detalle de fondo */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,148,122,.05),transparent_45%)] pointer-events-none" />
-
-          <div className="grid lg:grid-cols-12 relative z-10">
-
-            {/* ================= IZQUIERDA ================= */}
-
-            <div
-              className={`
-  lg:col-span-7
-  p-8
-  md:p-14
-  flex
-  flex-col
-  justify-center
-
-  transition-all
-  duration-700
-  delay-150
-
-  ${visible
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 -translate-x-10"
-                }
-`}
-            >
-              <h2 className="text-4xl uppercase text-right md:text-5xl font-titulo font-bold text-secundario leading-tight max-w-xl">
-                Iniciemos una conversación
-              </h2>
-
-              <p className="mt-8 text-textoOscuro leading-8 text-base md:text-lg max-w-xl text-justify">
-                Cada situación requiere una estrategia diferente.
-                Completá nuestro formulario de orientación para que
-                podamos analizar previamente tu caso y aprovechar al
-                máximo la primera reunión.
-              </p>
-
-              <div className="mt-12 flex flex-wrap gap-8">
-
-                {socialLinks.map((link, index) => (
-                  <a
-                    key={link.name}
-                    href={link.url}
-                    className={`
-                    group
-                    flex
-                    items-center
-                    gap-3
-                    text-principal
-                    ${link.color}
-                    hover:text-principal
-                    text-principal/90
-                    transition-all
-                    duration-100
-                    border-1
-                    border-secundario
-                    p-3
-                    rounded-2xl
-                    hover:scale-105
-                    w-full
-                    md:w-auto
-                    text-center
-                    uppercase
-                    ${visible
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 translate-y-6"
-                      }
-`}
-                    style={{
-                      transitionDelay: `${index * 120}ms`
-                    }}
-                  >
-                    <i className={`${link.icon} text-lg`} />
-
-                    <span className="text-sm font-medium">
-                      {link.name}
-                    </span>
-
-                    <span className="group-hover:translate-x-1 transition-transform">
-                      →
-                    </span>
-
-                  </a>
-
-                ))}
-
-              </div>
-
-            </div>
-
-            {/* ================= DERECHA ================= */}
-
-            <div
-className={`
-lg:col-span-5
-flex
-items-center
-justify-center
-p-8
-md:p-14
-
-transition-all
-duration-700
-delay-300
-
-${
- visible
- ? "opacity-100 translate-x-0"
- : "opacity-0 translate-x-10"
-}
-`}
->
-
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSeevxFp8amKbv5WZKeeGpSoQ3g8buYwwLzeSeWC5B-zc-eXKg/viewform?usp=publish-editor"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                group
-
-                w-full
-                max-w-sm
-
-                rounded-3xl
-
-                border
-                border-secundario/10
-
-                bg-secundario/90
-
-                px-10
-                py-14
-
-                transition-all
-                duration-500
-
-                hover:-translate-y-2
-                hover:border-detalles
-                hover:scale-102
-                hover:shadow-[0_20px_60px_rgba(2,82,89,.18)]
-                "
+    <section
+      id="contacto"
+      className="relative flex min-h-[calc(100dvh-var(--header-height))] w-full flex-col"
+    >
+      {/* CONTENIDO PRINCIPAL */}
+      <div className="flex flex-1 items-center">
+        <Container>
+          <div ref={ref} className="w-full">
+            <SectionFrame>
+              <div
+                className={`relative overflow-hidden bg-transparent transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  visible
+                    ? "translate-y-0 scale-100 opacity-100"
+                    : "translate-y-10 scale-95 opacity-0"
+                }`}
               >
-
-                <div className="flex flex-col items-center text-center">
-
+                {/* Decoración de fondo */}
+                <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-detalles/5 blur-3xl" />
+                <div className="absolute -left-20 -bottom-20 h-48 w-48 rounded-full bg-secundario/5 blur-3xl" />
+                
+                <div className="relative z-10 grid items-stretch lg:grid-cols-12">
+                  {/* FORMULARIO */}
                   <div
-                    className="
-                    h-20
-                    w-20
-
-                    rounded-full
-
-                    bg-detalles/10
-
-                    flex
-                    items-center
-                    justify-center
-
-                    mb-8
-                    "
+                    className={`flex items-center justify-start p-6 transition-all duration-700 delay-300 md:p-8 lg:col-span-5 ${
+                      visible
+                        ? "translate-x-0 opacity-100"
+                        : "-translate-x-10 opacity-0"
+                    }`}
                   >
-                    <i className="fas fa-file-signature text-3xl text-detalles" />
+                    <div className="w-full max-w-md border border-principal/15 bg-principal/10 px-7 py-7 text-principal md:px-8 md:py-8">
+                      {/* Icono decorativo */}
+                      <div className="mb-4 flex justify-center">
+                        <div className="rounded-full bg-detalles/20 p-3">
+                          <i className="fas fa-pen-fancy text-2xl text-detalles" />
+                        </div>
+                      </div>
+
+                      <h3 className="text-center text-2xl font-semibold uppercase text-principal">
+                        Iniciar consulta
+                      </h3>
+
+                      <p className="mt-4 text-center text-sm leading-7 text-principal/80">
+                        Revisaremos previamente tu situación antes de coordinar
+                        una entrevista.
+                      </p>
+
+                      <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSeevxFp8amKbv5WZKeeGpSoQ3g8buYwwLzeSeWC5B-zc-eXKg/viewform?usp=publish-editor"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-6 inline-flex w-full items-center justify-center bg-detalles px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-secundario transition hover:-translate-y-0.5 hover:shadow-lg"
+                      >
+                        Completar formulario
+                        <i className="fas fa-arrow-right ml-2 text-xs" />
+                      </a>
+
+                      <div className="mt-7 border-t border-principal/15 pt-5">
+                        <div className="flex items-start gap-3 text-sm leading-7 text-principal/80">
+                          <i className="fas fa-map-pin mt-1 text-detalles" />
+                          <div>
+                            <p>Reunión: presencial y virtual</p>
+                            <p>Zona: La Plata - Berisso - Ensenada</p>
+                          </div>
+                        </div>
+
+                        <div className="mt-4 overflow-hidden border border-secundario2">
+                          <iframe
+                            title="Ubicación del estudio"
+                            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d204.59106644721493!2d-57.88158683468789!3d-34.86986731028101!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1785866802701!5m2!1ses-419!2sar"
+                            className="h-44 w-full"
+                            loading="lazy"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            style={{ border: 0 }}
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
-                  <p className="uppercase tracking-[0.3em] text-principal/60 text-xs mb-3">
-                    Formulario
-                  </p>
-
-                  <h3 className="text-3xl font-medium text-principal uppercase">
-                    Iniciar consulta
-                  </h3>
-
-                  <p className="mt-4 mb-4 text-principal/80 leading-7">
-                    Revisaremos previamente tu situación antes de coordinar una entrevista.
-                  </p>
-
+                  {/* INFORMACIÓN DE CONTACTO */}
                   <div
-                    className="
-                    group
-        flex
-        items-center
-        gap-2
-        border-1
-        border-principal
-        px-8
-        py-3
-        rounded-2xl
-        font-semibold
-        text-secundario
-        transition-all
-        duration-300
-        bg-principal
-        group-hover:text-detalles
-        uppercase
-                    "
+                    className={`flex min-h-[320px] items-center justify-center p-6 transition-all duration-700 delay-150 md:p-8 lg:col-span-7 ${
+                      visible
+                        ? "translate-x-0 opacity-100"
+                        : "translate-x-10 opacity-0"
+                    }`}
                   >
+                    <div className="flex w-full max-w-2xl flex-col justify-between text-center lg:text-left p-5">
+                      {/* Badge decorativo */}
+                      <div className="mb-2 flex justify-center lg:justify-start">
+                        <span className="inline-flex items-center gap-2 rounded-full bg-detalles/10 px-3 py-3 mb-5 text-xs font-medium uppercase tracking-wider text-detalles">
+                          <span className="h-1.5 w-1.5 rounded-full bg-detalles" />
+                          Contacto directo
+                        </span>
+                      </div>
 
-                    Completar formulario
+                      <h2 className="font-titulo text-3xl font-bold leading-tight text-secundario2 md:text-5xl">
+                        Hablemos sobre tu situación.
+                      </h2>
 
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">
-                      →
-                    </span>
+                      <p className="mt-6 max-w-2xl text-base leading-8 text-textoClaro text-justify md:text-lg">
+                        Cada situación requiere una estrategia distinta. Si
+                        necesitás orientación, podés escribirnos por WhatsApp,
+                        enviar un email o completar el formulario para que
+                        podamos analizar tu caso con tiempo.
+                      </p>
 
+                      {/* Línea decorativa */}
+                      <div className="my-6 flex justify-center lg:justify-start">
+                        <div className="h-px w-20 bg-gradient-to-r from-detalles to-transparent" />
+                      </div>
+
+                      {/* Texto de disponibilidad */}
+                      <p className="text-sm text-principal/60 text-center">
+                        <i className="fas fa-clock mr-2  text-detalles" />
+                        Respondemos a la brevedad.
+                      </p>
+
+                      <div className="mt-4 flex w-full flex-wrap justify-center gap-3 lg:justify-center">
+                        {socialLinks.map((link, index) => (
+                          <a
+                            key={link.name}
+                            href={link.url}
+                            className={`group flex w-full items-center justify-center gap-3 border border-secundario p-3 text-center text-sm font-medium uppercase transition-all duration-200 hover:scale-105 hover:shadow-lg md:w-1/2 ${link.color} ${
+                              visible
+                                ? "translate-y-0 opacity-100"
+                                : "translate-y-6 opacity-0"
+                            }`}
+                            style={{
+                              transitionDelay: `${index * 120}ms`,
+                            }}
+                          >
+                            <i className={`${link.icon} text-lg`} />
+                            <span>{link.name}</span>
+                            <span className="transition-transform group-hover:translate-x-1">
+                              →
+                            </span>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-
                 </div>
-
-              </a>
-
-            </div>
-
+              </div>
+            </SectionFrame>
           </div>
-
-        </div>
-        </div>
-
-        <Footer />
-      </Container>
-
+        </Container>
+      </div>
     </section>
   );
 }
