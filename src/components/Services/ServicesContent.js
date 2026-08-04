@@ -85,8 +85,9 @@ export default function ServicesContent({ selectedArea, visible }) {
           href="#contacto" 
           className="inline-flex items-center gap-2 border border-secundario2/20 bg-secundario2 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-secundario transition hover:-translate-y-0.5 hover:shadow-lg group"
         >
-          <i className="fab fa-whatsapp text-2xl text-green" />
+          
           Consultar por esta área
+          <i className="fab fa-whatsapp text-2xl text-green" />
         </a>
       </div>
     </div>

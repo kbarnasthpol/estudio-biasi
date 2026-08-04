@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -11,11 +12,14 @@ import {
   FaBook,
   FaShieldAlt,
   FaUserTie,
-  FaScaleBalanced
 } from "react-icons/fa";
 
 import useReveal from "../hooks/useReveal";
 
+
+/* =========================================================
+   ICONOS
+========================================================= */
 
 const dividerIcons = {
 
@@ -31,7 +35,6 @@ const dividerIcons = {
     FaShieldAlt,
   ],
 
-
   contact: [
     FaHandshake,
     FaFileContract,
@@ -41,11 +44,14 @@ const dividerIcons = {
     FaShieldAlt,
     FaBook,
     FaGavel,
-  ]
+  ],
 
 };
 
 
+/* =========================================================
+   FILA DE ICONOS
+========================================================= */
 
 function IconRow({ icons, reverse }) {
 
@@ -58,20 +64,20 @@ function IconRow({ icons, reverse }) {
         gap-14
         ${
           reverse
-          ? "animate-marqueeReverse"
-          : "animate-marquee"
+            ? "animate-marqueeReverse"
+            : "animate-marquee"
         }
       `}
     >
 
-      {[...icons, ...icons].map((Icon,index)=>(
+      {[...icons, ...icons].map((Icon, index) => (
 
         <Icon
           key={index}
           className="
             text-2xl
             text-secundario
-            opacity-80
+            opacity-70
             shrink-0
           "
         />
@@ -80,86 +86,319 @@ function IconRow({ icons, reverse }) {
 
     </div>
 
-  )
+  );
 
 }
 
 
+/* =========================================================
+   FILA DE PUNTOS
+========================================================= */
 
+function DotRow({ reverse }) {
+
+  return (
+
+    <div
+      className={`
+        flex
+        items-center
+        w-max
+        gap-10
+        ${
+          reverse
+            ? "animate-marqueeReverse"
+            : "animate-marquee"
+        }
+      `}
+    >
+
+      {[...Array(18)].map((_, index) => (
+
+        <span
+          key={index}
+          className={`
+            block
+            rounded-full
+            shrink-0
+            ${
+              index % 4 === 0
+                ? "w-2 h-2 bg-detalles"
+                : "w-1.5 h-1.5 bg-secundario/50"
+            }
+          `}
+        />
+
+      ))}
+
+    </div>
+
+  );
+
+}
+
+
+/* =========================================================
+   ORNAMENTOS
+========================================================= */
+
+function OrnamentRow({ icons, reverse }) {
+
+  return (
+
+    <div
+      className={`
+        flex
+        items-center
+        w-max
+        gap-10
+        ${
+          reverse
+            ? "animate-marqueeReverse"
+            : "animate-marquee"
+        }
+      `}
+    >
+
+      {[...icons, ...icons].map((Icon, index) => (
+
+        <div
+          key={index}
+          className="
+            flex
+            items-center
+            gap-4
+            shrink-0
+          "
+        >
+
+          <span
+            className="
+              w-8
+              h-px
+              bg-detalles/50
+            "
+          />
+
+          <Icon
+            className="
+              text-lg
+              text-secundario/60
+            "
+          />
+
+          <span
+            className="
+              w-8
+              h-px
+              bg-detalles/50
+            "
+          />
+
+        </div>
+
+      ))}
+
+    </div>
+
+  );
+
+}
+
+
+/* =========================================================
+   LÍNEA MINIMALISTA
+========================================================= */
+
+function MinimalDivider() {
+
+  return (
+
+    <div className="relative w-full h-full flex items-center">
+
+      <div
+        className="
+          absolute
+          left-0
+          right-0
+          h-px
+          bg-secundario/20
+        "
+      />
+
+      <div
+        className="
+          absolute
+          left-1/2
+          -translate-x-1/2
+          w-16
+          h-px
+          bg-detalles
+        "
+      />
+
+    </div>
+
+  );
+
+}
+
+
+/* =========================================================
+   COMPONENTE PRINCIPAL
+========================================================= */
 
 export default function MobileDivider({
-  type="services",
-  reverse=false
+
+  type = "services",
+
+  variant = "icons",
+
+  title = null,
+
+  reverse = false,
+
 }) {
 
-
-  const [revealRef,isVisible] = useReveal();
-
+  const [revealRef, isVisible] = useReveal();
 
   const icons =
     dividerIcons[type] || dividerIcons.services;
-
 
 
   return (
 
     <div
       ref={revealRef}
-      className={`
+      className="
         md:hidden
         h-[8vh]
+        min-h-[55px]
         relative
         overflow-hidden
         flex
         items-center
         bg-principal
+        border-y
         border-detalles
-border-y-1
-
-      `}
+      "
     >
 
-{/* Línea decorativa de fondo */}
-<div
-  className="
-    absolute
-    inset-0
-    flex
-    items-center
-    justify-center
-    opacity-30
-    pointer-events-none
-    z-0
-  "
->
 
-  <svg
-    className="
-      w-[160%]
-      h-full
-      animate-linePulse
-    "
-    viewBox="0 0 600 100"
-    fill="none"
-  >
+      {/* =====================================================
+          LÍNEA DECORATIVA DE FONDO
+      ===================================================== */}
 
-    <path
-      d="
-     M-20 50
-    C60 35, 120 35, 190 50
-    C250 65, 310 65, 370 50
-    C430 35, 500 35, 680 50
-      "
-      stroke="var(--color-detalles)"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-    />
+      <div
+        className="
+          absolute
+          inset-0
+          flex
+          items-center
+          justify-center
+          opacity-30
+          pointer-events-none
+          z-0
+        "
+      >
 
-  </svg>
+        <svg
+          className="
+            w-[160%]
+            h-full
+            animate-linePulse
+          "
+          viewBox="0 0 600 100"
+          fill="none"
+        >
 
-</div>
+          <path
+            d="
+              M-20 50
+              C60 35, 120 35, 190 50
+              C250 65, 310 65, 370 50
+              C430 35, 500 35, 680 50
+            "
+            stroke="var(--color-detalles)"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
 
-      {/* Fade lateral */}
+        </svg>
+
+      </div>
+
+
+      {/* =====================================================
+          CONTENIDO DECORATIVO
+      ===================================================== */}
+
+      <div
+        className={`
+          absolute
+          inset-0
+          flex
+          items-center
+          transition-opacity
+          duration-700
+          ${
+            isVisible
+              ? "opacity-100"
+              : "opacity-0"
+          }
+        `}
+      >
+
+        {/* ICONOS */}
+
+        {variant === "icons" && (
+
+          <IconRow
+            icons={icons}
+            reverse={reverse}
+          />
+
+        )}
+
+
+        {/* PUNTOS */}
+
+        {variant === "dots" && (
+
+          <DotRow
+            reverse={reverse}
+          />
+
+        )}
+
+
+        {/* ORNAMENTOS */}
+
+        {variant === "ornament" && (
+
+          <OrnamentRow
+            icons={icons}
+            reverse={reverse}
+          />
+
+        )}
+
+
+        {/* LÍNEA MINIMAL */}
+
+        {variant === "minimal" && (
+
+          <MinimalDivider />
+
+        )}
+
+      </div>
+
+
+      {/* =====================================================
+          FADE LATERAL
+      ===================================================== */}
+
       <div
         className="
           absolute
@@ -174,45 +413,73 @@ border-y-1
       />
 
 
+      {/* =====================================================
+          TÍTULO CENTRAL
+      ===================================================== */}
 
-      {/* Línea superior */}
-      <div
-        className="
-          absolute
-          top-0
-          left-0
-          w-full
-          h-5px
-          bg-secundario/20
-        "
-      />
+      {title && (
+
+        <div
+          className="
+            absolute
+            left-1/2
+            top-1/2
+            -translate-x-1/2
+            -translate-y-1/2
+            z-20
+            flex
+            items-center
+            gap-3
+            px-5
+            py-1.5
+            bg-principal
+            whitespace-nowrap
+          "
+        >
+
+          {/* línea izquierda */}
+
+          <span
+            className="
+              block
+              w-5
+              h-px
+              bg-detalles
+            "
+          />
+
+          <span
+            className="
+              font-titulo
+              text-sm
+              tracking-[0.18em]
+              text-secundario
+              uppercase
+            "
+          >
+            {title}
+          </span>
+
+          {/* línea derecha */}
+
+          <span
+            className="
+              block
+              w-5
+              h-px
+              bg-detalles
+            "
+          />
+
+        </div>
+
+      )}
 
 
+      {/* =====================================================
+          LÍNEA INFERIOR
+      ===================================================== */}
 
-      <div
-        className={`
-          transition-opacity
-          duration-700
-          w-full
-          ${
-            isVisible
-            ? "opacity-100"
-            : "opacity-0"
-          }
-        `}
-      >
-
-        <IconRow
-          icons={icons}
-          reverse={reverse}
-        />
-
-      </div>
-
-
-
-
-      {/* Línea inferior */}
       <div
         className="
           absolute
@@ -224,9 +491,8 @@ border-y-1
         "
       />
 
-
     </div>
 
-  )
+  );
 
 }

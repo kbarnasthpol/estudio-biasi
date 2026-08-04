@@ -16,28 +16,38 @@ export default function Home() {
       <div className="snap-section">
         <Hero />
       </div>
-      <MobileDivider type="contact" reverse />
+      <MobileDivider type="contact"
+  variant="ornament"
+  title="VALORES"
+  reverse />
 
       <div className="snap-section ">
         <TrustSection />
       </div>
-      <MobileDivider type="contact" />
+      <MobileDivider
+  variant="minimal"
+  title="NOSOTROS"
+/>
 
       <div className="snap-section ">
         <About />
       </div>
 
-      <MobileDivider type="services" />
+      <MobileDivider variant="dots"
+  title="PROBLEMAS" />
 
       <div className="snap-section ">
         <ProblemSection />
       </div>
-      <MobileDivider type="services" reverse />
+      <MobileDivider type="services"
+  variant="icons"
+  title="SERVICIOS" />
 
       <div className="snap-section ">
         <Services />
       </div>
-      <MobileDivider type="contact" />
+      <MobileDivider variant="dots"
+  title="RESEÑAS" />
 
       <div className="snap-section ">
         <TestimonialsSection />
@@ -48,7 +58,12 @@ export default function Home() {
         <FaqSection />
       </div>
 
-      <MobileDivider type="contact" reverse />
+      <MobileDivider
+  type="contact"
+  variant="ornament"
+  title="CONTACTO"
+  reverse
+/>
 
       <div className="snap-section ">
         <Contact />
