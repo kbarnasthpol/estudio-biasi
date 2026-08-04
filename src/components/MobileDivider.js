@@ -511,7 +511,7 @@ export default function MobileDivider({
             bg-principal/40
             whitespace-nowrap
             font-bold
-            text-2xl
+            text-3xl
           "
         >
 
