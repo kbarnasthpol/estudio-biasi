@@ -508,7 +508,7 @@ export default function MobileDivider({
             gap-3
             px-5
             py-1.5
-            bg-principal/40
+            bg-principal/70
             whitespace-nowrap
           
           "
@@ -528,7 +528,7 @@ export default function MobileDivider({
           <span
             className="
               font-titulo
-              tracking-[0.18em]
+              tracking-[0.09em]
               text-secundario
               uppercase
               font-extrabold

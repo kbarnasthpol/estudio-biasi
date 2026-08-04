@@ -77,7 +77,7 @@ export default function ProblemSection() {
 
                   <p className="mt-8 text-l uppercase tracking-[0.25em] text-detalles flex items-center justify-center lg:justify-center gap-2">
                     <i className="fas fa-arrow-right text-xs" />
-                    Ejemplos por los que suele empezar una consulta
+                    Ejemplos por los que se suele empezar una consulta
                     <i className="fas fa-arrow-right text-xs" />
                   </p>
                 </div>
