@@ -113,7 +113,7 @@ export default function Contact() {
                   >
                     <div className="flex w-full max-w-2xl flex-col justify-between text-center lg:text-left p-5">
                       {/* Badge decorativo */}
-                      <div className="mb-2 flex justify-center lg:justify-start">
+                      <div className="mb-2 flex justify-center lg:justify-end">
                         <span className="inline-flex items-center gap-2 rounded-full bg-detalles/10 px-3 py-3 mb-5 text-xs font-medium uppercase tracking-wider text-detalles">
                           <span className="h-1.5 w-1.5 rounded-full bg-detalles" />
                           Contacto directo

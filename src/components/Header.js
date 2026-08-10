@@ -18,12 +18,14 @@ export default function Header() {
       { id: 'sobre-mi', label: 'NOSOTROS', href: '/#sobre-mi' },
       { id: 'problemas', label: 'PROBLEMAS', href: '/#problemas' },
       { id: 'areas-especializacion', label: 'SERVICIOS', href: '/#areas-especializacion', hasSubmenu: true },
-      { id: 'testimonios', label: 'TESTIMONIOS', href: '/#testimonios' },
       { id: 'faq', label: 'FAQ', href: '/faq' },
       { id: 'contacto', label: 'CONTACTO', href: '/#contacto' },
     ],
     []
   );
+  {/* agregar cuando tenga testimonios
+      { id: 'testimonios', label: 'TESTIMONIOS', href: '/#testimonios' },
+      */}
 
   const serviceLinks = useMemo(
     () =>

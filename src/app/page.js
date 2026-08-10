@@ -46,12 +46,15 @@ export default function Home() {
       <div className="snap-section ">
         <Services />
       </div>
+      {/*
+      HASTA NO TENER TESTIMONIOS, NO MOSTRAR ESTA SECCIÓN
       <MobileDivider variant="dots"
   title="TESTIMONIOS" />
 
       <div className="snap-section ">
         <TestimonialsSection />
       </div>
+      */}
       <MobileDivider type="contact" variant="question" title="PREGUNTAS FRECUENTES" reverse />
 
       <div className="snap-section ">
@@ -67,6 +70,9 @@ export default function Home() {
 
       <div className="snap-section ">
         <Contact />
+      </div>
+      <div className="snap-section ">
+        <Footer />
       </div>
       
 
