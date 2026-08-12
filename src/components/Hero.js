@@ -62,17 +62,30 @@ export default function Hero() {
 
   return (
     <section
-      id="inicio"
-      className="flex w-full items-center overflow-hidden md:py-10 lg:py-12"
-    >
+  id="inicio"
+  className="
+    flex
+    min-h-[100svh]
+    w-full
+    items-center
+    overflow-hidden
+    md:min-h-0
+    md:py-10
+    lg:py-12
+  "
+>
       <Container>
         <SectionFrame
-          className="
-            h-[72vh]
-            min-h-[560px]
-            max-h-[720px]
-          "
-        >
+  className="
+    h-[100svh]
+    min-h-0
+    max-h-none
+
+    md:h-[72vh]
+    md:min-h-[560px]
+    md:max-h-[720px]
+  "
+>
           <div
             className={`grid h-full transition-all duration-1000 ease-out md:grid-cols-[1.05fr_0.95fr] ${
               compact
@@ -85,23 +98,24 @@ export default function Hero() {
             ====================================================== */}
 
             <div
-              className="
-                flex
-                min-h-0
-                items-center
-                px-7
-                py-8
+  className="
+    flex
+    min-h-0
+    items-center
+    pl-5
+    pr-8
+    py-8
 
-                sm:px-9
+    sm:px-9
 
-                md:px-10
-                md:py-8
+    md:px-10
+    md:py-8
 
-                lg:px-12
+    lg:px-12
 
-                xl:px-14
-              "
-            >
+    xl:px-14
+  "
+>
               <div className="w-full max-w-3xl">
 
                 {/* -------------------------------------------------
