@@ -285,6 +285,7 @@ export default function Hero() {
                       w-1/2
                       md:px-6
                       md:py-3
+                      h-14
                     "
                   >
                     Solicitar asesoramiento
@@ -312,6 +313,7 @@ export default function Hero() {
                       w-1/2
                       md:px-6
                       md:py-3
+                      h-14
                     "
                   >
                     Ver servicios
