@@ -102,7 +102,8 @@ export default function Hero() {
   className="
     flex
     min-h-0
-    items-center
+    md:items-center
+    items-end
     pl-5
     pr-8
     py-8
@@ -123,7 +124,7 @@ export default function Hero() {
                     IDENTIDAD - MODIFICADO CON MÁS PROTAGONISMO
                 -------------------------------------------------- */}
 
-               <div className="mb-6 flex w-full items-center overflow-hidden">
+               <div className="mb-6 flex w-full items-center top-0 overflow-hidden">
   {/* Lado Izquierdo - BIASI */}
   <div className=" bg-detalles md:py-3 md:px-6 px-3 text-end">
     <span className="font-titulo text-4xl md:text-5xl font-bold uppercase leading-none tracking-tight text-principal">
@@ -178,13 +179,10 @@ export default function Hero() {
                   "
                 >
                   
-                  <span className="hidden md:block">
-                    Tu situación
+                  <span className="block">
+                    Tu <br className="md:hidden"/> situación
                   </span>
-                  <span className="block md:hidden">
-                    Tu 
-                    <span>situación</span>
-                  </span>
+                  
 
                   <span className="block">
                     legal<span className="text-detalles">.</span>
