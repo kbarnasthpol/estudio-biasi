@@ -106,7 +106,8 @@ export default function Hero() {
     items-end
     pl-5
     pr-8
-    py-8
+    pt-8
+    pb-5
 
     sm:px-9
 
@@ -124,7 +125,7 @@ export default function Hero() {
                     IDENTIDAD - MODIFICADO CON MÁS PROTAGONISMO
                 -------------------------------------------------- */}
 
-               <div className="mb-6 flex w-full items-center top-0 overflow-hidden">
+               <div className="mb-6 flex w-full items-center  overflow-hidden">
   {/* Lado Izquierdo - BIASI */}
   <div className=" bg-detalles md:py-3 md:px-6 px-3 text-end">
     <span className="font-titulo text-4xl md:text-5xl font-bold uppercase leading-none tracking-tight text-principal">
@@ -242,7 +243,7 @@ export default function Hero() {
                   </p>
                   
                   {/* Indicador de cambio minimalista con animación */}
-                  <div className="absolute bottom-0 left-0 mt-2 flex gap-1.5">
+                  <div className="absolute bottom-0 right-0 mt-2 flex gap-1.5">
                     {textosAsesoramiento.map((_, index) => (
                       <span
                         key={index}
