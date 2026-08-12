@@ -67,7 +67,8 @@ export default function Hero() {
     flex
     min-h-[100svh]
     w-full
-    items-center
+    md:items-center
+    items-between
     overflow-hidden
     md:min-h-0
     md:py-10
