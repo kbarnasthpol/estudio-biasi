@@ -62,8 +62,8 @@ export default function Hero() {
 
   return (
     <section
-  id="inicio"
-  className="
+      id="inicio"
+      className="
     flex
     min-h-[100svh]
     w-full
@@ -74,10 +74,10 @@ export default function Hero() {
     md:py-10
     lg:py-12
   "
->
+    >
       <Container>
         <SectionFrame
-  className="
+          className="
     h-[100svh]
     min-h-0
     max-h-none
@@ -86,20 +86,19 @@ export default function Hero() {
     md:min-h-[560px]
     md:max-h-[720px]
   "
->
+        >
           <div
-            className={`grid h-full transition-all duration-1000 ease-out md:grid-cols-[1.05fr_0.95fr] ${
-              compact
-                ? "translate-y-4 scale-[0.985] opacity-20"
-                : "translate-y-0 scale-100 opacity-100"
-            }`}
+            className={`grid h-full transition-all duration-1000 ease-out md:grid-cols-[1.05fr_0.95fr] ${compact
+              ? "translate-y-4 scale-[0.985] opacity-20"
+              : "translate-y-0 scale-100 opacity-100"
+              }`}
           >
             {/* =====================================================
                 IZQUIERDA
             ====================================================== */}
 
             <div
-  className="
+              className="
     flex
     min-h-0
     md:items-center
@@ -118,43 +117,131 @@ export default function Hero() {
 
     xl:px-14
   "
->
+            >
               <div className="w-full max-w-3xl">
 
                 {/* -------------------------------------------------
-                    IDENTIDAD - MODIFICADO CON MÁS PROTAGONISMO
-                -------------------------------------------------- */}
+    IDENTIDAD
+-------------------------------------------------- */}
 
-               <div className="mb-6 flex w-full items-center  overflow-hidden">
-  {/* Lado Izquierdo - BIASI */}
-  <div className=" bg-detalles md:py-3 md:px-6 px-3 text-end">
-    <span className="font-titulo text-4xl md:text-5xl font-bold uppercase leading-none tracking-tight text-principal">
-      BIASI
-    </span>
-  </div>
+                <div className="mb-6 -mt-12 w-full md:-mt-5">
 
-  {/* & Posicionada exactamente en la divisoria */}
-  <div className="relative z-10 flex w-0 items-center justify-center pointer-events-none">
-    <span
-      className="font-titulo text-4xl md:text-5xl font-bold leading-none tracking-tight select-none"
-      style={{
-        background: 'linear-gradient(to right, var(--color-secundario) 50%, var(--color-detalles) 50%)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        backgroundClip: 'text',
-      }}
-    >
-      &amp;
-    </span>
-  </div>
+                  {/* Descriptor */}
+                  <div
+                    className="
+      mb-2
+      pl-1
+      text-[8px]
+      font-semibold
+      uppercase
+      tracking-[0.32em]
+      text-textoClaro/60
+      md:hidden
 
-  {/* Lado Derecho - ASOCIADOS */}
-  <div className=" bg-principal md:py-3 md:px-6 px-3 text-start">
-    <span className="font-titulo text-4xl md:text-5xl font-bold uppercase leading-none tracking-tight text-secundario">
-      ASOCIADOS
-    </span>
-  </div>
-</div>
+      md:text-[9px]
+    "
+                  >
+                    Estudio jurídico
+                  </div>
+
+                  {/* Nombre */}
+                  <div className="flex w-full items-center overflow-hidden">
+
+                    {/* BIASI */}
+                    <div
+                      className="
+        bg-detalles
+        px-3
+        py-2
+        text-end
+
+        md:px-6
+        md:py-3
+      "
+                    >
+                      <span
+                        className="
+          font-titulo
+          text-4xl
+          font-bold
+          uppercase
+          leading-none
+          tracking-tight
+          text-principal
+
+          md:text-5xl
+        "
+                      >
+                        BIASI
+                      </span>
+                    </div>
+
+                    {/* & */}
+                    <div
+                      className="
+        relative
+        z-10
+        flex
+        w-0
+        items-center
+        justify-center
+        pointer-events-none
+      "
+                    >
+                      <span
+                        className="
+          font-titulo
+          text-4xl
+          font-bold
+          leading-none
+          tracking-tight
+          select-none
+
+          md:text-5xl
+        "
+                        style={{
+                          background:
+                            "linear-gradient(to right, var(--color-secundario) 50%, var(--color-detalles) 50%)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text",
+                        }}
+                      >
+                        &amp;
+                      </span>
+                    </div>
+
+                    {/* ASOCIADOS */}
+                    <div
+                      className="
+        bg-principal
+        px-3
+        py-2
+        text-start
+
+        md:px-6
+        md:py-3
+      "
+                    >
+                      <span
+                        className="
+          font-titulo
+          text-4xl
+          font-bold
+          uppercase
+          leading-none
+          tracking-tight
+          text-secundario
+
+          md:text-5xl
+        "
+                      >
+                        ASOCIADOS
+                      </span>
+                    </div>
+
+                  </div>
+                </div>
 
                 {/* -------------------------------------------------
                     TITULO
@@ -179,11 +266,11 @@ export default function Hero() {
                     xl:text-[4.45rem]
                   "
                 >
-                  
+
                   <span className="block">
-                    Tu <br className="md:hidden"/> situación
+                    Tu <br className="md:hidden" /> situación
                   </span>
-                  
+
 
                   <span className="block">
                     legal<span className="text-detalles">.</span>
@@ -233,15 +320,15 @@ export default function Hero() {
                       lg:text-base
                       lg:leading-6
 
-                      ${isAnimating 
-                        ? 'opacity-0 -translate-y-3 scale-95' 
+                      ${isAnimating
+                        ? 'opacity-0 -translate-y-3 scale-95'
                         : 'opacity-100 translate-y-0 scale-100'
                       }
                     `}
                   >
                     {textosAsesoramiento[textIndex]}
                   </p>
-                  
+
                   {/* Indicador de cambio minimalista con animación */}
                   <div className="absolute bottom-0 right-0 mt-2 flex gap-1.5">
                     {textosAsesoramiento.map((_, index) => (
@@ -264,76 +351,87 @@ export default function Hero() {
                 </div>
 
                 {/* -------------------------------------------------
-                    BOTONES
-                -------------------------------------------------- */}
+    BOTONES
+-------------------------------------------------- */}
 
                 <div
-                  className="
-                    mt-8
-                    flex
-                    flex-col
-                    gap-2.5
+                  className={`
+    mt-8
+    flex
+    flex-col
+    gap-2.5
+    transition-all
+    duration-500
+    ease-out
 
-                    sm:flex-row
+    sm:flex-row
 
-                    md:mt-7
-                    md:gap-3
-                  "
+    md:mt-3
+    md:gap-3
+  `}
                 >
                   <a
                     href="#contacto"
-                    className="
-                      inline-flex
-                      items-center
-                      justify-center
-                      border
-                      border-detalles
-                      bg-detalles
-                      px-5
-                      py-3
-                      text-[10px]
-                      font-semibold
-                      uppercase
-                      tracking-[0.18em]
-                      text-secundario
-                      transition
-                      duration-300
-                      hover:-translate-y-1
-                      w-3/4
-                      md:w-1/2
-                      md:px-6
-                      md:py-3
-                      h-14
-                    "
+                    className={`
+      inline-flex
+      h-14
+      items-center
+      justify-center
+      border
+      border-detalles
+      bg-detalles
+      px-5
+      py-3
+      text-[10px]
+      font-semibold
+      uppercase
+      tracking-[0.18em]
+      text-secundario
+      transition-all
+      duration-500
+      ease-out
+      hover:-translate-y-1
+
+      ${compact ? "w-full" : "w-3/4"}
+
+      sm:w-auto
+      md:w-1/2
+      md:px-6
+      md:py-3
+    `}
                   >
                     Solicitar asesoramiento
                   </a>
 
                   <a
                     href="#areas-especializacion"
-                    className="
-                      inline-flex
-                      items-center
-                      justify-center
-                      border
-                      border-textoClaro/50
-                      px-5
-                      py-3
-                      text-[10px]
-                      font-semibold
-                      uppercase
-                      tracking-[0.18em]
-                      text-textoClaro
-                      transition
-                      duration-300
-                      hover:-translate-y-1
-                      hover:border-textoClaro
-                      w-3/4
-                      md:w-1/2
-                      md:px-6
-                      md:py-3
-                      h-14
-                    "
+                    className={`
+      inline-flex
+      h-14
+      items-center
+      justify-center
+      border
+      border-textoClaro/50
+      px-5
+      py-3
+      text-[10px]
+      font-semibold
+      uppercase
+      tracking-[0.18em]
+      text-textoClaro
+      transition-all
+      duration-500
+      ease-out
+      hover:-translate-y-1
+      hover:border-textoClaro
+
+      ${compact ? "w-full" : "w-3/4"}
+
+      sm:w-auto
+      md:w-1/2
+      md:px-6
+      md:py-3
+    `}
                   >
                     Ver servicios
                   </a>
