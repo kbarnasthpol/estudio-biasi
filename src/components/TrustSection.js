@@ -32,7 +32,7 @@ export default function TrustSection() {
             <div className="relative z-10">
               <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
                 {/* Columna izquierda - Texto principal */}
-                <div className="max-w-4xl text-center lg:text-left">
+                <div className="max-w-4xl text-justify lg:text-left">
                   {/* Badge decorativo */}
                   <div className="mb-4 hidden md:block flex items-center justify-center lg:justify-start">
                     <span className="inline-flex items-center gap-2 rounded-full bg-detalles/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-detalles">

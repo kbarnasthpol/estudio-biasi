@@ -9,6 +9,7 @@ import {
   FaLandmark,
   FaShieldAlt,
 } from "react-icons/fa";
+import Image from "next/image";
 
 import Container from "./Container";
 import SectionFrame from "./SectionFrame";
@@ -72,7 +73,7 @@ export default function Hero() {
     overflow-hidden
     md:min-h-0
     md:py-10
-    lg:py-12
+    lg:py-15
   "
     >
       <Container>
@@ -85,6 +86,7 @@ export default function Hero() {
     md:h-[72vh]
     md:min-h-[560px]
     md:max-h-[720px]
+
   "
         >
           <div
@@ -454,8 +456,7 @@ export default function Hero() {
                   min-h-0
                   grid-cols-4
                   grid-rows-6
-                  gap-1.5
-                  lg:gap-2
+
                 "
               >
 
@@ -463,81 +464,91 @@ export default function Hero() {
                     BLOQUE PRINCIPAL
                 ================================================== */}
 
-                <div
-                  className="
-                    relative
-                    col-span-2
-                    row-span-4
-                    overflow-hidden
-                    bg-principal
-                  "
-                >
-                  <div className="flex h-full items-center justify-center">
-                    <FaBalanceScale
-                      className="
-                        text-[7rem]
-                        text-secundario/10
+               <div
+  className="
+    relative
+    col-span-2
+    row-span-4
+    overflow-hidden
+    bg-principal
+    border-groove
+    border-0
+    border-secundario
+  "
+>
+  {/* Imagen que se adapta al contenedor */}
+  <div className="flex h-full w-full items-center justify-center">
+    <Image className="
+        h-full
+        w-full
+        object-cover
+         grayscale
+      "
+      src="/img/ejemplo_abogado_Hero.jpeg"
+      alt="Estudio jurídico"
+      width={800}
+      height={600}
+      priority
+    />
+  </div>
 
-                        lg:text-[8rem]
+  {/* Mantenemos el texto en la parte inferior */}
+   {/* probar como queeda con esto
+  <div
+    className="
+      absolute
+      bottom-0
+      left-0
+      bg-principal/90
+      px-4
+      py-2
+      lg:px-5
+      lg:py-2.5
+      w-full
+    "
+  >
+    <p
+      className="
+        text-[10px]
+        font-semibold
+        uppercase
+        tracking-[0.18em]
+        text-secundario
+        text-center
 
-                        xl:text-[9.5rem]
-                      "
-                    />
-                  </div>
-
-                  <div
-                    className="
-                      absolute
-                      bottom-0
-                      left-0
-                      bg-secundario
-                      px-4
-                      py-2
-                      lg:px-5
-                      lg:py-2.5
-                    "
-                  >
-                    <p
-                      className="
-                        text-[7px]
-                        font-semibold
-                        uppercase
-                        tracking-[0.18em]
-                        text-textoClaro
-
-                        lg:text-[8px]
-                      "
-                    >
-                      Estudio jurídico
-                    </p>
-                  </div>
-                </div>
+        lg:text-[12px]
+      "
+    >
+      Estudio jurídico
+    </p>
+     
+  </div>
+  */}
+</div>
 
                 {/* =================================================
-                    ESCUDO
+                    RAYAS DE FONDO 1
                 ================================================== */}
 
-                <div
-                  className="
-                    col-span-1
-                    row-span-2
-                    flex
-                    items-center
-                    justify-center
-                    bg-detalles
-                  "
-                >
-                  <FaShieldAlt
-                    className="
-                      text-4xl
-                      text-secundario
-
-                      lg:text-5xl
-
-                      xl:text-[3.4rem]
-                    "
-                  />
-                </div>
+               <div
+  className="
+    col-span-1
+    row-span-2
+    flex
+    items-center
+    justify-center
+    bg-detalles
+    relative
+    overflow-hidden
+  "
+  style={{
+    backgroundImage: `repeating-linear-gradient(135deg, var(--color-secundario) 0px, var(--color-secundario) 1px, transparent 4px, transparent 20px)`,
+    backgroundColor: 'var(--color-detalles)'
+  }}
+>
+  {/* El div queda con el fondo de líneas a 45° */}
+  {/* Puedes dejar vacío o agregar contenido adicional */}
+</div>
 
                 {/* =================================================
                     DOCUMENTO
@@ -608,7 +619,7 @@ export default function Hero() {
                 </div>
 
                 {/* =================================================
-                    MALETIN
+                    TRIBUNAL
                 ================================================== */}
 
                 <div
@@ -621,7 +632,7 @@ export default function Hero() {
                     bg-detalles
                   "
                 >
-                  <FaBriefcase
+                  <FaLandmark
                     className="
                       text-4xl
                       text-secundario
@@ -644,7 +655,7 @@ export default function Hero() {
                     flex
                     items-center
                     justify-center
-                    bg-principal
+                    bg-detalles
                   "
                 >
                   <FaBalanceScale
@@ -660,30 +671,28 @@ export default function Hero() {
                 </div>
 
                 {/* =================================================
-                    TRIBUNALES
+                    RAYAS DE FONDO 2
                 ================================================== */}
 
-                <div
-                  className="
-                    col-span-1
-                    row-span-2
-                    flex
-                    items-center
-                    justify-center
-                    bg-secundario
-                  "
-                >
-                  <FaLandmark
-                    className="
-                      text-4xl
-                      text-textoClaro
-
-                      lg:text-5xl
-
-                      xl:text-[3.4rem]
-                    "
-                  />
-                </div>
+               <div
+  className="
+    col-span-1
+    row-span-2
+    flex
+    items-center
+    justify-center
+    bg-detalles
+    relative
+    overflow-hidden
+  "
+  style={{
+    backgroundImage: `repeating-linear-gradient(135deg, var(--color-principal) 0px, var(--color-principal) 0.5px, transparent 3px, transparent 20px)`,
+    backgroundColor: 'var(--color-secundario)'
+  }}
+>
+  {/* El div queda con el fondo de líneas a 45° */}
+  {/* Puedes dejar vacío o agregar contenido adicional */}
+</div>
 
                 {/* =================================================
                     AREAS DE PRACTICA

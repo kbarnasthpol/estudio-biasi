@@ -348,9 +348,7 @@ export default function MobileDivider({
         flex
         items-center
         bg-principal
-        border-dashed
-        border-y
-        border-detalles
+
       "
     >
 

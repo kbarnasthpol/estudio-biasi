@@ -158,7 +158,7 @@ export default function Contact() {
                           >
                             <i className={`${link.icon} text-lg`} />
                             <span>{link.name}</span>
-                            <span className="transition-transform group-hover:translate-x-1">
+                            <span className="transition-transform group-hover:translate-x-1 hidden md:block">
                               →
                             </span>
                           </a>

@@ -119,7 +119,7 @@ export default function FaqSection() {
                 </p>
                 <Link 
                   href="/faq" 
-                  className="inline-flex items-center justify-center border border-detalles bg-detalles px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-secundario transition hover:-translate-y-0.5 hover:shadow-lg group"
+                  className="inline-flex w-full md:w-1/4 items-center justify-center border border-detalles bg-detalles px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-secundario transition hover:-translate-y-0.5 hover:shadow-lg group"
                 >
                   Ver más preguntas
                   <i className="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1" />

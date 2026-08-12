@@ -58,7 +58,7 @@ export default function ProblemSection() {
                   </div>
 
                   <p className="mt-6 text-base md:text-lg leading-8 text-principal/90">
-                    <i className="fas fa-quote-left mr-2 text-detalles/30 text-sm" />
+                    <i className="fas fa-quote-left mr-2 text-justify text-detalles/30 text-sm" />
                     A veces lo más difícil es dar el primer paso. Si algo te preocupa, podés contarnos brevemente qué está pasando y te orientamos sobre las opciones más adecuadas.
                     <i className="fas fa-quote-right ml-2 text-detalles/30 text-sm" />
                   </p>
