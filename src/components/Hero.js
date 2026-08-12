@@ -110,7 +110,7 @@ export default function Hero() {
 
                <div className="mb-6 flex w-full items-center overflow-hidden">
   {/* Lado Izquierdo - BIASI */}
-  <div className=" bg-detalles py-3 px-6 text-end">
+  <div className=" bg-detalles md:py-3 md:px-6 px-3 text-end">
     <span className="font-titulo text-4xl md:text-5xl font-bold uppercase leading-none tracking-tight text-principal">
       BIASI
     </span>
@@ -132,7 +132,7 @@ export default function Hero() {
   </div>
 
   {/* Lado Derecho - ASOCIADOS */}
-  <div className=" bg-principal py-3 px-6 text-start">
+  <div className=" bg-principal md:py-3 md:px-6 px-3 text-start">
     <span className="font-titulo text-4xl md:text-5xl font-bold uppercase leading-none tracking-tight text-secundario">
       ASOCIADOS
     </span>
@@ -163,9 +163,12 @@ export default function Hero() {
                   "
                 >
                   
-                  <span className="block">
-                    Tu
-                    <span className="md:hidden"/> situación
+                  <span className="hidden md:block">
+                    Tu situación
+                  </span>
+                  <span className="block md:hidden">
+                    Tu 
+                    <span>situación</span>
                   </span>
 
                   <span className="block">
@@ -282,7 +285,8 @@ export default function Hero() {
                       transition
                       duration-300
                       hover:-translate-y-1
-                      w-1/2
+                      w-3/4
+                      md:w-1/2
                       md:px-6
                       md:py-3
                       h-14
@@ -310,7 +314,8 @@ export default function Hero() {
                       duration-300
                       hover:-translate-y-1
                       hover:border-textoClaro
-                      w-1/2
+                      w-3/4
+                      md:w-1/2
                       md:px-6
                       md:py-3
                       h-14
