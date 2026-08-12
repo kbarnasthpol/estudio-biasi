@@ -102,7 +102,8 @@ export default function Hero() {
     flex
     min-h-0
     md:items-center
-    items-end
+    flex-col
+    items-stretch
     pl-5
     pr-8
     pt-8
@@ -118,11 +119,12 @@ export default function Hero() {
     xl:px-14
   "
             >
-              <div className="w-full max-w-3xl">
+              <div className="flex h-full w-full max-w-3xl flex-col">
 
                 {/* -------------------------------------------------
     IDENTIDAD
 -------------------------------------------------- */}
+  <div className="flex flex-1 flex-col justify-center">
 
                 <div className="mb-6 -mt-12 w-full md:-mt-5">
 
@@ -240,6 +242,7 @@ export default function Hero() {
                       </span>
                     </div>
 
+                  </div>
                   </div>
                 </div>
 
