@@ -9,7 +9,7 @@ export default function AboutContent({ visible }) {
     >
       
 
-      <p className="text-xs uppercase tracking-[0.35em] text-detalles">
+      <p className="text-xs hidden md:block uppercase tracking-[0.35em] text-detalles">
         <i className="fas fa-scale-balanced mr-2" />
         Sobre el estudio
       </p>

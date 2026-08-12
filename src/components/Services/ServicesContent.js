@@ -44,7 +44,7 @@ export default function ServicesContent({ selectedArea, visible }) {
           Área de práctica
         </p>
 
-        <h3 className={`text-2xl md:text-4xl font-titulo font-bold tracking-tight text-secundario mb-6 transition-all duration-300 ease-in-out delay-50 ${
+        <h3 className={`text-2xl uppercase md:text-4xl font-titulo font-bold tracking-tight text-secundario mb-6 transition-all duration-300 ease-in-out delay-50 ${
           visible ? "opacity-100 translate-x-0 blur-0" : "opacity-0 -translate-x-6 blur-[8px]"
         } ${isChanging ? "opacity-0" : ""}`}>
           {currentArea.nombre}

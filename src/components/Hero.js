@@ -63,7 +63,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="flex w-full items-center overflow-hidden py-8 md:py-10 lg:py-12"
+      className="flex w-full items-center overflow-hidden md:py-10 lg:py-12"
     >
       <Container>
         <SectionFrame
@@ -111,7 +111,7 @@ export default function Hero() {
                <div className="mb-6 flex w-full items-center overflow-hidden">
   {/* Lado Izquierdo - BIASI */}
   <div className=" bg-detalles py-3 px-6 text-end">
-    <span className="font-titulo text-5xl font-bold uppercase leading-none tracking-tight text-principal">
+    <span className="font-titulo text-4xl md:text-5xl font-bold uppercase leading-none tracking-tight text-principal">
       BIASI
     </span>
   </div>
@@ -119,7 +119,7 @@ export default function Hero() {
   {/* & Posicionada exactamente en la divisoria */}
   <div className="relative z-10 flex w-0 items-center justify-center pointer-events-none">
     <span
-      className="font-titulo text-5xl font-bold leading-none tracking-tight select-none"
+      className="font-titulo text-4xl md:text-5xl font-bold leading-none tracking-tight select-none"
       style={{
         background: 'linear-gradient(to right, var(--color-secundario) 50%, var(--color-detalles) 50%)',
         WebkitBackgroundClip: 'text',
@@ -133,7 +133,7 @@ export default function Hero() {
 
   {/* Lado Derecho - ASOCIADOS */}
   <div className=" bg-principal py-3 px-6 text-start">
-    <span className="font-titulo text-5xl font-bold uppercase leading-none tracking-tight text-secundario">
+    <span className="font-titulo text-4xl md:text-5xl font-bold uppercase leading-none tracking-tight text-secundario">
       ASOCIADOS
     </span>
   </div>
@@ -162,8 +162,10 @@ export default function Hero() {
                     xl:text-[4.45rem]
                   "
                 >
+                  
                   <span className="block">
-                    Tu situación
+                    Tu
+                    <span className="md:hidden"/> situación
                   </span>
 
                   <span className="block">

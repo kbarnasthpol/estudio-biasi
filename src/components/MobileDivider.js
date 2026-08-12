@@ -342,12 +342,13 @@ export default function MobileDivider({
       className="
         md:hidden
         h-[8vh]
-        min-h-[55px]
+        min-h-[100px]
         relative
         overflow-hidden
         flex
         items-center
         bg-principal
+        border-dashed
         border-y
         border-detalles
       "
