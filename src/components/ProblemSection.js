@@ -48,17 +48,17 @@ export default function ProblemSection() {
                     ¿Tenés un problema legal?
                   </p>
                   
-                  <h2 className="mt-3 text-secundario2 text-3xl md:text-4xl font-titulo font-bold leading-tight">
+                  <h2 className="mt-3 text-secundario2 text-start text-3xl md:text-4xl font-titulo font-bold leading-tight">
                     No hace falta saber por dónde empezar para pedir ayuda.
                   </h2>
 
                   {/* Línea decorativa */}
-                  <div className="mt-4 flex justify-center lg:justify-start">
+                  <div className="mt-4 flex justify-start">
                     <div className="h-px w-20 bg-gradient-to-r from-detalles to-transparent" />
                   </div>
 
-                  <p className="mt-6 text-base md:text-lg leading-8 text-principal/90">
-                    <i className="fas fa-quote-left mr-2 text-justify text-detalles/30 text-sm" />
+                  <p className="mt-6 text-base text-justify md:text-lg leading-8 text-principal/90">
+                    <i className="fas fa-quote-left mr-2 text-detalles/30 text-sm" />
                     A veces lo más difícil es dar el primer paso. Si algo te preocupa, podés contarnos brevemente qué está pasando y te orientamos sobre las opciones más adecuadas.
                     <i className="fas fa-quote-right ml-2 text-detalles/30 text-sm" />
                   </p>
@@ -76,9 +76,9 @@ export default function ProblemSection() {
                   </div>
 
                   <p className="mt-8 text-l uppercase tracking-[0.25em] text-detalles flex items-center justify-center lg:justify-center gap-2">
-                    <i className="fas fa-arrow-right text-xs" />
+                    
                     Ejemplos por los que se suele empezar una consulta
-                    <i className="fas fa-arrow-right text-xs" />
+                    <i className="fas fa-arrow-right text-xs hidden md:block" />
                   </p>
                 </div>
 

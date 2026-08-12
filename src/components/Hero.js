@@ -135,14 +135,13 @@ export default function Hero() {
                     className="
       mb-2
       pl-1
-      text-[8px]
+      text-[10px]
       font-semibold
       uppercase
       tracking-[0.32em]
       text-textoClaro/60
       md:hidden
 
-      md:text-[9px]
     "
                   >
                     Estudio jurídico
@@ -269,6 +268,8 @@ export default function Hero() {
                     lg:text-[4rem]
 
                     xl:text-[4.45rem]
+                    mb-4
+                    md:mb-0
                   "
                 >
 
@@ -361,7 +362,7 @@ export default function Hero() {
 
                 <div
                   className={`
-    mt-8
+    mt-16
     flex
     flex-col
     gap-2.5
