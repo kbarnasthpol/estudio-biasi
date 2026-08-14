@@ -1,7 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import {
+  FaBalanceScale,
+  FaGavel,
+  FaFileContract,
+  FaLandmark,
+} from "react-icons/fa";
+
 import Container from "./Container";
+import SectionFrame from "./SectionFrame";
 
 export default function Footer() {
   const footerRef = useRef(null);
@@ -37,10 +45,11 @@ export default function Footer() {
 
   const navigation = [
     { name: "Inicio", href: "#inicio" },
-    { name: "Nosotros", href: "#nosotros" },
     { name: "Valores", href: "#valores" },
-    { name: "Servicios", href: "#servicios" },
-    { name: "FAQ", href: "#faq" },
+    { name: "Nosotros", href: "#sobre-mi" },
+    { name: "Problemas", href: "#problemas" },
+    { name: "Servicios", href: "#areas-especializacion" },
+    { name: "FAQ", href: "/faq" },
     { name: "Contacto", href: "#contacto" },
   ];
 
@@ -48,87 +57,534 @@ export default function Footer() {
     <footer
       id="footer"
       ref={footerRef}
-      className="relative flex min-h-screen w-full snap-start items-center overflow-hidden bg-principal"
+      className="
+        flex
+        min-h-[100svh]
+        w-full
+        snap-start
+        items-center
+        overflow-hidden
+      "
     >
       <Container>
-        <div
-          className={`flex min-h-screen flex-col justify-between py-10 transition-all duration-1000 md:py-14 ${
-            visible
-              ? "translate-y-0 opacity-100"
-              : "translate-y-6 opacity-0"
-          }`}
+        <SectionFrame
+          className="
+            h-[100svh]
+            min-h-0
+            max-h-none
+
+            md:h-[72vh]
+            md:min-h-[560px]
+            md:max-h-[720px]
+          "
         >
-          {/* CTA */}
-          <div className="flex flex-1 flex-col items-center justify-center text-center">
-            <div className="mb-8 h-[2px] w-24 bg-detalles md:w-32" />
+          <div
+            className={`
+              grid
+              h-full
+              transition-all
+              duration-1000
+              ease-out
 
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-secundario/70">
-              Biasi & Asociados
-            </p>
+              md:grid-cols-[0.3fr_1.05fr_0.95fr]
 
-            <h2 className="max-w-3xl font-titulo text-4xl font-bold uppercase leading-tight tracking-[-0.03em] text-secundario sm:text-5xl md:text-6xl lg:text-7xl">
-              ¿Necesitás
-              <span className="block">
-                asesoramiento<span className="text-detalles">?</span>
-              </span>
-            </h2>
+              ${
+                visible
+                  ? "translate-y-0 scale-100 opacity-100"
+                  : "translate-y-4 scale-[0.985] opacity-0"
+              }
+            `}
+          >
+            {/* =====================================================
+                FRANJA IZQUIERDA (columna que salió del mosaico)
+            ====================================================== */}
 
-            <p className="mt-6 max-w-xl text-base leading-7 text-textoOscuro/70 md:text-lg md:leading-8">
-              Una estrategia clara empieza con una conversación.
-            </p>
+            <div className="relative hidden h-full min-h-0 md:block">
+              <div
+                className="
+                  grid
+                  h-full
+                  min-h-0
+                  grid-rows-3
+                "
+              >
+                {/* =================================================
+                    DOCUMENTO
+                ================================================== */}
 
-            <a
-              href="#contacto"
-              className="mt-10 inline-flex items-center justify-center border border-detalles bg-detalles px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-secundario transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-            >
-              Solicitar asesoramiento
-            </a>
-          </div>
+                <div
+                  className="
+                    flex
+                    items-center
+                    justify-center
+                    bg-textoClaro
+                  "
+                >
+                  <FaFileContract
+                    className="
+                      text-4xl
+                      text-secundario
 
-          {/* Información inferior */}
-          <div className="border-t border-secundario/20 pt-8">
-            <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-              
-              {/* Marca */}
-              <div>
-                <h3 className="font-titulo text-2xl font-bold tracking-[-0.03em] text-secundario md:text-3xl">
-                  BIASI<span className="text-detalles">&</span>ASOCIADOS
-                </h3>
+                      lg:text-5xl
 
-                <p className="mt-2 max-w-xs text-sm leading-6 text-textoOscuro/60">
-                  Asesoramiento jurídico con estrategia,
-                  cercanía y compromiso.
-                </p>
+                      xl:text-[3.4rem]
+                    "
+                  />
+                </div>
 
-                <p className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-secundario/60">
-                  La Plata · Buenos Aires
-                </p>
+                {/* =================================================
+                    MARTILLO
+                ================================================== */}
+
+                <div
+                  className="
+                    relative
+                    overflow-hidden
+                    bg-secundario
+                  "
+                >
+                  <div
+                    className="
+                      absolute
+                      inset-[-50%]
+                      rotate-45
+                      bg-[repeating-linear-gradient(
+                        135deg,
+                        transparent_0,
+                        transparent_16px,
+                        rgba(249,246,241,0.1)_16px,
+                        rgba(249,246,241,0.1)_18px
+                      )]
+                    "
+                  />
+
+                  <div className="relative flex h-full items-center justify-center">
+                    <FaGavel
+                      className="
+                        text-4xl
+                        text-textoClaro
+
+                        lg:text-5xl
+
+                        xl:text-[3.4rem]
+                      "
+                    />
+                  </div>
+                </div>
+
+                {/* =================================================
+                    TRIBUNAL
+                ================================================== */}
+
+                <div
+                  className="
+                    flex
+                    items-center
+                    justify-center
+                    bg-detalles
+                  "
+                >
+                  <FaLandmark
+                    className="
+                      text-4xl
+                      text-secundario
+
+                      lg:text-5xl
+
+                      xl:text-[3.4rem]
+                    "
+                  />
+                </div>
               </div>
-
-              {/* Navegación */}
-              <nav>
-                <ul className="flex flex-wrap justify-start gap-x-6 gap-y-3 md:max-w-md md:justify-end md:gap-x-7">
-                  {navigation.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-xs font-semibold uppercase tracking-[0.16em] text-secundario/70 transition-colors duration-300 hover:text-secundario"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
             </div>
 
-            {/* Copyright */}
-            <div className="mt-8 flex flex-col gap-2 border-t border-secundario/10 pt-5 text-[10px] uppercase tracking-[0.15em] text-secundario/50 sm:flex-row sm:items-center sm:justify-between">
-              <span>© 2026 Biasi & Asociados</span>
-              <span>Todos los derechos reservados</span>
+            {/* =====================================================
+                IZQUIERDA (bloque de identidad / CTA)
+            ====================================================== */}
+
+            <div
+              className="
+                flex
+                min-h-0
+                flex-col
+
+                px-5
+                pt-8
+                pb-5
+
+                sm:px-9
+
+                md:px-10
+                md:py-8
+
+                lg:px-12
+
+                xl:px-14
+              "
+            >
+              <div className="flex h-full w-full max-w-3xl flex-col justify-between">
+
+                {/* =================================================
+                    IDENTIDAD
+                ================================================== */}
+
+                <div className="flex flex-1 flex-col justify-between">
+
+                  <div className="mb-8 w-full md:mb-10">
+
+                    <div
+                      className="
+                        mb-2
+                        pl-1
+                        text-[10px]
+                        font-semibold
+                        uppercase
+                        tracking-[0.32em]
+                        text-textoClaro/80
+                      "
+                    >
+                      Estudio jurídico
+                    </div>
+
+                    {/* =============================================
+                        MARCA
+                    ============================================== */}
+
+                    <div className="flex w-full items-center overflow-hidden">
+
+                      {/* BIASI */}
+
+                      <div
+                        className="
+                          bg-detalles
+                          px-3
+                          py-2
+
+                          md:px-6
+                          md:py-3
+                        "
+                      >
+                        <span
+                          className="
+                            font-titulo
+                            text-4xl
+                            font-bold
+                            uppercase
+                            leading-none
+                            tracking-tight
+                            text-principal
+
+                            md:text-5xl
+                          "
+                        >
+                          BIASI
+                        </span>
+                      </div>
+
+                      {/* & */}
+
+                      <div
+                        className="
+                          relative
+                          z-10
+                          flex
+                          w-0
+                          items-center
+                          justify-center
+                          pointer-events-none
+                        "
+                      >
+                        <span
+                          className="
+                            font-titulo
+                            text-4xl
+                            font-bold
+                            leading-none
+                            tracking-tight
+                            select-none
+
+                            md:text-5xl
+                          "
+                          style={{
+                            background:
+                              "linear-gradient(to right, var(--color-secundario) 50%, var(--color-detalles) 50%)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            backgroundClip: "text",
+                          }}
+                        >
+                          &amp;
+                        </span>
+                      </div>
+
+                      {/* ASOCIADOS */}
+
+                      <div
+                        className="
+                          bg-principal
+                          px-3
+                          py-2
+
+                          md:px-6
+                          md:py-3
+                        "
+                      >
+                        <span
+                          className="
+                            font-titulo
+                            text-4xl
+                            font-bold
+                            uppercase
+                            leading-none
+                            tracking-tight
+                            text-secundario
+
+                            md:text-5xl
+                          "
+                        >
+                          ASOCIADOS
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* =================================================
+                      CTA
+                  ================================================== */}
+
+                  <h1
+                    className="
+                      font-titulo
+                      text-[3.4rem]
+                      font-bold
+                      uppercase
+                      leading-[0.9]
+                      tracking-[-0.045em]
+                      text-textoClaro
+
+                      sm:text-[3.8rem]
+
+                      md:text-[3.55rem]
+
+                      lg:text-[4rem]
+
+                      xl:text-[4.45rem]
+                    "
+                  >
+                    <span className="text-detalles">¡</span>Estamos para lo que 
+                    <span className="block">
+                      necesites<span className="text-detalles">!</span>
+                    </span>
+                  </h1>
+
+                  {/* Línea */}
+
+                  <div className="my-5 h-[2px] w-24 bg-detalles md:w-32" />
+                  <div className="mt-10 flex md:mt-8">
+
+                  </div>
+                </div>
+
+                {/* =================================================
+                    INFORMACIÓN INFERIOR
+                ================================================== */}
+
+                <div
+                  className="
+                    border-t
+                    border-detalles/20
+                    pt-4
+                    text-right
+
+                    md:pt-5
+                  "
+                >
+                  <div className="flex flex-col gap-2">
+
+                    <span
+                      className="
+                        text-[8px]
+                        font-semibold
+                        uppercase
+                        tracking-[0.22em]
+                        text-principal/50
+                      "
+                    >
+                      Berisso · Buenos Aires
+                    </span>
+
+                    <span
+                      className="
+                        text-[8px]
+                        uppercase
+                        tracking-[0.15em]
+                        text-principal/40
+                      "
+                    >
+                      © 2026 Biasi &amp; Asociados · Todos los derechos reservados
+                    </span>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* =====================================================
+                MOSAICO DERECHO (ahora 3 columnas)
+            ====================================================== */}
+
+            <div className="relative hidden h-full min-h-0 md:block">
+
+              <div
+                className="
+                  grid
+                  h-full
+                  min-h-0
+                  grid-cols-3
+                  grid-rows-6
+                "
+              >
+
+                {/* =================================================
+                    BLOQUE NAVEGACIÓN
+                ================================================== */}
+
+                <div
+                  className="
+                    col-span-2
+                    row-span-6
+                    flex
+                    min-h-0
+                    flex-col
+                    justify-center
+                    overflow-hidden
+                    bg-secundario
+                    px-5
+                    py-5
+
+                    lg:px-6
+                    lg:py-6
+
+                    xl:px-7
+                  "
+                >
+              
+
+                  <nav>
+                    <ul className="space-y-2.5 lg:space-y-5">
+                      {navigation.map((item) => (
+                        <li key={item.name}>
+                          <a
+                            href={item.href}
+                            className="
+                              group
+                              flex
+                              items-center
+                              gap-4
+                              text-[9px]
+                              font-semibold
+                              uppercase
+                              tracking-[0.18em]
+                              text-textoClaro/80
+                              transition-all
+                              duration-300
+                              hover:translate-x-1
+                              hover:text-detalles
+
+                              md:text-[13px]
+                            "
+                          >
+                            <span
+                              className="
+                                h-[6px]
+                                w-0
+                                bg-detalles
+                                transition-all
+                                duration-300
+                                group-hover:w-5
+                              "
+                            />
+
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+
+                 
+                </div>
+
+                {/* =================================================
+                    RAYAS
+                ================================================== */}
+
+                <div
+                  className="
+                    relative
+                    col-span-1
+                    row-span-2
+                    overflow-hidden
+                    bg-detalles
+                  "
+                  style={{
+                    backgroundImage:
+                      "repeating-linear-gradient(135deg, var(--color-secundario) 0px, var(--color-secundario) 1px, transparent 4px, transparent 20px)",
+                  }}
+                />
+
+                {/* =================================================
+                    BALANZA
+                ================================================== */}
+
+                <div
+                  className="
+                    relative
+                    col-span-1
+                    row-span-2
+                    flex
+                    items-center
+                    justify-center
+                    overflow-hidden
+                    bg-detalles
+                  "
+                >
+                  <FaBalanceScale
+                    className="
+                      relative
+                      z-10
+                      text-4xl
+                      text-secundario
+
+                      lg:text-5xl
+
+                      xl:text-[3.4rem]
+                    "
+                  />
+                </div>
+
+                {/* =================================================
+                    RAYAS SECUNDARIAS
+                ================================================== */}
+
+                <div
+                  className="
+                    relative
+                    col-span-1
+                    row-span-2
+                    overflow-hidden
+                    bg-secundario
+                  "
+                  style={{
+                    backgroundImage:
+                      "repeating-linear-gradient(135deg, var(--color-principal) 0px, var(--color-principal) 0.5px, transparent 3px, transparent 20px)",
+                  }}
+                />
+
+              </div>
             </div>
           </div>
-        </div>
+        </SectionFrame>
       </Container>
     </footer>
   );

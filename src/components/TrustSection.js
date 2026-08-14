@@ -41,7 +41,7 @@ export default function TrustSection() {
                     </span>
                   </div>
                   
-                  <h2 className="mt-3 text-3xl text-justify md:text-4xl font-titulo font-bold text-secundario2 leading-tight">
+                  <h2 className="mt-3 text-3xl text-left md:text-4xl font-titulo font-bold text-secundario2 leading-tight">
                     Un estudio jurídico que combina criterio, cercanía y estrategia.
                   </h2>
 

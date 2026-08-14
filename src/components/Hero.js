@@ -706,7 +706,7 @@ export default function Hero() {
                     flex
                     min-h-0
                     flex-col
-                    justify-end
+                    justify-between
                     overflow-hidden
                     bg-principal
                     px-4
