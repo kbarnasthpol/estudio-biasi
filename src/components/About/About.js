@@ -16,7 +16,8 @@ export default function About() {
           <div
             ref={ref}
             className={`
-              relative overflow-hidden p-6 lg:p-10
+              relative grid overflow-hidden
+              lg:grid-cols-12 lg:items-stretch
               transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
               ${
                 visible
@@ -25,17 +26,19 @@ export default function About() {
               }
             `}
           >
-            {/* Decoraciones de fondo */}
-            <div className="absolute -right-10 -top-10 h-48 w-48 rounded-full bg-detalles/5 blur-3xl" />
-            <div className="absolute -left-10 -bottom-10 h-40 w-40 rounded-full bg-secundario/5 blur-3xl" />
-            <div className="absolute right-1/3 top-1/4 h-32 w-32 rounded-full bg-principal/5 blur-2xl" />
+            {/* Imagen - pegada al borde del contenedor, ocupa todo el alto */}
+            <div className="relative h-[320px] w-full sm:h-[420px] lg:col-span-4 lg:h-auto">
+              <AboutCard visible={visible} />
+            </div>
 
-            <div className="relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-6 items-end">
-              <div className="lg:col-span-5 flex justify-center">
-                <AboutCard visible={visible} />
-              </div>
+            {/* Texto - con su propio padding, como el resto de las secciones */}
+            <div className="relative  lg:col-span-8">
+              {/* Decoraciones de fondo */}
+              <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-detalles/5 blur-3xl" />
+              <div className="pointer-events-none absolute -left-10 -bottom-10 h-40 w-40 rounded-full bg-secundario/5 blur-3xl" />
+              <div className="pointer-events-none absolute right-1/3 top-1/4 h-32 w-32 rounded-full bg-principal/5 blur-2xl" />
 
-              <div className="lg:col-span-7">
+              <div className="relative z-10 flex h-full flex-col justify-center">
                 <AboutContent visible={visible} />
               </div>
             </div>
