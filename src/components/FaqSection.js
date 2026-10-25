@@ -40,16 +40,13 @@ export default function FaqSection() {
             }`}
           >
             {/* Decoraciones de fondo */}
-            <div className="absolute -right-10 -top-10 h-48 w-48 rounded-full bg-detalles/5 blur-3xl" />
-            <div className="absolute -left-10 -bottom-10 h-40 w-40 rounded-full bg-secundario/5 blur-3xl" />
+            <div className="ambient-float absolute -right-10 -top-10 h-48 w-48 rounded-full bg-detalles/5 blur-3xl" />
+            <div className="ambient-float absolute -left-10 -bottom-10 h-40 w-40 rounded-full bg-secundario/5 blur-3xl" />
 
             <div className="relative z-10">
               {/* Badge decorativo */}
-              <div className="mb-4 flex items-center gap-2">
-                <span className="inline-flex items-center gap-2 rounded-full bg-detalles/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-detalles">
-                  <span className="h-1.5 w-1.5 rounded-full bg-detalles" />
-                  Resolvemos tus dudas
-                </span>
+              <div className="mb-3 pl-1 text-[10px] font-semibold uppercase tracking-[0.32em] text-textoClaro/60">
+                Resolvemos tus dudas
               </div>
 
               <div className="max-w-5xl">
@@ -57,34 +54,36 @@ export default function FaqSection() {
                   <i className="fas fa-question-circle mr-2" />
                   FAQ
                 </p>
-                <h2 className="mt-3 text-3xl md:text-4xl font-titulo font-bold text-secundario2 leading-tight">
-                  Preguntas frecuentes para despejar dudas desde el comienzo.
+                <h2 className="mt-3 text-left font-titulo text-3xl font-bold uppercase leading-[0.95] tracking-[-0.03em] text-textoClaro md:text-4xl">
+                  <span className="section-highlight">Preguntas frecuentes</span>{' '}
+                  para despejar dudas desde el comienzo.
                 </h2>
               </div>
 
               {/* Línea decorativa */}
-              <div className="mt-4 flex">
-                <div className="h-px w-20 bg-gradient-to-r from-detalles to-transparent" />
-              </div>
+              <div className="my-5 h-[2px] w-24 bg-detalles md:my-6 md:w-32" />
 
-              <div className="mt-8 space-y-3">
+              <div className="mt-8 flex flex-col gap-3">
                 {faqs.map((item, index) => {
                   const isOpen = openIndex === index;
                   return (
                     <div 
                       key={item.question} 
-                      className="border border-secundario/12 bg-principal/80 shadow-none overflow-hidden transition-all duration-300 hover:border-detalles/20"
+                      className="flex shrink-0 flex-col overflow-hidden border border-principal/15 bg-principal/95 shadow-none transition-colors duration-300 hover:border-detalles/50"
                     >
                       <button
                         type="button"
-                        className="flex w-full items-center justify-between px-5 py-4 text-left group"
+                        id={`faq-question-${index}`}
+                        aria-expanded={isOpen}
+                        aria-controls={`faq-answer-${index}`}
+                        className="group flex min-h-14 w-full flex-none items-center justify-between gap-3 px-5 py-3 text-left focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-detalles"
                         onClick={() => setOpenIndex(isOpen ? -1 : index)}
                       >
-                        <span className="flex items-center gap-3 text-base font-semibold text-secundario">
-                          <span className={`inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold transition-all duration-300 ${
+                        <span className="flex items-center gap-3 text-sm font-semibold text-secundario md:text-base">
+                          <span className={`inline-flex h-7 w-7 shrink-0 items-center justify-center text-xs font-bold transition-all duration-300 ${
                             isOpen 
                               ? 'bg-detalles text-secundario' 
-                              : 'bg-secundario/10 text-secundario/50'
+                              : 'border border-secundario/15 bg-principal text-secundario/70'
                           }`}>
                             {index + 1}
                           </span>
@@ -96,15 +95,21 @@ export default function FaqSection() {
                           {isOpen ? '−' : '+'}
                         </span>
                       </button>
-                      <div className={`grid transition-all duration-300 ${
-                        isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-                      }`}>
+                      <div
+                        id={`faq-answer-${index}`}
+                        role="region"
+                        aria-labelledby={`faq-question-${index}`}
+                        aria-hidden={!isOpen}
+                        className={`overflow-hidden transition-[max-height] duration-300 ${
+                          isOpen ? 'max-h-40' : 'max-h-0'
+                        }`}
+                      >
                         <div className="overflow-hidden">
-                          <p className="px-5 pb-5 text-sm md:text-base leading-7 text-textoOscuro">
+                          <div className="px-5 pb-4 text-sm leading-7 text-textoOscuro md:text-base">
                             <i className="fas fa-quote-left mr-2 text-detalles/30 text-xs" />
                             {item.answer}
                             <i className="fas fa-quote-right ml-2 text-detalles/30 text-xs" />
-                          </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -113,13 +118,13 @@ export default function FaqSection() {
               </div>
 
               <div className="mt-8 flex items-center justify-between gap-4 flex-wrap">
-                <p className="text-sm text-principal/60">
+                <p className="text-sm text-textoClaro/60">
                   <i className="fas fa-clock mr-2 text-detalles" />
                   ¿No encontraste tu pregunta? Escríbenos directamente
                 </p>
                 <Link 
                   href="/faq" 
-                  className="inline-flex w-full md:w-1/4 items-center justify-center border border-detalles bg-detalles px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-secundario transition hover:-translate-y-0.5 hover:shadow-lg group"
+                  className="group inline-flex w-full items-center justify-center border border-detalles bg-detalles px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-secundario transition hover:-translate-y-0.5 hover:shadow-lg md:w-auto md:text-sm"
                 >
                   Ver más preguntas
                   <i className="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1" />

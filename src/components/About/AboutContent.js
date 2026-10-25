@@ -35,7 +35,7 @@ export default function AboutContent({ visible }) {
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}>
         Una mirada jurídica cercana, clara y{" "}
-        <span className="inline-block bg-detalles px-2 py-1 text-secundario">
+        <span className="section-highlight">
           firme
         </span>
         .

@@ -8,8 +8,17 @@ export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
-  const [showHeader, setShowHeader] = useState(false);
+  const [heroIntersecting, setHeroIntersecting] = useState(true);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const showHeader = pathname !== '/' || !heroIntersecting;
+  const activeNavSection =
+    pathname === '/'
+      ? activeSection
+      : pathname === '/faq'
+        ? 'faq'
+        : pathname.startsWith('/servicios/')
+          ? 'areas-especializacion'
+          : null;
 
   const navLinks = useMemo(
     () => [
@@ -37,16 +46,15 @@ export default function Header() {
   );
 
   useEffect(() => {
+    if (pathname !== '/') return;
+
     const hero = document.getElementById('inicio');
 
-    if (!hero) {
-      setShowHeader(true);
-      return;
-    }
+    if (!hero) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setShowHeader(!entry.isIntersecting);
+        setHeroIntersecting(entry.isIntersecting);
       },
       { threshold: 0.2 }
     );
@@ -54,9 +62,11 @@ export default function Header() {
     observer.observe(hero);
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
+    if (pathname !== '/') return;
+
     const sections = navLinks
       .map((link) => document.getElementById(link.id))
       .filter(Boolean);
@@ -85,10 +95,13 @@ export default function Header() {
     });
 
     return () => observer.disconnect();
-  }, [navLinks]);
+  }, [navLinks, pathname]);
 
   const handleNavClick = (e, link) => {
-    if (pathname === '/') {
+    if (
+      pathname === '/' &&
+      (link.href === '/' || link.href.startsWith('/#'))
+    ) {
       e.preventDefault();
       const element = document.getElementById(link.id);
 
@@ -137,6 +150,7 @@ export default function Header() {
           <ul className="flex w-full flex-col gap-2 px-4 py-6 text-center md:w-auto md:flex-row md:gap-6 md:px-0 md:py-0 md:text-left">
             {navLinks.map((link, index) => {
               const isServicesLink = link.hasSubmenu;
+              const isActive = activeNavSection === link.id;
 
               return (
                 <li
@@ -148,8 +162,9 @@ export default function Header() {
                 >
                   {isServicesLink ? (
                     <div className="relative">
-                      <a
+                      <Link
                         href="/#areas-especializacion"
+                        aria-expanded={isServicesOpen}
                         onClick={(e) => {
                           handleNavClick(e, link);
                           if (window.innerWidth < 768) {
@@ -160,13 +175,13 @@ export default function Header() {
                         }}
                         className={`relative block px-3 py-2 text-[0.78rem] font-medium tracking-[0.2em] transition-all duration-300 md:hover:scale-105 ${
                           isOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 md:translate-y-0 md:opacity-100'
-                        } ${activeSection === link.id ? 'text-detalles' : 'text-principal hover:text-detalles'}`}
+                        } ${isActive ? 'text-detalles' : 'text-principal hover:text-detalles'}`}
                       >
-                        {activeSection === link.id && (
+                        {isActive && (
                           <span className="absolute left-1/2 top-full mt-0 h-[2px] w-full -translate-x-1/2 rounded-full bg-detalles transition-all duration-300" />
                         )}
                         {link.label}
-                      </a>
+                      </Link>
 
                       <div
                         className={`absolute left-0 top-full mt-3 w-72  border border-principal/10 bg-secundario/95 p-3 shadow-xl transition-all duration-300 ${
@@ -194,9 +209,9 @@ export default function Header() {
                       onClick={(e) => handleNavClick(e, link)}
                       className={`relative block rounded-full px-3 py-2 text-[0.78rem] font-medium tracking-[0.2em] transition-all duration-300 md:hover:scale-105 ${
                         isOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 md:translate-y-0 md:opacity-100'
-                      } ${activeSection === link.id ? 'text-detalles' : 'text-principal hover:text-detalles'}`}
+                      } ${isActive ? 'text-detalles' : 'text-principal hover:text-detalles'}`}
                     >
-                      {activeSection === link.id && (
+                      {isActive && (
                         <span className="absolute left-1/2 top-full mt-0 h-[2px] w-full -translate-x-1/2 bg-detalles transition-all duration-300" />
                       )}
                       {link.label}

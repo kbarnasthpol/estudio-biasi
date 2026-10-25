@@ -25,9 +25,9 @@ export default function TrustSection() {
             }`}
           >
             {/* Decoraciones de fondo */}
-            <div className="absolute -right-10 -top-10 h-48 w-48 rounded-full bg-detalles/5 blur-3xl" />
-            <div className="absolute -left-10 -bottom-10 h-40 w-40 rounded-full bg-secundario/5 blur-3xl" />
-            <div className="absolute left-1/3 top-1/2 h-32 w-32 rounded-full bg-principal/5 blur-2xl" />
+            <div className="ambient-float absolute -right-10 -top-10 h-48 w-48 rounded-full bg-detalles/5 blur-3xl" />
+            <div className="ambient-float absolute -left-10 -bottom-10 h-40 w-40 rounded-full bg-secundario/5 blur-3xl" />
+            <div className="ambient-float absolute left-1/3 top-1/2 h-32 w-32 rounded-full bg-principal/5 blur-2xl" />
 
             <div className="relative z-10">
               <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
@@ -39,7 +39,7 @@ export default function TrustSection() {
 
                   <h2 className="mt-3 text-3xl text-left md:text-4xl font-titulo font-bold uppercase leading-[0.95] tracking-[-0.03em] text-textoClaro">
                     Un estudio jurídico que combina criterio, cercanía y{' '}
-                    <span className="inline-block bg-detalles px-2 py-1 text-secundario">
+                    <span className="section-highlight">
                       estrategia
                     </span>
                     .
@@ -118,6 +118,7 @@ export default function TrustSection() {
                               {item.text}
                             </p>
                           </div>
+
                         </div>
                       );
                     })}

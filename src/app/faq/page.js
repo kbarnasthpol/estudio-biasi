@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import FAQPageSection from '../../components/FAQPageSection';
+import CopyrightNotice from '../../components/CopyrightNotice';
 import FloatingWhatsApp from '../../components/FloatingWhatsApp';
 
 export const metadata = {
@@ -9,18 +9,11 @@ export const metadata = {
 
 export default function FAQPage() {
   return (
-    <div className="min-h-screen bg-principal pt-24">
-      <div className="mx-auto mb-6 flex w-full max-w-7xl items-center justify-between px-4 md:px-8">
-        <Link href="/" className="inline-flex items-center rounded-full border border-secundario/15 bg-principal px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-secundario transition hover:-translate-y-0.5">
-          Volver al inicio
-        </Link>
-        <a href="/#contacto" className="inline-flex items-center rounded-full border border-detalles bg-detalles px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-secundario transition hover:-translate-y-0.5">
-          Consultar
-        </a>
-      </div>
-      <main className="pb-16">
+    <div className="flex min-h-screen flex-col bg-principal pt-16 md:pt-20">
+      <main className="flex-1 pb-12">
         <FAQPageSection />
       </main>
+      <CopyrightNotice />
       <FloatingWhatsApp />
     </div>
   );

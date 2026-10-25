@@ -373,7 +373,8 @@ export default function Footer() {
                   >
                     <span className="text-detalles">¡</span>Estamos para lo que 
                     <span className="block">
-                      necesites<span className="text-detalles">!</span>
+                      <span className="section-highlight">necesites</span>
+                      <span className="text-detalles">!</span>
                     </span>
                   </h1>
 

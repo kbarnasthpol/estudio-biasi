@@ -99,20 +99,20 @@ useEffect(() => {
 
               shrink-0
               flex-1
-md:flex-1
+              md:flex-1
 
               px-6
               py-5
-font-titulo
+              font-titulo
               md:px-8
               md:py-6
 
-              text-left
+              flex items-center justify-center text-center
 
               border-r
               md:border-r-0
               md:border-b
-uppercase
+              uppercase
               border-principal/10
 
               transition-colors
@@ -146,13 +146,13 @@ uppercase
                 "
               />
             )}
-<div className={`${
+            <div className={`text-center ${
                 active
-                  ? "md:translate-x-6 scale-102 font-bold"
+                  ? "scale-102 font-bold"
                   : "font-medium"
               }`}>
             {area.nombre}
-</div>
+            </div>
           </button>
         );
       })}

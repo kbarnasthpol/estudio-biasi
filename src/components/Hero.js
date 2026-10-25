@@ -284,13 +284,7 @@ export default function Hero() {
 
                   <span className="mt-1.5 block">
                     <span
-                      className="
-                        inline-block
-                        bg-detalles
-                        px-2
-                        py-1
-                        text-secundario
-                      "
+                      className="section-highlight"
                     >
                       Nuestra
                     </span>{" "}

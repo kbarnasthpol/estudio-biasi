@@ -176,6 +176,66 @@ body {
   transform: translateZ(0);
 }
 
+.section-highlight {
+  display: inline-block;
+  padding: 0.08em 0.16em 0.02em;
+  background-color: var(--color-detalles);
+  color: var(--color-secundario);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.diagonal-pattern {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(2, 82, 89, 0.9) 0,
+    rgba(2, 82, 89, 0.9) 1px,
+    transparent 1px,
+    transparent 18px
+  );
+}
+
+.service-content-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.service-content-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.ambient-float {
+  animation: floating 8s ease-in-out infinite;
+}
+
+.page-motion-in {
+  animation: page-enter 750ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes highlight-enter {
+  from {
+    opacity: 0.25;
+    transform: translateY(0.12em);
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0);
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 body header {
   transition:
     opacity 500ms ease,
