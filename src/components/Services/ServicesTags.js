@@ -2,23 +2,27 @@
 
 export default function ServicesTags({ servicios, visible, isChanging }) {
   return (
-    <ul className="grid grid-cols-2 gap-0 ">
+    <ul className="flex flex-wrap items-start gap-2">
       {servicios.map((servicio, index) => (
         <li
           key={servicio.nombre}
-          className={`flex min-h-12 items-center gap-2 px-2 py-2 text-[10px] font-medium uppercase leading-5 tracking-wide text-secundario transition-all duration-300 md:gap-3 md:px-5 md:text-sm ${
+          className={`group inline-flex w-fit max-w-full items-center gap-3 border border-secundario/15 bg-secundario/[0.03] px-3 py-2 text-[10px] font-medium uppercase leading-5 tracking-wide text-secundario transition-all duration-300 hover:translate-x-1 hover:border-detalles/60 hover:bg-detalles/15 md:gap-4 md:px-5 md:text-sm ${
             visible && !isChanging
-              ? "translate-y-0 opacity-100"
-              : "translate-y-3 opacity-0"
+              ? "service-tag-enter"
+              : "opacity-0"
           }`}
           style={{
-            transitionDelay: `${!isChanging ? index * 30 : 0}ms`,
+            animationDelay: `${visible && !isChanging ? index * 70 : 0}ms`,
           }}
         >
-          <span aria-hidden="true" className="font-titulo text-xs font-semibold text-detalles">
-            {String(index + 1).padStart(2, "0")}
+          <span className={`flex items-center gap-3 md:gap-4 ${
+            visible && !isChanging ? "service-tag-content-enter" : "translate-y-3"
+          }`}>
+            <span aria-hidden="true" className="font-titulo text-xs font-semibold text-detalles transition-colors group-hover:text-secundario">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <span>{servicio.nombre}</span>
           </span>
-          <span>{servicio.nombre}</span>
         </li>
       ))}
     </ul>

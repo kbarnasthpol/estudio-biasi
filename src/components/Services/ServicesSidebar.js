@@ -107,7 +107,7 @@ useEffect(() => {
               md:px-8
               md:py-6
 
-              flex items-center justify-center text-center
+              flex items-center justify-start text-left
 
               border-r
               md:border-r-0
@@ -146,9 +146,9 @@ useEffect(() => {
                 "
               />
             )}
-            <div className={`text-center ${
+            <div className={`text-left transition-transform duration-300 ${
                 active
-                  ? "scale-102 font-bold"
+                  ? "translate-x-4 scale-102 font-bold"
                   : "font-medium"
               }`}>
             {area.nombre}

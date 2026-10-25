@@ -139,7 +139,7 @@ export default function Contact() {
                           <a
                             key={link.name}
                             href={link.url}
-                            className={`group inline-flex h-14 items-center justify-center gap-3 border border-detalles px-5 py-3 text-center text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg md:text-sm ${link.color} ${
+                            className={`group inline-flex h-14 items-center justify-center gap-3 border border-principal/50 px-5 py-3 text-center text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg md:text-sm ${link.color} ${
                               visible
                                 ? "translate-y-0 opacity-100"
                                 : "translate-y-6 opacity-0"
