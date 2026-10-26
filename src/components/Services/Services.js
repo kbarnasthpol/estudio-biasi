@@ -23,7 +23,7 @@ export default function Services() {
           className={`  bg-principal transition-all duration-700 ${visible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-98"}`}
         >
 
-          <div className="flex flex-col md:h-[680px] md:flex-row">
+          <div className="flex flex-col md:h-[550px] md:flex-row">
             <ServicesSidebar areas={areasData} selectedArea={selectedArea} setSelectedArea={setSelectedArea} visible={visible} />
             <ServicesContent selectedArea={selectedArea} visible={visible} />
           </div>

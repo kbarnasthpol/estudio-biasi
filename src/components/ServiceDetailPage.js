@@ -34,9 +34,9 @@ export default function ServiceDetailPage({ area }) {
                   variant="overlay"
                 />
 
-                <div className="relative z-10 max-w-4xl px-6 pb-12 pt-32 md:px-10 md:pb-14 md:pt-16">
+                <div className="relative z-10 px-6 pb-12 pt-32 md:px-10 md:pb-14 md:pt-16">
                   <h1 className="font-titulo text-4xl font-bold uppercase leading-[0.95] tracking-[-0.03em] text-principal md:text-6xl">
-                    <span className="section-highlight">{area.nombre}</span>
+                    <span className=" section-highlight opacity-90">{area.nombre}</span>
                   </h1>
                   <div className="my-5 h-[2px] w-24 bg-detalles md:my-6 md:w-32" />
                   <p className="max-w-3xl border-l-2 bg-secundario/50 border-detalles/80 pl-5 text-base leading-8 text-principal md:text-lg">
@@ -74,11 +74,11 @@ export default function ServiceDetailPage({ area }) {
                 </p>
                 <h2
                   id="service-topics-title"
-                  className="font-titulo text-3xl font-bold uppercase leading-[0.95] tracking-[-0.03em] text-textoClaro md:text-4xl"
+                  className="font-titulo text-center text-3xl font-bold uppercase leading-[0.95] tracking-[-0.03em] text-textoClaro md:text-4xl"
                 >
                   <span className="text-detalles">¿</span>En qué podemos orientarte<span className="text-detalles">?</span>              </h2>
                 <div className="my-5 h-[2px] w-24 bg-detalles md:my-6 md:w-32" />
-                <p className="max-w-3xl text-base leading-8 text-textoClaro/80 md:text-lg">
+                <p className=" text-base leading-8 text-textoClaro/80 md:text-lg">
                   Estos son algunos de los temas que pueden motivar una
                   consulta en esta área. Cada situación es distinta y requiere
                   conversar sobre sus circunstancias.

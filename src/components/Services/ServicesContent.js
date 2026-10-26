@@ -16,7 +16,7 @@ export default function ServicesContent({ selectedArea, visible }) {
   }, [currentArea.id, selectedArea]);
 
   return (
-    <div className="relative flex h-[680px] flex-1 flex-col overflow-hidden bg-principal">
+    <div className="relative flex h-[550px] flex-1 flex-col overflow-hidden bg-principal">
       <div
         key={currentArea.id}
         aria-live="polite"
