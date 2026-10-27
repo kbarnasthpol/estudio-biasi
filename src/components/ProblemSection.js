@@ -108,11 +108,11 @@ export default function ProblemSection() {
                   <div className=" grid grid-cols-2">
                     <div
                       aria-hidden="true"
-                      className="diagonal-pattern min-h-20 bg-principal/80 hidden md:block md:min-h-24"
+                      className="diagonal-pattern min-h-20 bg-principal/20 hidden md:block md:min-h-24"
                     />
                     <a
                       href="#contacto"
-                      className="group inline-flex min-h-20 items-center justify-center gap-2 bg-detalles px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.16em] text-secundario transition hover:bg-detalles/90 md:min-h-24 md:px-6 md:text-sm"
+                      className="group inline-flex w-full min-h-20 items-center justify-center gap-2 bg-detalles px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.16em] text-secundario transition hover:bg-detalles/90 md:min-h-24 md:px-6 md:text-sm"
                     >
                       Contanos qué necesitás
                       <i className="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1" />

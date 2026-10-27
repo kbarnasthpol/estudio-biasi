@@ -123,7 +123,7 @@ export default function ServiceDetailPage({ area }) {
                     confidencialidad.
                   </p>
                 </div>
-                <div className="flex flex-col gap-4 md:items-end">
+                <div className="flex flex-col gap-4 justify-center md:items-end">
                   <Link
                     href="/#contacto"
                     className="inline-flex w-fit items-center justify-center gap-2 border border-detalles bg-detalles px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-secundario transition hover:-translate-y-0.5 hover:shadow-lg md:text-sm"

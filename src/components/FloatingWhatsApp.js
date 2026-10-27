@@ -17,7 +17,7 @@ target="_blank"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"
-        className="flex h-12 w-12 items-center justify-center border border-[#25D366] bg-[#25D366] text-white shadow-lg transition hover:-translate-y-1 md:h-14 md:w-14"
+        className="flex h-14 w-14 items-center justify-center border border-[#25D366] bg-[#25D366] text-white shadow-lg transition hover:-translate-y-1 md:h-14 md:w-14"
       >
         <i className="fab fa-whatsapp text-2xl" />
       </a>

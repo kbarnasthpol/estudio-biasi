@@ -425,7 +425,7 @@ export default function Hero() {
       hover:-translate-y-1
       hover:border-textoClaro
 
-      ${compact ? "w-full" : "w-3/4"}
+      w-full
 
       sm:w-auto
       md:w-1/2
@@ -479,7 +479,7 @@ export default function Hero() {
         object-cover
          grayscale
       "
-      src="/img/ejemplo_abogado_Hero.jpeg"
+      src="/img/foto-prueba1.jpeg"
       alt="Estudio jurídico"
       width={800}
       height={600}

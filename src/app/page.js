@@ -23,7 +23,7 @@ export default function Home() {
       <div className="snap-section ">
         <TrustSection />
       </div>
-      <MobileDivider
+      <MobileDivider type="contact"
   variant="minimal"
 />
 
@@ -69,6 +69,7 @@ export default function Home() {
       <div className="snap-section ">
         <Contact />
       </div>
+      <MobileDivider variant="dots" />
       <div className="snap-section ">
         <Footer />
       </div>

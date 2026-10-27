@@ -10,7 +10,7 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState('inicio');
   const [heroIntersecting, setHeroIntersecting] = useState(true);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const showHeader = pathname !== '/' || !heroIntersecting;
+  const showHeader = isOpen || pathname !== '/' || !heroIntersecting;
   const activeNavSection =
     pathname === '/'
       ? activeSection
@@ -49,19 +49,34 @@ export default function Header() {
     if (pathname !== '/') return;
 
     const hero = document.getElementById('inicio');
+    const scrollContainer = document.querySelector('.snap-container');
 
     if (!hero) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setHeroIntersecting(entry.isIntersecting);
-      },
-      { threshold: 0.2 }
-    );
+    const updateHeroVisibility = () => {
+      const heroBounds = hero.getBoundingClientRect();
+      const scrollBounds = scrollContainer?.getBoundingClientRect();
+      const viewportTop = scrollBounds?.top ?? 0;
+      const viewportBottom = scrollBounds?.bottom ?? window.innerHeight;
+      const visibleHeight = Math.max(
+        0,
+        Math.min(heroBounds.bottom, viewportBottom) -
+          Math.max(heroBounds.top, viewportTop)
+      );
+      const intersectionRatio = visibleHeight / heroBounds.height;
 
-    observer.observe(hero);
+      setHeroIntersecting(intersectionRatio >= 0.2);
+    };
 
-    return () => observer.disconnect();
+    const initialUpdate = window.requestAnimationFrame(updateHeroVisibility);
+    scrollContainer?.addEventListener('scroll', updateHeroVisibility, { passive: true });
+    window.addEventListener('resize', updateHeroVisibility);
+
+    return () => {
+      window.cancelAnimationFrame(initialUpdate);
+      scrollContainer?.removeEventListener('scroll', updateHeroVisibility);
+      window.removeEventListener('resize', updateHeroVisibility);
+    };
   }, [pathname]);
 
   useEffect(() => {
@@ -146,9 +161,11 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-[70] h-[var(--header-height)] w-full font-titulo transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)] md:h-[var(--header-height-desktop)] border-b border-principal/10 bg-secundario/95 backdrop-blur-lg ${
-          showHeader ? '' : 'md:pointer-events-none md:-translate-y-6 md:opacity-0'
-        } pointer-events-auto translate-y-0 opacity-100`}
+        className={`fixed inset-x-0 top-0 z-[70] h-[var(--header-height)] w-full border-b border-principal/10 bg-secundario/95 font-titulo backdrop-blur-lg transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)] md:h-[var(--header-height-desktop)] ${
+          showHeader
+            ? 'translate-y-0 opacity-100'
+            : 'pointer-events-none -translate-y-full opacity-0'
+        }`}
       >
         <div className="container relative mx-auto flex h-full items-center justify-between px-4 md:px-8">
           <Link
@@ -160,11 +177,19 @@ export default function Header() {
             }}
             className="relative z-[80] flex flex-col leading-none transition-all duration-700"
           >
-            <span className="mb-1 text-[9px] font-semibold uppercase tracking-[0.3em] text-principal/70">
+            <span className="mb-1 pl-1 text-[8px] font-semibold text-center uppercase tracking-[0.4em] text-principal/70 md:text-[10px]">
               Estudio Jurídico
             </span>
-            <span className="text-xl font-bold tracking-[-0.03em] text-principal md:text-2xl">
-              BIASI<span className="text-detalles">&</span>ASOCIADOS
+            <span className="flex items-center font-titulo text-[15px] font-bold uppercase leading-none tracking-tight md:text-lg">
+              <span className="bg-detalles px-2 py-1.5 text-principal md:px-2">
+                BIASI
+              </span>
+              <span className="relative z-10 -mx-2 select-none bg-[linear-gradient(to_right,var(--color-secundario)_50%,var(--color-detalles)_50%)] bg-clip-text  text-transparent">
+                &amp;
+              </span>
+              <span className="bg-principal px-2 py-1.5 text-secundario md:px-2">
+                ASOCIADOS
+              </span>
             </span>
           </Link>
 
@@ -237,14 +262,13 @@ export default function Header() {
         id="mobile-navigation"
         aria-label="Navegación móvil"
         aria-hidden={!isOpen}
-        className={`fixed inset-0 z-[60] flex h-[100dvh] flex-col overflow-y-auto bg-secundario px-6 pb-10 pt-[calc(var(--header-height)+1.5rem)] transition-all duration-300 md:hidden ${
+        className={`mobile-navigation-background fixed inset-0 z-[60] flex h-[100dvh] flex-col overflow-y-auto px-6 pb-10 pt-[calc(var(--header-height)+1.5rem)] transition-all duration-300 md:hidden ${
           isOpen
             ? 'visible translate-y-0 opacity-100'
             : 'pointer-events-none invisible -translate-y-2 opacity-0'
         }`}
       >
-        <div aria-hidden="true" className="mobile-divider-pattern pointer-events-none absolute inset-0 opacity-70" />
-        <ul className="relative mx-auto flex w-full max-w-md flex-1 flex-col justify-center gap-2 text-center">
+        <ul className="relative z-10 mx-auto flex w-full max-w-md flex-1 flex-col justify-center gap-2 text-center">
           {navLinks.map((link, index) => {
             const isActive = activeNavSection === link.id;
 
@@ -270,11 +294,14 @@ export default function Header() {
                     </button>
                     <div
                       id="mobile-services-menu"
-                      className={`grid overflow-hidden transition-[grid-template-rows,opacity] duration-300 ${
-                        isServicesOpen ? 'visible grid-rows-[1fr] opacity-100' : 'invisible grid-rows-[0fr] opacity-0'
-                      }`}
+                      className="mobile-services-submenu"
+                      style={{
+                        maxHeight: isServicesOpen ? '24rem' : 0,
+                        opacity: isServicesOpen ? 1 : 0,
+                        visibility: isServicesOpen ? 'visible' : 'hidden',
+                      }}
                     >
-                      <div className="min-h-0 overflow-hidden">
+                      <div>
                         <Link
                           href={link.href}
                           onClick={(event) => handleNavClick(event, link)}

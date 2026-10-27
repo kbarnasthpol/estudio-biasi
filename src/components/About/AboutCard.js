@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+
 
 export default function AboutCard({ visible }) {
   return (
@@ -9,8 +11,19 @@ export default function AboutCard({ visible }) {
         ${visible ? "opacity-100" : "opacity-0"}
       `}
     >
-      {/* Cuando tengas la foto, va acá con object-cover, igual que en el Hero */}
-      <div className="absolute inset-0 flex items-center justify-center" />
+<Image className="
+        h-full
+        w-full
+        object-cover
+         grayscale
+      "
+      src="/img/mejorPerfil.jpeg"
+      alt="Foto de la Dra. Biasi"
+      width={800}
+      height={600}
+      priority
+    />
+          <div className="absolute inset-0 flex items-center justify-center" />
 
       
 

@@ -210,6 +210,25 @@ body {
   );
 }
 
+.mobile-navigation-background {
+  background-color: var(--color-secundario);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(247, 243, 227, 0.1) 0,
+    rgba(247, 243, 227, 0.1) 1px,
+    transparent 1px,
+    transparent 18px
+  );
+}
+
+.mobile-services-submenu {
+  overflow: hidden;
+  transition:
+    max-height 300ms ease,
+    opacity 300ms ease,
+    visibility 300ms ease;
+}
+
 a[class*="bg-detalles"],
 a[class*="bg-secundario2"] {
   box-shadow:
