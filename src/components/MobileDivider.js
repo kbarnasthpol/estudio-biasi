@@ -76,8 +76,8 @@ function IconRow({ icons, reverse }) {
           key={index}
           className="
             text-2xl
-            text-secundario
-            opacity-50
+            text-principal
+            opacity-45
             shrink-0
           "
         />
@@ -124,7 +124,7 @@ function DotRow({ reverse }) {
             ${
               index % 4 === 0
                 ? "w-2 h-2 bg-detalles"
-                : "w-1.5 h-1.5 bg-secundario/50"
+                : "w-1.5 h-1.5 bg-principal/50"
             }
           `}
         />
@@ -182,7 +182,7 @@ function QuestionRow({ reverse }) {
             className="
               font-titulo
               text-2xl
-              text-secundario/60
+              text-principal/75
               leading-none
           "
           >
@@ -252,7 +252,7 @@ function OrnamentRow({ icons, reverse }) {
           <Icon
             className="
               text-lg
-              text-secundario/60
+              text-principal/70
             "
           />
 
@@ -291,7 +291,7 @@ function MinimalDivider() {
           left-0
           right-0
           h-px
-          bg-secundario/20
+          bg-principal/20
         "
       />
 
@@ -347,10 +347,12 @@ export default function MobileDivider({
         overflow-hidden
         flex
         items-center
-        bg-principal
+        bg-secundario
 
       "
     >
+
+      <div aria-hidden="true" className="mobile-divider-pattern absolute inset-0" />
 
 
       {/* =====================================================
@@ -479,9 +481,9 @@ export default function MobileDivider({
           absolute
           inset-0
           bg-gradient-to-r
-          from-principal
+          from-secundario
           via-transparent
-          to-principal
+          to-secundario
           z-10
           pointer-events-none
         "
@@ -507,7 +509,10 @@ export default function MobileDivider({
             gap-3
             px-5
             py-1.5
-            bg-principal/70
+            border
+            border-principal/15
+            bg-secundario/90
+            shadow-[0_8px_24px_rgba(2,82,89,0.3)]
             whitespace-nowrap
           
           "
@@ -528,7 +533,7 @@ export default function MobileDivider({
             className="
               font-titulo
               tracking-[0.09em]
-              text-secundario
+              text-principal
               uppercase
               font-extrabold
             text-xl
@@ -564,7 +569,7 @@ export default function MobileDivider({
           left-0
           w-full
           h-px
-          bg-secundario/20
+          bg-principal/20
         "
       />
 

@@ -14,6 +14,11 @@
   --font-comun: "Inter", sans-serif;
 }
 
+:root {
+  --header-height: 76px;
+  --header-height-desktop: 88px;
+}
+
 /* Reglas globales base */
 html, body {
   margin: 0;
@@ -193,6 +198,31 @@ body {
     transparent 1px,
     transparent 18px
   );
+}
+
+.mobile-divider-pattern {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(247, 243, 227, 0.1) 0,
+    rgba(247, 243, 227, 0.1) 1px,
+    transparent 1px,
+    transparent 18px
+  );
+}
+
+a[class*="bg-detalles"],
+a[class*="bg-secundario2"] {
+  box-shadow:
+    inset 0 0 0 1px rgba(2, 82, 89, 0.45),
+    inset 0 0 0 4px rgba(247, 243, 227, 0.5);
+}
+
+a[class*="bg-detalles"]:hover,
+a[class*="bg-secundario2"]:hover {
+  box-shadow:
+    inset 0 0 0 1px rgba(2, 82, 89, 0.55),
+    inset 0 0 0 4px rgba(247, 243, 227, 0.55),
+    0 12px 28px rgba(2, 82, 89, 0.2);
 }
 
 .service-content-scroll {

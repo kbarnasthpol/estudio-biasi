@@ -8,8 +8,8 @@ import CopyrightNotice from "./CopyrightNotice";
 
 export default function ServiceDetailPage({ area }) {
   return (
-    <div className="flex min-h-screen flex-col bg-principal pt-16 md:pt-20">
-      <main className="page-motion-in flex-1 pb-0">
+    <div className="flex min-h-screen flex-col pt-16 md:pt-20">
+      <main className="page-motion-in flex-1 pb-0 bg-secundario/80">
         <Container>
           <SectionFrame className="border-x-0 shadow-none">
             <div>
@@ -109,16 +109,15 @@ export default function ServiceDetailPage({ area }) {
                 </ol>
               </section>
 
-              <aside className="grid gap-6 border-t border-principal/15 bg-principal/5 px-6 py-8 md:grid-cols-[1fr_auto] md:items-center md:px-10 md:py-10">
+              <aside className="grid gap-6 border-t border-principal/15 bg-principal/90 px-6 py-8 md:grid-cols-[1fr_auto] md:items-center md:px-10 md:py-10">
                 <div className="max-w-3xl">
-                  <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-textoClaro/60">
+                  <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-textoOscuro/60">
                     Un abordaje claro
                   </p>
-                  <h2 className="font-titulo text-2xl font-bold uppercase leading-tight text-textoClaro md:text-3xl">
-                    Cada situación merece ser{' '}
-                    <span className="section-highlight">escuchada.</span>
-                  </h2>
-                  <p className="mt-4 text-sm leading-7 text-principal/80 md:text-base">
+                  <h2 className="font-titulo section-highlight text-2xl font-bold uppercase leading-tight text-detalles md:text-3xl">
+                    Cada situación merece ser escuchada.
+                                      </h2>
+                  <p className="mt-4 text-sm leading-7 text-secundario/80 md:text-base">
                     El primer paso es conversar sobre lo que te pasa y conocer
                     las circunstancias de tu consulta, con claridad y
                     confidencialidad.

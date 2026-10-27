@@ -18,7 +18,6 @@ export default function Home() {
       </div>
       <MobileDivider type="contact"
   variant="ornament"
-  title="NUESTROS VALORES"
   reverse />
 
       <div className="snap-section ">
@@ -26,7 +25,6 @@ export default function Home() {
       </div>
       <MobileDivider
   variant="minimal"
-  title="SOBRE NOSOTROS"
 />
 
       <div className="snap-section ">
@@ -34,7 +32,7 @@ export default function Home() {
       </div>
 
       <MobileDivider variant="dots"
-  title="ASESORÍA LEGAL" />
+  />
 
       <div className="snap-section ">
         <ProblemSection />
@@ -55,7 +53,7 @@ export default function Home() {
         <TestimonialsSection />
       </div>
       */}
-      <MobileDivider type="contact" variant="question" title="PREGUNTAS FRECUENTES" reverse />
+      <MobileDivider type="contact" variant="question" reverse />
 
       <div className="snap-section ">
         <FaqSection />

@@ -46,7 +46,7 @@ export default function Contact() {
                 <div className="relative z-10 grid items-stretch lg:grid-cols-12">
                   {/* FORMULARIO */}
                   <div
-                    className={`flex items-end justify-start transition-all duration-700 delay-300 lg:col-span-5 ${
+                    className={`order-2 flex items-end justify-start transition-all duration-700 delay-300 lg:order-1 lg:col-span-5 ${
                       visible
                         ? "translate-x-0 opacity-100"
                         : "-translate-x-10 opacity-0"
@@ -102,7 +102,7 @@ export default function Contact() {
 
                   {/* INFORMACIÓN DE CONTACTO */}
                   <div
-                    className={`relative flex min-h-[360px] flex-col transition-all duration-700 delay-150 lg:col-span-7 ${
+                    className={`relative order-1 flex min-h-[360px] flex-col transition-all duration-700 delay-150 lg:order-2 lg:col-span-7 ${
                       visible
                         ? "translate-x-0 opacity-100"
                         : "translate-x-10 opacity-0"

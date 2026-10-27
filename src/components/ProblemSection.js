@@ -108,7 +108,7 @@ export default function ProblemSection() {
                   <div className=" grid grid-cols-2">
                     <div
                       aria-hidden="true"
-                      className="diagonal-pattern min-h-20 bg-principal/80 md:min-h-24"
+                      className="diagonal-pattern min-h-20 bg-principal/80 hidden md:block md:min-h-24"
                     />
                     <a
                       href="#contacto"

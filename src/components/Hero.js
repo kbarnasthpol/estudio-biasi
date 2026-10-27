@@ -392,7 +392,7 @@ export default function Hero() {
       ease-out
       hover:-translate-y-1
 
-      ${compact ? "w-full" : "w-3/4"}
+      w-full
 
       sm:w-auto
       md:w-1/2

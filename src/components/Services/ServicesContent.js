@@ -7,6 +7,10 @@ import ServicesTags from "./ServicesTags";
 export default function ServicesContent({ selectedArea, visible }) {
   const [currentArea, setCurrentArea] = useState(selectedArea);
   const isChanging = selectedArea.id !== currentArea.id;
+  const consultationMessage = encodeURIComponent(
+    `Hola! Necesito asesoramiento en ${currentArea.nombre} y quiero pactar una reunión con el estudio.`
+  );
+  const consultationUrl = `https://api.whatsapp.com/send?phone=+5492213507725&text=${consultationMessage}`;
 
   useEffect(() => {
     if (selectedArea.id === currentArea.id) return;
@@ -63,7 +67,9 @@ export default function ServicesContent({ selectedArea, visible }) {
           <i className="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1" />
         </Link>
         <a 
-          href="#contacto" 
+          href={consultationUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="group inline-flex w-1/2 items-center justify-center gap-2 border border-secundario2/20 bg-secundario2 px-6 py-3 text-center text-sm font-semibold uppercase tracking-[0.25em] text-secundario transition hover:-translate-y-0.5 hover:shadow-lg"
         >
           
