@@ -56,7 +56,7 @@ export default function ServicesContent({ selectedArea, visible }) {
         </div>
       </div>
 
-      <div className={`relative z-10 flex min-h-20 md:flex-wrap flex-col justify-end gap-1 md:gap-0  border-secundario/15 bg-principal px-6 py-0 transition-all duration-300 md:px-0 ${
+      <div className={`relative z-10 flex min-h-20 md:flex-wrap flex-col justify-end gap-0  border-secundario/15 bg-principal px-6 py-0 transition-all duration-300 md:px-0 ${
         visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
       } ${isChanging ? "opacity-0 -translate-x-8" : ""}`}>
         <Link 
