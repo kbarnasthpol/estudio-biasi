@@ -2,7 +2,7 @@
 
 export default function FloatingWhatsApp() {
   return (
-    <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2 md:bottom-5 md:right-5 md:flex-col md:gap-3">
+    <div className="fixed bottom-5 right-4 z-50 flex flex-col gap-2.5 md:bottom-5 md:right-5 md:flex-col md:gap-3">
       <a
     href="https://maps.app.goo.gl/VTr2bbvbfg8CPatx8"
 target="_blank"

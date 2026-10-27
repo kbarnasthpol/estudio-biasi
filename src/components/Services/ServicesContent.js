@@ -56,12 +56,12 @@ export default function ServicesContent({ selectedArea, visible }) {
         </div>
       </div>
 
-      <div className={`relative z-10 flex min-h-20 flex-wrap justify-end gap-0  border-secundario/15 bg-principal px-6 py-0 transition-all duration-300 md:px-0 ${
+      <div className={`relative z-10 flex min-h-20 md:flex-wrap flex-col justify-end gap-1 md:gap-0  border-secundario/15 bg-principal px-6 py-0 transition-all duration-300 md:px-0 ${
         visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
       } ${isChanging ? "opacity-0 -translate-x-8" : ""}`}>
         <Link 
           href={`/servicios/${currentArea.id}`} 
-          className="group inline-flex w-1/2 items-center justify-center gap-2 border border-detalles bg-detalles px-6 py-3 text-center text-sm font-semibold uppercase tracking-[0.25em] text-secundario transition hover:-translate-y-0.5 hover:shadow-lg"
+          className="group inline-flex w-full md:w-1/2 items-center justify-center gap-2 border border-detalles bg-detalles px-6 py-3 text-center text-sm font-semibold uppercase tracking-[0.25em] text-secundario transition hover:-translate-y-0.5 hover:shadow-lg"
         >
           Ver detalle de esta área
           <i className="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1" />
@@ -70,7 +70,7 @@ export default function ServicesContent({ selectedArea, visible }) {
           href={consultationUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex w-1/2 items-center justify-center gap-2 border border-secundario2/20 bg-secundario2 px-6 py-3 text-center text-sm font-semibold uppercase tracking-[0.25em] text-secundario transition hover:-translate-y-0.5 hover:shadow-lg"
+          className="group inline-flex w-full md:w-1/2 items-center justify-center gap-2 border border-secundario2/20 bg-secundario2 px-6 py-3 text-center text-sm font-semibold uppercase tracking-[0.25em] text-secundario transition hover:-translate-y-0.5 hover:shadow-lg"
         >
           
           Consultar por esta área

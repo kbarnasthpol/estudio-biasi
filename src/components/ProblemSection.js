@@ -105,7 +105,7 @@ export default function ProblemSection() {
                     ))}
                   </div>
 
-                  <div className=" grid grid-cols-2">
+                  <div className=" md:grid md:grid-cols-2">
                     <div
                       aria-hidden="true"
                       className="diagonal-pattern min-h-20 bg-principal/20 hidden md:block md:min-h-24"
