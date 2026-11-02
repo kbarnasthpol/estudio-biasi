@@ -36,8 +36,10 @@ export default function ServiceDetailPage({ area }) {
 
                 <div className="relative z-10 px-6 pb-12 pt-32 md:px-10 md:pb-14 md:pt-16">
                   <h1 className="font-titulo text-4xl font-bold uppercase leading-[0.95] tracking-[-0.03em] text-principal md:text-6xl">
-                    <span className=" section-highlight opacity-90">{area.nombre}</span>
-                  </h1>
+  <span className="section-highlight box-decoration-clone bg-detalles px-2 py-1 opacity-90">
+    {area.nombre}
+  </span>
+</h1>
                   <div className="my-5 h-[2px] w-24 bg-detalles md:my-6 md:w-32" />
                   <p className="max-w-3xl border-l-2 bg-secundario/50 border-detalles/80 pl-5 text-base leading-8 text-principal md:text-lg">
                     {area.descripcion}
